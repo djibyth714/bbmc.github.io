@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+  <head>
+    <title>Discographie - BB MC | Albums, Mixtapes & Singles</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bbmc-custom.css">
+    <style>
+      /* Logo amélioré */
+      .logo-improved {
+        max-height: 40px !important;
+        width: 40px !important;
+        border-radius: 50%;
+        padding: 5px;
+        background: transparent;
+        transition: all 0.3s ease;
+        object-fit: contain;
+      }
+      
+      .logo-improved:hover {
+        transform: scale(1.1);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      }
+      
+      /* Page Header */
+      .page-header {
+        position: relative;
+        z-index: 10;
+        background: transparent !important;
+      }
+      
+      .page-header::before {
+        display: none !important;
+      }
+      
+      /* Suppression complète de la barre bleue navbar */
+      .rd-navbar-wrap {
+        background: transparent !important;
+      }
+      
+      .rd-navbar {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .rd-navbar::before,
+      .rd-navbar::after {
+        display: none !important;
+      }
+      
+      .rd-navbar-main-outer {
+        background: transparent !important;
+      }
+      
+      .rd-navbar-main {
+        background: transparent !important;
+      }
+      
+      .rd-navbar--is-stuck {
+        background: rgba(26, 26, 46, 0.9) !important;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+      
+      /* Amélioration lisibilité texte */
+      .section {
+        background: rgba(255, 255, 255, 0.95) !important;
+      }
+      
+      .bg-image {
+        position: relative;
+      }
+      
+      .bg-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+      }
+      
+      .bg-image .container {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .context-dark {
+        color: white !important;
+      }
+      
+      .context-dark h1,
+      .context-dark h2,
+      .context-dark h3,
+      .context-dark h4,
+      .context-dark h5,
+      .context-dark h6 {
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      }
+      
+      .context-dark p {
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      }
+      
+      .bg-default {
+        background: rgba(248, 249, 250, 0.98) !important;
+      }
+      
+      .bg-default h1,
+      .bg-default h2,
+      .bg-default h3,
+      .bg-default h4,
+      .bg-default h5,
+      .bg-default h6 {
+        color: #333 !important;
+      }
+      
+      .bg-default p {
+        color: #555 !important;
+      }
+      /* Lightbox améliorée (galerie) */
+      .lb-overlay { position: fixed; inset:0; background: rgba(0,0,0,0.85); display:none; align-items:center; justify-content:center; z-index:9999; }
+      .lb-overlay.show { display:flex; }
+      .lb-inner { position:relative; max-width:90%; max-height:90%; }
+      .lb-inner img { max-width:100%; max-height:100%; display:block; border-radius:8px; }
+      .lb-close, .lb-prev, .lb-next { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.06); border:none; color:#fff; width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; }
+      .lb-close { top:12px; right:12px; transform:none; }
+      .lb-prev { left:-64px; }
+      .lb-next { right:-64px; }
+      .lb-caption { margin-top:8px; text-align:center; color:#fff; font-size:16px; }
+      
+      /* Images uniformes pour Singles & Clips */
+      .single-card img {
+        height: 250px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+      }
+      
+      /* Correction visibilité section Statistiques */
+      .bg-gray-1 h2,
+      .bg-gray-1 h3,
+      .bg-gray-1 h4,
+      .bg-gray-1 h5,
+      .bg-gray-1 h6 {
+        color: #333 !important;
+      }
+      
+      /* Styles pour la section Émissions Radio & TV */
+      .emission-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 30px;
+      }
+      
+      .emission-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      }
+      
+      .emission-thumb {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        overflow: hidden;
+      }
+      
+      .emission-thumb img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      
+      .emission-card:hover .emission-thumb img {
+        transform: scale(1.05);
+      }
+      
+      .emission-info {
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .emission-info .type-badge {
+        display: inline-block;
+        background: #ff6b35;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        letter-spacing: 0.5px;
+      }
+      
+      .emission-info .chaine {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .emission-info .emission-name {
+        font-size: 14px;
+        margin: 0;
+        color: #666;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+      
+      .bg-gray-100 {
+        background-color: #f8f9fa !important;
+      }
+      
+      .bg-gray-1 p,
+      .bg-gray-1 .counter-classic-text {
+        color: #666 !important;
+      }
+      
+      .bg-gray-1 .counter,
+      .bg-gray-1 .counter-classic-number {
+        color: #ff6b35 !important;
+        font-weight: bold !important;
+      }
+      
+    </style>
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section page-header">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap" style="position: absolute">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!--RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!--RD Navbar Toggle-->
+                  <button type="button" class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" title="Menu de navigation"><span></span></button>
+                  <!--RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand--><a class="brand" href="index.html"><img src="logo d.f.prod.jpg" alt="BB MC - D.F.PROD" class="logo-improved"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Accueil</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Biographie</a>
+                      </li>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="discographie.html">Discographie</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="concerts.html">Concerts</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="rd-navbar-collapse">
+                  <ul class="socialite-list">
+                    <li><a class="icon novi-icon socialite fa-youtube" href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-instagram" href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-spotify" href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" target="_blank" rel="noopener"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="parallax-container section-lg text-center" data-parallax-img="images_BBMC/photo galérie bb mc/DSC_2547.jpg">
+        <div class="parallax-content">
+          <div class="container">
+            <h1 style="color: #fff; font-size: 48px; margin-bottom: 20px;">Discographie</h1>
+            <h6 class="text-gray-300" style="font-size: 24px;">Albums, Mixtapes & Singles de BB MC</h6>
+            <p style="color: #fff; font-size: 18px; margin-top: 20px;">Une évolution artistique de 2010 à 2025</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Album Principal - Tinndi Tiiɗɗi -->
+      <section class="section section-xl bg-default">
+        <div class="container">
+          <div class="row row-50 align-items-center">
+            <div class="col-lg-6">
+              <img src="images_BBMC/Photo des projets sortie/Album Tinndi Tiiɗɗi Tracklist.png" alt="Tinndi Tiiɗɗi - Tracklist" class="img-fluid rounded shadow-lg">
+            </div>
+            <div class="col-lg-6">
+              <h2>Tinndi Tiiɗɗi <span class="badge badge-primary">2025</span></h2>
+              <h4>Premier Album Studio</h4>
+              <p class="lead">21 titres qui marquent l'aboutissement artistique de BB MC, alliant tradition peule et modernité hip-hop dans une œuvre magistrale.</p>
+              
+              <div class="stats-row mb-4">
+                <div class="stat-item">
+                  <h5>1 280 704</h5>
+                  <p>Vues YouTube</p>
+                </div>
+                <div class="stat-item">
+                  <h5>37 032</h5>
+                  <p>Streams Spotify</p>
+                </div>
+                <div class="stat-item">
+                  <h5>21 147</h5>
+                  <p>Streams Apple Music</p>
+                </div>
+              </div>
+
+              <h5>Collaborations Notables :</h5>
+              <ul class="list-custom mb-4">
+                <li><strong>Fuuta</strong> feat. Gawlo Africa</li>
+                <li><strong>Debbo Lamdo</strong> feat. Mussu</li>
+                <li><strong>Anndu Hoorema</strong> feat. Agnés Dji</li>
+                <li><strong>Commandants</strong> feat. Safaray & Wizaby</li>
+              </ul>
+
+              <div class="streaming-links">
+                <a href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" class="btn btn-spotify" target="_blank" rel="noopener">
+                  <i class="fa fa-spotify"></i> Spotify
+                </a>
+                <a href="https://music.apple.com/fr/artist/bb-mc/1540760816" class="btn btn-apple" target="_blank" rel="noopener">
+                  <i class="fa fa-apple"></i> Apple Music
+                </a>
+                <a href="https://www.youtube.com/@bb_mc_officiel" class="btn btn-youtube" target="_blank" rel="noopener">
+                  <i class="fa fa-youtube"></i> YouTube
+                </a>
+                <a href="https://www.deezer.com/fr/artist/113787442" class="btn btn-deezer" target="_blank" rel="noopener">
+                  <i class="fa fa-music"></i> Deezer
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mixtapes -->
+      <section class="section section-lg bg-gray-1">
+        <div class="container">
+          <h2 class="text-center mb-5">Mixtapes</h2>
+          <div class="row row-50">
+            
+            <!-- Nofuru 2023 -->
+            <div class="col-lg-6">
+              <div class="row align-items-center">
+                <div class="col-md-5">
+                  <img src="images_BBMC/Photo des projets sortie/Mixtatpe NOFURU - Cover Officiel.jpg" alt="NOFURU Cover" class="img-fluid rounded shadow-sm mb-3">
+                </div>
+                <div class="col-md-7">
+                  <div class="album-card">
+                    <div class="album-header">
+                      <h3>Nofuru</h3>
+                      <span class="album-year">2023</span>
+                    </div>
+                    <div class="album-info">
+                      <p><strong>Date de sortie :</strong> 30 décembre 2023</p>
+                      <p><strong>Nombre de titres :</strong> 10</p>
+                      <p><strong>Type :</strong> Mixtape</p>
+                    </div>
+                    <p class="album-description">
+                      Mixtape de fin d'année qui consolide le style unique de BB MC, avec des productions modernes et des textes toujours ancrés dans la culture peule.
+                    </p>
+                    <div class="album-highlights">
+                      <h5>Tournée associée :</h5>
+                      <p>NOFURU Tour 2024 - 16 concerts à travers le Sénégal et la Mauritanie</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Naayi Laddé 2022 -->
+            <div class="col-lg-6">
+              <div class="row align-items-center">
+                <div class="col-md-5">
+                  <img src="images_BBMC/Photo des projets sortie/Mixtape Naayi Laddé - Cover.jpg" alt="Naayi Laddé Cover" class="img-fluid rounded shadow-sm mb-3">
+                </div>
+                <div class="col-md-7">
+                  <div class="album-card">
+                    <div class="album-header">
+                      <h3>Naayi Laddé</h3>
+                      <span class="album-year">2022</span>
+                    </div>
+                    <div class="album-info">
+                      <p><strong>Date de sortie :</strong> 7 mai 2022</p>
+                      <p><strong>Nombre de titres :</strong> 18</p>
+                      <p><strong>Type :</strong> Mixtape</p>
+                    </div>
+                    <p class="album-description">
+                      Première grande œuvre de BB MC qui établit sa réputation. Ce projet marque un tournant dans sa carrière avec une tournée exceptionnelle de 65 concerts.
+                    </p>
+                    <div class="album-highlights">
+                      <h5>Tournée associée :</h5>
+                      <p>Naayi Laddé Tour 2022 - 65 concerts, la tournée la plus intensive de l'artiste</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mine Ndiédjitani 2017 -->
+            <div class="col-lg-12">
+              <div class="album-card">
+                <div class="album-header">
+                  <h3>Mine Ndiédjitani</h3>
+                  <span class="album-year">2017-2018</span>
+                </div>
+                <div class="album-info">
+                  <p><strong>Groupe :</strong> D.G Team (Daranibé Goonga)</p>
+                  <p><strong>Type :</strong> Premier EP</p>
+                </div>
+                <p class="album-description">
+                  Premier projet officiel de BB MC avec le groupe Daranibé Goonga. Cet EP marque les débuts professionnels de l'artiste et pose les bases de son identité musicale.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Singles & Clips -->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <h2 class="text-center mb-5">Singles & Clips Phares</h2>
+          <div class="row row-30">
+            
+            <div class="col-lg-4 col-md-6">
+              <div class="single-card">
+                <img src="images_BBMC/Photo des projets sortie/Sortie Single NDA NDA.jpg" alt="NDA NDA" class="img-fluid rounded mb-3">
+                <h4>NDA NDA</h4>
+                <p class="single-type">Single</p>
+                <a href="https://www.youtube.com/watch?v=TmOU7pJxHlE" class="btn btn-youtube" target="_blank" rel="noopener">
+                  <i class="fa fa-youtube"></i> Regarder sur YouTube
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="single-card">
+                <img src="images_BBMC/Photo des projets sortie/Sortie Single KO MIN FULBE.jpg" alt="KO MIN FULBE" class="img-fluid rounded mb-3">
+                <h4>KO MIN FULBE</h4>
+                <p class="single-type">Single</p>
+                <a href="https://www.youtube.com/watch?v=1jq2gBs0jjg" class="btn btn-youtube" target="_blank" rel="noopener">
+                  <i class="fa fa-youtube"></i> Regarder sur YouTube
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="single-card">
+                <img src="images_BBMC/Photo des projets sortie/Sortie Single KONU.jpg" alt="KONU" class="img-fluid rounded mb-3">
+                <h4>KONU</h4>
+                <p class="single-type">Single</p>
+                <a href="https://www.youtube.com/watch?v=o_sqvpCxRxg" class="btn btn-youtube" target="_blank" rel="noopener">
+                  <i class="fa fa-youtube"></i> Regarder sur YouTube
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="single-card">
+                <img src="images_BBMC/Photo des projets sortie/Sortie Single BARAJAGAL.jpg" alt="BARAJAGAL" class="img-fluid rounded mb-3">
+                <h4>BARAJAGAL</h4>
+                <p class="single-type">Single</p>
+                <a href="https://www.youtube.com/watch?v=2ns3aLLsF2o" class="btn btn-youtube" target="_blank" rel="noopener">
+                  <i class="fa fa-youtube"></i> Regarder sur YouTube
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="single-card">
+                <img src="images_BBMC/Photo des projets sortie/Sortie Single Jeysi.jpg" alt="Jeysi" class="img-fluid rounded mb-3">
+                <h4>Jeysi</h4>
+                <p class="single-type">Single</p>
+                <a href="https://www.youtube.com/watch?v=ZkK439j6Vr0" class="btn btn-youtube" target="_blank" rel="noopener">
+                  <i class="fa fa-youtube"></i> Regarder sur YouTube
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="single-card">
+                <img src="images_BBMC/Photo des projets sortie/Sortie Single YINGEE JINEEJI.jpg" alt="YINGEE JINEEJI" class="img-fluid rounded mb-3">
+                <h4>YINGEE JINEEJI</h4>
+                <p class="single-type">Single</p>
+                <a href="https://www.youtube.com/watch?v=t4QQBnmTPG0" class="btn btn-youtube" target="_blank" rel="noopener">
+                  <i class="fa fa-youtube"></i> Regarder sur YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistiques Globales -->
+      <section class="section section-lg bg-gray-1">
+        <div class="container">
+          <h2 class="text-center mb-5">Statistiques & Audience</h2>
+          
+          <!-- YouTube Stats -->
+          <div class="row row-30 mb-5">
+            <div class="col-lg-6 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">4878371</span>
+                </div>
+                <h5 class="counter-classic-title">Vues YouTube</h5>
+                <p class="counter-classic-text">Total global</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">1326318</span>
+                </div>
+                <h5 class="counter-classic-title">Album Tinndi Tiiɗɗi</h5>
+                <p class="counter-classic-text">Vues YouTube</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Streaming Platforms Stats -->
+          <h3 class="text-center mb-4">Streaming - Album Tinndi Tiiɗɗi</h3>
+          <div class="row row-30">
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">38032</span>
+                </div>
+                <h5 class="counter-classic-title">Spotify</h5>
+                <p class="counter-classic-text">Streams</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">22147</span>
+                </div>
+                <h5 class="counter-classic-title">Apple Music</h5>
+                <p class="counter-classic-text">Streams</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">1492</span>
+                </div>
+                <h5 class="counter-classic-title">Deezer</h5>
+                <p class="counter-classic-text">Streams</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">402</span>
+                </div>
+                <h5 class="counter-classic-title">Amazon Music</h5>
+                <p class="counter-classic-text">Streams</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Total Streaming -->
+          <div class="row row-30 mt-4">
+            <div class="col-lg-12 text-center">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">62073</span>
+                </div>
+                <h5 class="counter-classic-title">Total Streams</h5>
+                <p class="counter-classic-text">Album Tinndi Tiiɗɗi - Toutes plateformes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Émissions Radio & TV -->
+      <section class="section section-lg bg-gray-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h2>Émissions Radio & TV</h2>
+              <p class="lead">BB MC dans les médias : passages et interviews dans les principales émissions radio et télé</p>
+            </div>
+          </div>
+          
+          <div class="row row-30 justify-content-center">
+            <!-- 2sTV After Work -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="emission-card">
+                <a href="images_BBMC/Emission radio et TV/2sTV emission After Work.jpeg" class="emission-thumb disc-thumb" data-caption="2sTV - Émission After Work">
+                  <img src="images_BBMC/Emission radio et TV/2sTV emission After Work.jpeg" alt="2sTV Émission After Work" class="img-fluid">
+                </a>
+                <div class="emission-info">
+                  <div class="type-badge">TV</div>
+                  <div class="chaine">2sTV</div>
+                  <div class="emission-name">After Work</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DStv NDENNDEN MIIJOOJI -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="emission-card">
+                <a href="images_BBMC/Emission radio et TV/DStv Emission NDENNDEN MIIJOOJI.jpeg" class="emission-thumb disc-thumb" data-caption="DStv - Émission NDENNDEN MIIJOOJI">
+                  <img src="images_BBMC/Emission radio et TV/DStv Emission NDENNDEN MIIJOOJI.jpeg" alt="DStv Émission NDENNDEN MIIJOOJI" class="img-fluid">
+                </a>
+                <div class="emission-info">
+                  <div class="type-badge">TV</div>
+                  <div class="chaine">DStv</div>
+                  <div class="emission-name">NDENNDEN MIIJOOJI</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- One Nation TV Rap Tiguirigui -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="emission-card">
+                <a href="images_BBMC/Emission radio et TV/One Nation TV emission Rap Tiguirigui.jpeg" class="emission-thumb disc-thumb" data-caption="One Nation TV - Rap Tiguirigui">
+                  <img src="images_BBMC/Emission radio et TV/One Nation TV emission Rap Tiguirigui.jpeg" alt="One Nation TV Rap Tiguirigui" class="img-fluid">
+                </a>
+                <div class="emission-info">
+                  <div class="type-badge">TV</div>
+                  <div class="chaine">One Nation TV</div>
+                  <div class="emission-name">Rap Tiguirigui</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RFI -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="emission-card">
+                <a href="images_BBMC/Emission radio et TV/RFI.jpg" class="emission-thumb disc-thumb" data-caption="RFI - Radio France Internationale">
+                  <img src="images_BBMC/Emission radio et TV/RFI.jpg" alt="RFI Radio France Internationale" class="img-fluid">
+                </a>
+                <div class="emission-info">
+                  <div class="type-badge">Radio</div>
+                  <div class="chaine">RFI</div>
+                  <div class="emission-name">Radio France Internationale</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RTF HIP HOP Vision -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="emission-card">
+                <a href="images_BBMC/Emission radio et TV/RTF (Radio Television Fulbé) Emission HIP HOP Vision.jpeg" class="emission-thumb disc-thumb" data-caption="RTF - Émission HIP HOP Vision">
+                  <img src="images_BBMC/Emission radio et TV/RTF (Radio Television Fulbé) Emission HIP HOP Vision.jpeg" alt="RTF Émission HIP HOP Vision" class="img-fluid">
+                </a>
+                <div class="emission-info">
+                  <div class="type-badge">TV</div>
+                  <div class="chaine">RTF</div>
+                  <div class="emission-name">HIP HOP Vision</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RTF WOLDÉ -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="emission-card">
+                <a href="images_BBMC/Emission radio et TV/RTF (Radio Television Fulbé) Emission WOLDÉ.jpeg" class="emission-thumb disc-thumb" data-caption="RTF - Émission WOLDÉ">
+                  <img src="images_BBMC/Emission radio et TV/RTF (Radio Television Fulbé) Emission WOLDÉ.jpeg" alt="RTF Émission WOLDÉ" class="img-fluid">
+                </a>
+                <div class="emission-info">
+                  <div class="type-badge">TV</div>
+                  <div class="chaine">RTF</div>
+                  <div class="emission-name">WOLDÉ</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Senegal FM BETAAWE -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="emission-card">
+                <a href="images_BBMC/Emission radio et TV/Senegal FM emission BETAAWE.jpg" class="emission-thumb disc-thumb" data-caption="Senegal FM - Émission BETAAWE">
+                  <img src="images_BBMC/Emission radio et TV/Senegal FM emission BETAAWE.jpg" alt="Senegal FM Émission BETAAWE" class="img-fluid">
+                </a>
+                <div class="emission-info">
+                  <div class="type-badge">Radio</div>
+                  <div class="chaine">Senegal FM</div>
+                  <div class="emission-name">BETAAWE</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vibe Radio TAL REK SHOW -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="emission-card">
+                <a href="images_BBMC/Emission radio et TV/vibe radio TAL REK SHOW.jpg" class="emission-thumb disc-thumb" data-caption="Vibe Radio - TAL REK SHOW">
+                  <img src="images_BBMC/Emission radio et TV/vibe radio TAL REK SHOW.jpg" alt="Vibe Radio TAL REK SHOW" class="img-fluid">
+                </a>
+                <div class="emission-info">
+                  <div class="type-badge">Radio</div>
+                  <div class="chaine">Vibe Radio</div>
+                  <div class="emission-name">TAL REK SHOW</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Plateformes de Streaming -->
+      <section class="section section-lg bg-default text-center">
+        <div class="container">
+          <h2>Écoutez BB MC sur toutes les plateformes</h2>
+          <p class="lead">Retrouvez toute la discographie de BB MC sur vos plateformes préférées</p>
+          
+          <div class="streaming-platforms">
+            <a href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" class="platform-link spotify" target="_blank" rel="noopener">
+              <i class="fa fa-spotify"></i>
+              <span>Spotify</span>
+            </a>
+            <a href="https://music.apple.com/fr/artist/bb-mc/1540760816" class="platform-link apple" target="_blank" rel="noopener">
+              <i class="fa fa-apple"></i>
+              <span>Apple Music</span>
+            </a>
+            <a href="https://www.youtube.com/@bb_mc_officiel" class="platform-link youtube" target="_blank" rel="noopener">
+              <i class="fa fa-youtube"></i>
+              <span>YouTube</span>
+            </a>
+            <a href="https://www.deezer.com/fr/artist/113787442" class="platform-link deezer" target="_blank" rel="noopener">
+              <i class="fa fa-music"></i>
+              <span>Deezer</span>
+            </a>
+            <a href="https://audiomack.com/bb-mc" class="platform-link audiomack" target="_blank" rel="noopener">
+              <i class="fa fa-headphones"></i>
+              <span>Audiomack</span>
+            </a>
+            <a href="https://www.tiktok.com/@bbmc_poulosy" class="platform-link tiktok" target="_blank" rel="noopener">
+              <i class="fa fa-music"></i>
+              <span>TikTok</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="section footer-classic bg-default">
+        <div class="container">
+          <div class="row row-15">
+            <div class="col-sm-6">
+              <p class="rights"><span>BB MC</span><span>&nbsp;</span><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>|&nbsp;</span>Tous droits réservés
+                | Production <a href="#">D.F.PROD</a>
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <div class="footer-contact"><a href="contacts.html">
+                  <div class="icon novi-icon mdi mdi-email-outline"></div>Nous contacter</a></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Lightbox galerie améliorée -->
+    <div id="lbOverlay" class="lb-overlay" aria-hidden="true">
+      <div class="lb-inner">
+        <button type="button" class="lb-close" aria-label="Fermer" title="Fermer">×</button>
+        <button type="button" class="lb-prev" aria-label="Précédent" title="Image précédente">‹</button>
+        <img src="" alt="" id="lbImage">
+        <button type="button" class="lb-next" aria-label="Suivant" title="Image suivante">›</button>
+        <div class="lb-caption" id="lbCaption"></div>
+      </div>
+    </div>
+    <script>
+      (function(){
+        const overlay = document.getElementById('lbOverlay');
+        const lbImage = document.getElementById('lbImage');
+        const lbCaption = document.getElementById('lbCaption');
+        const btnClose = overlay && overlay.querySelector('.lb-close');
+        const btnPrev = overlay && overlay.querySelector('.lb-prev');
+        const btnNext = overlay && overlay.querySelector('.lb-next');
+
+        const thumbs = Array.from(document.querySelectorAll('a.disc-thumb'));
+        let index = 0;
+
+        function show(idx){
+          const a = thumbs[idx];
+          if (!a) return;
+          let src = a.getAttribute('href');
+          // Encoder correctement l'URL pour gérer les caractères spéciaux
+          src = encodeURI(src);
+          const caption = a.dataset.caption || a.querySelector('img').alt || '';
+          lbImage.src = src;
+          lbCaption.textContent = caption;
+          overlay.classList.add('show');
+          overlay.setAttribute('aria-hidden','false');
+          index = idx;
+          
+          // Ajouter un gestionnaire d'erreur pour l'image
+          lbImage.onerror = function() {
+            console.log('Erreur de chargement pour:', src);
+            // Essayer avec l'URL originale non encodée
+            lbImage.src = a.getAttribute('href');
+          };
+        }
+
+        function hide(){
+          overlay.classList.remove('show');
+          overlay.setAttribute('aria-hidden','true');
+        }
+
+        function prev(){ show((index - 1 + thumbs.length) % thumbs.length); }
+        function next(){ show((index + 1) % thumbs.length); }
+
+        thumbs.forEach((a,i)=>{
+          a.addEventListener('click', function(e){ 
+            e.preventDefault(); 
+            e.stopPropagation();
+            console.log('Clic sur émission:', a.getAttribute('href'));
+            show(i); 
+          });
+        });
+        
+        // Debug: afficher toutes les images trouvées
+        console.log('Images d\'émissions trouvées:', thumbs.length);
+        thumbs.forEach((thumb, i) => {
+          console.log(`${i}: ${thumb.getAttribute('href')}`);
+        });
+        if (btnClose) btnClose.addEventListener('click', hide);
+        if (btnPrev) btnPrev.addEventListener('click', prev);
+        if (btnNext) btnNext.addEventListener('click', next);
+        overlay && overlay.addEventListener('click', (e)=>{ if (e.target === overlay) hide(); });
+        document.addEventListener('keydown', (e)=>{
+          if (overlay.classList.contains('show')){
+            if (e.key === 'ArrowLeft') prev();
+            if (e.key === 'ArrowRight') next();
+            if (e.key === 'Escape') hide();
+          }
+        });
+      })();
+    </script>
+    
+    <style>
+      .album-card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+      
+      .album-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .album-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 15px;
+      }
+      
+      .album-header h3 {
+        margin: 0;
+        color: #007bff;
+        font-size: 24px;
+      }
+      
+      .album-year {
+        background: #007bff;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+      }
+      
+      .album-info {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      
+      .album-info p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+      
+      .album-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      
+      .album-highlights {
+        background: #e3f2fd;
+        padding: 15px;
+        border-radius: 10px;
+        border-left: 4px solid #007bff;
+      }
+      
+      .album-highlights h5 {
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+      
+      .single-card {
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+        height: 100%;
+      }
+      
+      .single-card:hover {
+        transform: translateY(-3px);
+      }
+      
+      .single-card h4 {
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+      
+      .single-year {
+        color: #666;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      .single-type {
+        background: #007bff;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 15px;
+        font-size: 12px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+      
+      .stats-row {
+        display: flex;
+        gap: 30px;
+        margin: 30px 0;
+      }
+      
+      .stat-item {
+        text-align: center;
+      }
+      
+      .stat-item h5 {
+        color: #007bff;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      .stat-item p {
+        color: #666;
+        font-size: 14px;
+        margin: 0;
+      }
+      
+      .list-custom {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .list-custom li {
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .list-custom li:last-child {
+        border-bottom: none;
+      }
+      
+      .streaming-links {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+      
+      .btn {
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .btn-spotify {
+        background: #1db954;
+        color: white;
+      }
+      
+      .btn-apple {
+        background: #000;
+        color: white;
+      }
+      
+      .btn-youtube {
+        background: #ff0000;
+        color: white;
+      }
+      
+      .btn-deezer {
+        background: #ff6600;
+        color: white;
+      }
+      
+      .streaming-platforms {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+      
+      .platform-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        padding: 20px;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+        min-width: 120px;
+      }
+      
+      .platform-link:hover {
+        transform: translateY(-5px);
+      }
+      
+      .platform-link i {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+      
+      .platform-link.spotify {
+        background: #1db954;
+        color: white;
+      }
+      
+      .platform-link.apple {
+        background: #000;
+        color: white;
+      }
+      
+      .platform-link.youtube {
+        background: #ff0000;
+        color: white;
+      }
+      
+      .platform-link.deezer {
+        background: #ff6600;
+        color: white;
+      }
+      
+      .platform-link.audiomack {
+        background: #ff6600;
+        color: white;
+      }
+      
+      .platform-link.tiktok {
+        background: #000;
+        color: white;
+      }
+      
+      .counter-classic {
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .counter-classic-number {
+        font-size: 36px;
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+      
+      .counter-classic-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      .counter-classic-text {
+        color: #666;
+        font-size: 14px;
+      }
+      
+      @media (max-width: 768px) {
+        .stats-row {
+          flex-direction: column;
+          gap: 15px;
+        }
+        
+        .streaming-links {
+          justify-content: center;
+        }
+        
+        .streaming-platforms {
+          gap: 15px;
+        }
+        
+        .platform-link {
+          min-width: 100px;
+          padding: 15px;
+        }
+      }
+    </style>
+  </body>
+</html>

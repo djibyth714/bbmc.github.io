@@ -1,0 +1,32 @@
+# Fichiers système
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Fichiers de sauvegarde
+*~
+*.bak
+*.backup
+*_backup.*
+*_old.*
+*_original.*
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.log
+
+# Dossiers de cache
+node_modules/
+.cache/
+.vscode/
+.idea/
+
+# Fichiers de configuration locale
+.env
+.env.local
+config.local.php

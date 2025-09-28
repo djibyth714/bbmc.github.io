@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Contacts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bbmc-custom.css">
+    <style>
+      /* Logo amélioré */
+      .logo-improved {
+        max-height: 40px !important;
+        width: 40px !important;
+        border-radius: 50%;
+        padding: 5px;
+        background: transparent;
+        transition: all 0.3s ease;
+        object-fit: contain;
+      }
+      
+      .logo-improved:hover {
+        transform: scale(1.1);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      }
+      
+      /* Page Header */
+      .page-header {
+        position: relative;
+        z-index: 10;
+        background: transparent !important;
+      }
+      
+      .page-header::before {
+        display: none !important;
+      }
+      
+      /* Suppression complète de la barre bleue navbar */
+      .rd-navbar-wrap {
+        background: transparent !important;
+      }
+      
+      .rd-navbar {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .rd-navbar::before,
+      .rd-navbar::after {
+        display: none !important;
+      }
+      
+      .rd-navbar-main-outer {
+        background: transparent !important;
+      }
+      
+      .rd-navbar-main {
+        background: transparent !important;
+      }
+      
+      .rd-navbar--is-stuck {
+        background: rgba(26, 26, 46, 0.9) !important;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+      
+      /* Amélioration lisibilité texte */
+      .section {
+        background: rgba(255, 255, 255, 0.95) !important;
+      }
+      
+      .bg-image {
+        position: relative;
+      }
+      
+      .bg-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+      }
+      
+      .bg-image .container {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .context-dark {
+        color: white !important;
+      }
+      
+      .context-dark h1,
+      .context-dark h2,
+      .context-dark h3,
+      .context-dark h4,
+      .context-dark h5,
+      .context-dark h6 {
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      }
+      
+      .context-dark p {
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      }
+      
+      .bg-default {
+        background: rgba(248, 249, 250, 0.98) !important;
+      }
+      
+      .bg-default h1,
+      .bg-default h2,
+      .bg-default h3,
+      .bg-default h4,
+      .bg-default h5,
+      .bg-default h6 {
+        color: #333 !important;
+      }
+      
+      .bg-default p {
+        color: #555 !important;
+      }
+      
+      .contact-info {
+        background: rgba(255, 255, 255, 0.95) !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        border-radius: 10px;
+      }
+      
+      .contact-info h3,
+      .contact-info h4,
+      .contact-info h5 {
+        color: #333 !important;
+      }
+      
+      .contact-info p {
+        color: #555 !important;
+      }
+    </style>
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section page-header">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap" style="position: absolute">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!--RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!--RD Navbar Toggle-->
+                  <button type="button" class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" title="Menu de navigation"><span></span></button>
+                  <!--RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand--><a class="brand" href="index.html"><img src="logo d.f.prod.jpg" alt="BB MC - D.F.PROD" class="logo-improved"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Accueil</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Biographie</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="discographie.html">Discographie</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="concerts.html">Concerts</a>
+                      </li>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="contacts.html">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="rd-navbar-collapse">
+                  <ul class="socialite-list">
+                    <li><a class="icon novi-icon socialite fa-facebook" href="#"></a></li>
+                    <li><a class="icon novi-icon socialite fa-twitter" href="#"></a></li>
+                    <li><a class="icon novi-icon socialite fa-instagram" href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- Breadcrumbs-->
+      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images_BBMC/photo\ galérie\ bb\ mc/DSC_2580.jpg);">
+        <div class="container">
+          <h2 class="breadcrumbs-custom-title">Contact</h2>
+        </div>
+      </section>
+      <section class="section section-md bg-default">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+              <h3>Informations de Contact</h3>
+              <p class="text-gray-600">Vous trouverez ici toutes les informations nécessaires pour me contacter pour des collaborations, réservations de concerts ou toute question.</p>
+            </div>
+          </div>
+          <div class="row row-50 justify-lg-content-center row-custom-border">
+            <div class="col-lg-4 col-md-6">
+              <div class="box-icon-classic">
+                <div class="icon novi-icon icon-primary icon-lg fl-bigmug-line-cellphone55"></div>
+                <h5 class="box-icon-classic-title">Téléphones</h5>
+                <ul class="box-icon-classic-list">
+                  <li><a href="tel:+221782884765">Principal : +221 78 288 47 65</a></li>
+                  <li><a href="tel:+221770950193">Secondaire : +221 77 095 01 93</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="box-icon-classic">
+                <div class="icon novi-icon icon-primary icon-lg fl-bigmug-line-big104"></div>
+                <h5 class="box-icon-classic-title">Adresse</h5>
+                <ul class="box-icon-classic-list">
+                  <li><a href="https://maps.app.goo.gl/CviqwKCGZoywtqge9" target="_blank" rel="noopener" title="Localiser Thiemping sur Google Maps">Thiemping, <br> Région de Matam, Sénégal</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="box-icon-classic">
+                <div class="icon novi-icon icon-primary icon-md fl-bigmug-line-email64"></div>
+                <h5 class="box-icon-classic-title">E-mails</h5>
+                <ul class="box-icon-classic-list">
+                  <li><a href="mailto:bebemc.th@gmail.com">bebemc.th@gmail.com</a></li>
+                  <li><a href="mailto:bb.mc.officiel@gmail.com">bb.mc.officiel@gmail.com</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Mailform-->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+              <h3>Contactez-moi</h3>
+              <p class="text-gray-600">N'hésitez pas à me laisser un message ou poser une question en utilisant le formulaire ci-dessous.</p>
+            </div>
+          </div>
+          <!--RD Mailform-->
+          <form class="rd-form rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+            <div class="row row-40">
+              <div class="col-lg-4">
+                <div class="form-wrap">
+                  <label class="form-label" for="contact-name">Nom</label>
+                  <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="form-wrap">
+                  <label class="form-label" for="contact-phone">Téléphone</label>
+                  <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="form-wrap">
+                  <label class="form-label" for="contact-email">E-Mail</label>
+                  <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-wrap">
+                  <label class="form-label" for="contact-message">Message</label>
+                  <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-wrap">
+                  <button class="button button-primary" type="submit">Envoyer le message</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

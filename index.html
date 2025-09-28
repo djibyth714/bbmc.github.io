@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+  <head>
+    <title>BB MC - Rappeur Hip Hop Afro-Rap | Site Officiel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bbmc-custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+      .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} 
+      html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+      
+      /* Custom Styles pour BB MC */
+      :root {
+        --primary-color: #ff6b35;
+        --secondary-color: #1a1a2e;
+        --accent-color: #ffd700;
+        --text-light: #f8f9fa;
+        --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+      }
+      
+      /* Custom Styles pour BB MC */
+      .hero-section {
+        position: relative;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      
+      /* Animations d'entrée */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      
+      /* Classes d'animation */
+      .animate-fade-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+      }
+      
+      .animate-fade-left {
+        animation: fadeInLeft 0.8s ease-out forwards;
+        opacity: 0;
+      }
+      
+      .animate-fade-right {
+        animation: fadeInRight 0.8s ease-out forwards;
+        opacity: 0;
+      }
+      
+      .animate-pulse {
+        animation: pulse 2s ease-in-out infinite;
+      }
+      
+      /* Délais d'animation */
+      .delay-1 { animation-delay: 0.2s; }
+      .delay-2 { animation-delay: 0.4s; }
+      .delay-3 { animation-delay: 0.6s; }
+      .delay-4 { animation-delay: 0.8s; }
+      
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('images_bbMC/photo galérie bb mc/12.jpg') center/cover;
+        opacity: 0.3;
+        z-index: 1;
+      }
+      
+      /* Page Header */
+      .page-header {
+        position: relative;
+        z-index: 10;
+        background: transparent !important;
+      }
+      
+      .page-header::before {
+        display: none !important;
+      }
+      
+      /* Suppression complète de la barre bleue navbar */
+      .rd-navbar-wrap {
+        background: transparent !important;
+      }
+      
+      .rd-navbar {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .rd-navbar::before,
+      .rd-navbar::after {
+        display: none !important;
+      }
+      
+      .rd-navbar-main-outer {
+        background: transparent !important;
+      }
+      
+      .rd-navbar-main {
+        background: transparent !important;
+      }
+      
+      .rd-navbar--is-stuck {
+        background: rgba(26, 26, 46, 0.9) !important;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }  
+      .hero-content {
+        text-align: center;
+        color: var(--text-light);
+      }
+      
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+      
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin: 3rem 0;
+        flex-wrap: wrap;
+      }
+      
+      .stat-item {
+        text-align: center;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--accent-color);
+        display: block;
+      }
+      
+      .stat-label {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+      
+      /* Buttons */
+      .btn-custom {
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        border: none;
+        margin: 0 10px;
+        text-decoration: none;
+        display: inline-block;
+      }
+      
+      .btn-primary-custom {
+        background: linear-gradient(45deg, var(--primary-color), #ff8a65);
+        color: white;
+      }
+      
+      .btn-primary-custom:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        color: white;
+        text-decoration: none;
+      }
+      
+      .btn-outline-custom {
+        background: transparent;
+        color: var(--text-light);
+        border: 2px solid var(--accent-color);
+      }
+      
+      .btn-outline-custom:hover {
+        background: var(--accent-color);
+        color: var(--secondary-color);
+        text-decoration: none;
+      }
+      
+      /* Album Section */
+      .album-showcase {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 100px 0;
+        color: white;
+      }
+      
+      .album-card {
+        background: transparent;
+        border-radius: 20px;
+        padding: 0;
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+      
+      .album-card:hover {
+        transform: translateY(-10px);
+      }
+      
+      .album-cover {
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+      }
+      
+      .album-cover:hover {
+        transform: scale(1.02);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      }
+      
+      /* Videos Section */
+      .videos-section {
+        background: #f8f9fa;
+        padding: 100px 0;
+      }
+      
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      
+      .section-title h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+      }
+      
+      .section-title p {
+        font-size: 1.2rem;
+        color: #666;
+      }
+      
+      .video-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 30px;
+      }
+      
+      .video-card:hover {
+        transform: translateY(-10px);
+      }
+      
+      .video-embed {
+        position: relative;
+        width: 100%;
+        height: 250px;
+      }
+      
+      .video-embed iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      
+      .video-info {
+        padding: 20px;
+      }
+      
+      .video-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+      }
+      
+      .video-description {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      
+      /* Music Player Section */
+      .music-section {
+        background: var(--dark-gradient);
+        padding: 100px 0;
+        color: white;
+      }
+      
+      .audiomack-player {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+      
+      /* Social Media */
+      .social-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 80px 0;
+        color: white;
+        text-align: center;
+      }
+      
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+      
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 2rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+      
+      .social-link:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+        text-decoration: none;
+      }
+      
+      .social-link.youtube:hover { background: #ff0000; }
+      .social-link.spotify:hover { background: #1db954; }
+      .social-link.instagram:hover { background: #e4405f; }
+      .social-link.facebook:hover { background: #1877f2; }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        
+        .hero-stats {
+          gap: 1.5rem;
+        }
+        
+        .stat-number {
+          font-size: 2rem;
+        }
+        
+        .section-title h2 {
+          font-size: 2rem;
+        }
+        
+        .social-links {
+          gap: 20px;
+        }
+        
+        .social-link {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+      }
+      
+      /* Logo amélioré */
+      .logo-improved {
+        max-height: 40px !important;
+        width: 40px !important;
+        border-radius: 50%;
+        padding: 5px;
+        background: transparent;
+        transition: all 0.3s ease;
+        object-fit: contain;
+      }
+      
+      .logo-improved:hover {
+        transform: scale(1.1);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      }
+      
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .animate-fade-in {
+        animation: fadeInUp 0.8s ease-out;
+      }
+      
+      /* Footer */
+      .footer-custom {
+        background: var(--secondary-color);
+        color: white;
+        padding: 50px 0 30px;
+      }
+      
+      .footer-custom a {
+        color: var(--accent-color);
+      }
+      
+      .footer-custom a:hover {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <!-- Page Header-->
+      <header class="section page-header">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap" style="position: absolute">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!--RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!--RD Navbar Toggle-->
+                  <button type="button" class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" title="Menu de navigation"><span></span></button>
+                  <!--RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand--><a class="brand" href="index.html"><img src="logo d.f.prod.jpg" alt="BB MC - D.F.PROD" class="logo-improved"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Accueil</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Biographie</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="discographie.html">Discographie</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="concerts.html">Concerts</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="rd-navbar-collapse">
+                  <ul class="socialite-list">
+                    <li><a class="icon novi-icon socialite fa-youtube" href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener" title="YouTube BB MC"></a></li>
+                    <li><a class="icon novi-icon socialite fa-instagram" href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener" title="Instagram BB MC"></a></li>
+                    <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener" title="Facebook BB MC"></a></li>
+                    <li><a class="icon novi-icon socialite fa-spotify" href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" target="_blank" rel="noopener" title="Spotify BB MC"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title animate-fade-up">BB MC</h1>
+            <p class="hero-subtitle animate-fade-up delay-1">Ambassadeur du Rap Peul • Hip Hop • Afro-rap • Trap</p>
+            <p class="animate-fade-up delay-2" style="font-size: 1.1rem; margin-bottom: 2rem;">Originaire de Thiemping, Matam - Sénégal</p>
+            
+            <div class="hero-stats animate-fade-up delay-3">
+              <div class="stat-item animate-fade-left delay-1">
+                <span class="stat-number counter" data-count="4878371">0</span>
+                <span class="stat-label">Vues YouTube</span>
+              </div>
+              <div class="stat-item animate-fade-up delay-2">
+                <span class="stat-number counter" data-count="1326318">0</span>
+                <span class="stat-label">Vues Album Tinndi Tiiɗɗi</span>
+              </div>
+              <div class="stat-item animate-fade-right delay-3">
+                <span class="stat-number counter" data-count="62073">0</span>
+                <span class="stat-label">Streams Totaux</span>
+              </div>
+              <div class="stat-item animate-fade-up delay-4">
+                <span class="stat-number counter" data-count="21">0</span>
+                <span class="stat-label">Titres Album</span>
+              </div>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+              <a href="#music" class="btn-custom btn-primary-custom">Écouter maintenant</a>
+              <a href="concerts.html" class="btn-custom btn-outline-custom">Voir les concerts</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Album Showcase -->
+      <section class="album-showcase">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="album-card">
+                <img src="images_BBMC/Photo des projets sortie/Album Tinndi Tiiɗɗi - Cover Officiel.PNG" alt="Album Tinndi Tiiɗɗi" class="album-cover img-fluid">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 30px;">Tinndi Tiiɗɗi</h2>
+              <p style="font-size: 1.3rem; margin-bottom: 20px;"><strong>Premier Album Studio • 15 août 2025</strong></p>
+              <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">Une œuvre de 21 titres qui allie tradition peule et modernité hip-hop, marquant l'aboutissement artistique de BB MC.</p>
+              
+              <div class="row" style="margin-bottom: 30px;">
+                <div class="col-4 text-center">
+                  <h4 style="color: var(--accent-color);">1.32M</h4>
+                  <p>Vues YouTube</p>
+                </div>
+                <div class="col-4 text-center">
+                  <h4 style="color: var(--accent-color);">38K</h4>
+                  <p>Streams Spotify</p>
+                </div>
+                <div class="col-4 text-center">
+                  <h4 style="color: var(--accent-color);">22K</h4>
+                  <p>Apple Music</p>
+                </div>
+              </div>
+              
+              <h5 style="margin-bottom: 15px;">Collaborations :</h5>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 8px;"><strong>Fuuta</strong> feat. Gawlo Africa</li>
+                <li style="margin-bottom: 8px;"><strong>Debbo Lamdo</strong> feat. Mussu</li>
+                <li style="margin-bottom: 8px;"><strong>Anndu Hoorema</strong> feat. Agnés Dji</li>
+                <li style="margin-bottom: 8px;"><strong>Commandants</strong> feat. Safaray & Wizaby</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Videos Section -->
+      <section class="videos-section" id="videos">
+        <div class="container">
+          <div class="section-title">
+            <h2>Clips & Vidéos</h2>
+            <p>Découvrez les derniers clips et performances de BB MC</p>
+          </div>
+          
+          <div class="row">
+            <div class="col-lg-6 col-md-6 mb-4">
+              <div class="video-card">
+                <div class="video-embed">
+                  <iframe src="https://www.youtube.com/embed/WJF_bPy6tM0" allowfullscreen title="BB MC - Fête Ta Vie (Clip Officiel)"></iframe>
+                </div>
+                <div class="video-info">
+                  <h4 class="video-title">Fête Ta Vie (Clip Officiel)</h4>
+                  <p class="video-description">Le dernier clip en date de BB MC, extrait de l'album Tinndi Tiiɗɗi. Une production visuelle exceptionnelle.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-6 mb-4">
+              <div class="video-card">
+                <div class="video-embed">
+                  <iframe src="https://www.youtube.com/embed/XyliL7392I0" allowfullscreen title="BB MC - DEBBO LAMDO feat Mussu"></iframe>
+                </div>
+                <div class="video-info">
+                  <h4 class="video-title">DEBBO LAMDO feat Mussu</h4>
+                  <p class="video-description">Collaboration exceptionnelle entre BB MC et Mussu dans ce titre phare de l'album Tinndi Tiiɗɗi.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-6 mb-4">
+              <div class="video-card">
+                <div class="video-embed">
+                  <iframe src="https://www.youtube.com/embed/TmOU7pJxHlE" allowfullscreen title="BB MC - NDA NDA (Clip Officiel)"></iframe>
+                </div>
+                <div class="video-info">
+                  <h4 class="video-title">NDA NDA (Clip Officiel)</h4>
+                  <p class="video-description">Un des clips les plus populaires de BB MC avec une esthétique visuelle remarquable et des paroles engagées.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-6 mb-4">
+              <div class="video-card">
+                <div class="video-embed">
+                  <iframe src="https://www.youtube.com/embed/o_sqvpCxRxg" allowfullscreen title="BB MC - KONU (Clip Officiel)"></iframe>
+                </div>
+                <div class="video-info">
+                  <h4 class="video-title">KONU (Clip Officiel)</h4>
+                  <p class="video-description">Clip officiel de KONU, démontrant la polyvalence artistique de BB MC et son ancrage culturel peul.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center" style="margin-top: 40px;">
+            <a href="https://www.youtube.com/@bb_mc_officiel" class="btn-custom btn-primary-custom" target="_blank" rel="noopener">
+              <i class="fab fa-youtube"></i> Voir toutes les vidéos
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Music Player Section -->
+      <section class="music-section" id="music">
+        <div class="container">
+          <div class="section-title" style="color: white;">
+            <h2>Écouter BB MC</h2>
+            <p>Découvrez la discographie complète sur toutes les plateformes</p>
+          </div>
+          
+          <div class="row">
+            <div class="col-lg-12 mb-4">
+              <div class="audiomack-player">
+                <h4 style="margin-bottom: 30px; color: white; text-align: center;"><i class="fas fa-music"></i> Album Tinndi Tiiɗɗi - Écoute Complète</h4>
+                
+                <!-- Player Audio HTML5 pour les titres populaires -->
+                <div class="row">
+                  <div class="col-lg-6 mb-3">
+                    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px;">
+                      <h5 style="color: var(--accent-color); margin-bottom: 15px;">🎵 Fête Ta Vie</h5>
+                      <audio controls style="width: 100%; margin-bottom: 10px;">
+                        <source src="music/TINNDI_TIIDDI/17 Fête Ta Vie.mp3" type="audio/mpeg">
+                        Votre navigateur ne supporte pas l'audio HTML5.
+                      </audio>
+                      <p style="color: white; font-size: 0.9rem; margin: 0;">Extrait de l'album Tinndi Tiiɗɗi</p>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-6 mb-3">
+                    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px;">
+                      <h5 style="color: var(--accent-color); margin-bottom: 15px;">🎵 Debbo Laamɗo feat. Mussu</h5>
+                      <audio controls style="width: 100%; margin-bottom: 10px;">
+                        <source src="music/TINNDI_TIIDDI/06 Debbo Laamɗo (feat. Mussu).mp3" type="audio/mpeg">
+                        Votre navigateur ne supporte pas l'audio HTML5.
+                      </audio>
+                      <p style="color: white; font-size: 0.9rem; margin: 0;">Collaboration avec Mussu</p>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-6 mb-3">
+                    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px;">
+                      <h5 style="color: var(--accent-color); margin-bottom: 15px;">🎵 Fuuta feat. Gawlo Africa</h5>
+                      <audio controls style="width: 100%; margin-bottom: 10px;">
+                        <source src="music/TINNDI_TIIDDI/04 Fuuta (feat. Gawlo Africa).mp3" type="audio/mpeg">
+                        Votre navigateur ne supporte pas l'audio HTML5.
+                      </audio>
+                      <p style="color: white; font-size: 0.9rem; margin: 0;">Collaboration avec Gawlo Africa</p>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-6 mb-3">
+                    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px;">
+                      <h5 style="color: var(--accent-color); margin-bottom: 15px;">🎵 Concept</h5>
+                      <audio controls style="width: 100%; margin-bottom: 10px;">
+                        <source src="music/TINNDI_TIIDDI/03 Concept.mp3" type="audio/mpeg">
+                        Votre navigateur ne supporte pas l'audio HTML5.
+                      </audio>
+                      <p style="color: white; font-size: 0.9rem; margin: 0;">Titre ego et clash de l'album</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Liens vers les plateformes de streaming -->
+                <div class="text-center" style="margin-top: 30px;">
+                  <p style="color: white; margin-bottom: 20px;">Écoutez l'album complet sur vos plateformes préférées :</p>
+                  <div class="row">
+                    <div class="col-md-3 mb-2">
+                      <a href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" class="btn-custom btn-primary-custom w-100" target="_blank" rel="noopener">
+                        <i class="fab fa-spotify"></i> Spotify
+                      </a>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                      <a href="https://music.apple.com/fr/artist/bb-mc/1540760816" class="btn-custom btn-outline-custom w-100" target="_blank" rel="noopener">
+                        <i class="fab fa-apple"></i> Apple Music
+                      </a>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                      <a href="https://www.deezer.com/fr/artist/113787442" class="btn-custom btn-primary-custom w-100" target="_blank" rel="noopener">
+                        <i class="fas fa-music"></i> Deezer
+                      </a>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                      <a href="https://www.youtube.com/@bb_mc_officiel" class="btn-custom btn-outline-custom w-100" target="_blank" rel="noopener">
+                        <i class="fab fa-youtube"></i> YouTube
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- Social Media Section -->
+      <section class="social-section">
+        <div class="container">
+          <h2 style="font-size: 3rem; margin-bottom: 20px;">Suivez BB MC</h2>
+          <p style="font-size: 1.2rem; margin-bottom: 40px;">Restez connecté pour les dernières actualités, concerts et sorties</p>
+          
+          <div class="social-links">
+            <a href="https://www.youtube.com/@bb_mc_officiel" class="social-link youtube" target="_blank" rel="noopener">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/bb_mc_officiel/" class="social-link instagram" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/BB.MC.OFFICIELLE" class="social-link facebook" target="_blank" rel="noopener">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" class="social-link spotify" target="_blank" rel="noopener">
+              <i class="fab fa-spotify"></i>
+            </a>
+            <a href="https://www.tiktok.com/@bbmc_poulosy" class="social-link" target="_blank" rel="noopener" style="background: #000;">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+          
+          <div style="margin-top: 50px;">
+            <h4>🎤 Production : D.F.PROD</h4>
+            <p>Directeur : SALLBY (Djiby Oumar SALL) • Manager : KTN (Ibrahima Niang)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer-custom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; 2025 BB MC - Tous droits réservés | Production <a href="#">D.F.PROD</a></p>
+            </div>
+            <div class="col-md-6 text-right">
+              <a href="contacts.html">
+                <i class="fas fa-envelope"></i> Nous contacter
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script>
+      // Animation au scroll
+      window.addEventListener('scroll', function() {
+        const elements = document.querySelectorAll('.animate-fade-in');
+        elements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('animate-fade-in');
+          }
+        });
+      });
+      
+      // Smooth scroll pour les liens internes
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Animation des compteurs
+      function animateCounter(element) {
+        const target = parseInt(element.dataset.count);
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          
+          // Format des nombres
+          if (target >= 1000000) {
+            element.textContent = (current / 1000000).toFixed(1) + 'M';
+          } else if (target >= 1000) {
+            element.textContent = (current / 1000).toFixed(0) + 'K';
+          } else {
+            element.textContent = Math.floor(current);
+          }
+        }, 16);
+      }
+      
+      // Intersection Observer pour les animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            
+            // Animer les compteurs
+            if (entry.target.classList.contains('counter')) {
+              setTimeout(() => {
+                animateCounter(entry.target);
+              }, 500);
+            }
+          }
+        });
+      }, observerOptions);
+      
+      // Observer tous les éléments animés
+      document.querySelectorAll('.animate-fade-up, .animate-fade-left, .animate-fade-right, .counter').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

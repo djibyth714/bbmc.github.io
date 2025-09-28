@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+  <head>
+    <title>Biographie - BB MC | Rappeur Hip Hop Afro-Rap</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bbmc-custom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+      /* Logo amélioré */
+      .logo-improved {
+        max-height: 40px !important;
+        width: 40px !important;
+        border-radius: 50%;
+        padding: 5px;
+        background: transparent;
+        transition: all 0.3s ease;
+        object-fit: contain;
+      }
+      
+      .logo-improved:hover {
+        transform: scale(1.1);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      }
+      
+      /* Page Header */
+      .page-header {
+        position: relative;
+        z-index: 10;
+        background: transparent !important;
+      }
+      
+      .page-header::before {
+        display: none !important;
+      }
+      
+      /* Suppression complète de la barre bleue navbar */
+      .rd-navbar-wrap {
+        background: transparent !important;
+      }
+      
+      .rd-navbar {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .rd-navbar::before,
+      .rd-navbar::after {
+        display: none !important;
+      }
+      
+      .rd-navbar-main-outer {
+        background: transparent !important;
+      }
+      
+      .rd-navbar-main {
+        background: transparent !important;
+      }
+      
+      .rd-navbar--is-stuck {
+        background: rgba(26, 26, 46, 0.9) !important;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+      /* Small enhancement for scrolled navbar */
+      .rd-navbar--scrolled {
+        background: rgba(26, 26, 46, 0.95) !important;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2) !important;
+        transition: background .25s ease, box-shadow .25s ease;
+      }
+
+      .logo-improved--small {
+        transform: scale(0.82) !important;
+        transition: transform .25s ease;
+      }
+
+      /* Reveal on scroll */
+      .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+      .animate-on-scroll.in-view { opacity: 1; transform: none; }
+
+      /* Back to top button */
+      #backToTop { position: fixed; right: 20px; bottom: 24px; width:44px; height:44px; border-radius:50%; background:#ff6b35; color:#fff; border:none; display:none; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.18); z-index:9999; }
+      #backToTop.show { display:flex; }
+      
+      
+      
+      /* Amélioration lisibilité texte biographie */
+      .box-about {
+        background: rgba(255, 255, 255, 0.95) !important;
+        padding: 40px !important;
+        border-radius: 15px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        margin: 20px 0 !important;
+      }
+      
+      .box-about h2,
+      .box-about h4,
+      .box-about h5 {
+        color: #333 !important;
+      }
+      
+      .box-about p {
+        color: #555 !important;
+        line-height: 1.7 !important;
+      }
+      
+      .box-about-mega-title {
+        color: #ff6b35 !important;
+      }
+      
+      .box-about-title {
+        color: #333 !important;
+      }
+      
+      .box-about-post-title {
+        color: #ff6b35 !important;
+        margin-bottom: 20px !important;
+      }
+      
+      .artist-info {
+        background: rgba(248, 249, 250, 0.8) !important;
+        padding: 20px !important;
+        border-radius: 10px !important;
+        margin: 20px 0 !important;
+        border-left: 4px solid #ff6b35 !important;
+      }
+      
+      .artist-info h5 {
+        color: #ff6b35 !important;
+        margin-bottom: 10px !important;
+      }
+      
+      .artist-info p {
+        color: #666 !important;
+        margin: 0 !important;
+      }
+      
+      /* Galerie Photos Styles */
+      .gallery-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      
+      .gallery-main {
+        position: relative;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .main-image {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        display: block;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+      
+      .gallery-controls {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        pointer-events: none;
+      }
+      
+      .gallery-btn {
+        background: rgba(255, 107, 53, 0.9);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        pointer-events: all;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .gallery-btn:hover {
+        background: rgba(255, 107, 53, 1);
+        transform: scale(1.1);
+      }
+      
+      .gallery-thumbnails {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+      }
+      
+      .thumbnail {
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 3px solid transparent;
+        aspect-ratio: 1;
+      }
+      
+      .thumbnail:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .thumbnail.active {
+        border-color: #ff6b35;
+        transform: scale(1.05);
+      }
+      
+      .thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      
+      @media (max-width: 768px) {
+        .main-image {
+          height: 300px;
+        }
+        
+        .gallery-thumbnails {
+          grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+          gap: 10px;
+        }
+        
+        .gallery-btn {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+        }
+      }
+      
+      /* Lightbox Styles */
+      .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .lightbox.active {
+        display: flex;
+      }
+      
+      .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .lightbox-image {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+      
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 107, 53, 0.9);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .lightbox-close:hover {
+        background: rgba(255, 107, 53, 1);
+        transform: scale(1.1);
+      }
+      
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 107, 53, 0.9);
+        color: white;
+        border: none;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        font-size: 28px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .lightbox-nav:hover {
+        background: rgba(255, 107, 53, 1);
+        transform: translateY(-50%) scale(1.1);
+      }
+      
+      .lightbox-prev {
+        left: 30px;
+      }
+      
+      .lightbox-next {
+        right: 30px;
+      }
+      
+      .lightbox-counter {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    </style>
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section page-header">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap" style="position: absolute">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!--RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!--RD Navbar Toggle-->
+                  <button type="button" class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" title="Menu de navigation"><span></span></button>
+                  <!--RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand--><a class="brand" href="index.html"><img src="logo d.f.prod.jpg" alt="BB MC - D.F.PROD" class="logo-improved"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Accueil</a>
+                      </li>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="about.html">Biographie</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="discographie.html">Discographie</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="concerts.html">Concerts</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="rd-navbar-collapse">
+                  <ul class="socialite-list">
+                    <li><a class="icon novi-icon socialite fa-youtube" href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-instagram" href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-spotify" href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" target="_blank" rel="noopener"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Breadcrumbs-->
+      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images_BBMC/photo\ galérie\ bb\ mc/BBMC_About.png);">
+        <div class="container">
+          <h2 class="breadcrumbs-custom-title">Biographie</h2>
+        </div>
+      </section>
+
+      <!-- Section Biographie Principale -->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row row-50 flex-md-row-reverse">
+            <div class="col-md-6 text-center">
+              <div class="box-image-1">
+                <img src="images_BBMC/photo galérie bb mc/ibrahim.jpg" alt="BB MC - Ibrahima SY" width="468" height="553" class="img-fluid rounded shadow"/>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="box-about">
+                <div class="box-about-title-wrap">
+                  <h2 class="box-about-mega-title">BB MC</h2>
+                </div>
+                <h4 class="box-about-post-title">Ambassadeur du Rap Peul</h4>
+                <p><strong>Originaire de Thiemping (région de Matam, Sénégal)</strong>, BB MC débute sa carrière en 2010 avec le groupe Daranibé Goonga (D.G Team). Dès ses premiers freestyles, il se distingue par un style unique mêlant rap pur, rythmes afro et forte identité culturelle peule.</p>
+                
+                <p>En 2013, il marque le rap sénégalais avec <strong>WIMA RAP BI NILEU</strong>, avant de multiplier tournées, concours et victoires (Matam 2017, finaliste FP2H Dakar 2018, finaliste Flow Up 2019).</p>
+                
+                <p>Son écriture engagée, entre conte peul moderne et rap urbain, lui permet de s'imposer comme l'un des artistes les plus prometteurs de sa génération. En 2025, il franchit un cap avec son premier album studio, <strong>Tinndi Tiiɗɗi</strong>, une œuvre de 21 titres qui consacre son statut d'ambassadeur du rap peul au Sénégal et au-delà.</p>
+                
+                <div class="artist-info">
+                  <h5>Style Musical :</h5>
+                  <p>Hip Hop • Afro-rap • Trap • Influences culture peule</p>
+                </div>
+                
+                <a class="button button-primary" href="discographie.html">Découvrir sa discographie</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timeline Carrière -->
+      <section class="section section-lg bg-gray-1">
+        <div class="container">
+          <h2 class="text-center mb-5">Parcours Musical</h2>
+          <div class="timeline">
+            
+            <div class="timeline-item">
+              <div class="timeline-year">2010</div>
+              <div class="timeline-content">
+                <h5>Débuts avec Daranibé Goonga</h5>
+                <p>Formation du groupe D.G Team avec les premiers singles et freestyles qui établissent les bases de son style unique.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-year">2013</div>
+              <div class="timeline-content">
+                <h5>Percée avec WIMA RAP BI NILEU</h5>
+                <p>Le titre qui marque sa percée dans le rap sénégalais et établit sa réputation au-delà des frontières du Fouta.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-year">2014-2016</div>
+              <div class="timeline-content">
+                <h5>Succès dans le Fouta et en Mauritanie</h5>
+                <p>Multiplication des concerts et reconnaissance croissante dans la région, avec un public fidèle qui s'élargit.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-year">2017-2018</div>
+              <div class="timeline-content">
+                <h5>Victoire concours Matam & Premier EP</h5>
+                <p>Victoire au concours de Matam et sortie du premier EP <strong>Mine Ndiédjitani</strong> avec D.G Team. Finaliste FP2H Dakar 2018.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-year">2019</div>
+              <div class="timeline-content">
+                <h5>Finaliste Flow Up à Dakar</h5>
+                <p>Reconnaissance nationale avec sa participation remarquée au concours Flow Up, confirmant son statut d'artiste prometteur.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-year">2020-2022</div>
+              <div class="timeline-content">
+                <h5>Singles phares & Premier Mixtape</h5>
+                <p>Sortie des hits <strong>Debbo Poulo</strong>, <strong>Dow Dieri</strong>, <strong>Ko Mama Wino</strong>. Premier Mixtape <strong>Naayi Ladde</strong> (18 titres, 7 mai 2022) et premier clip officiel <strong>Boulél Ilo</strong> (juin 2022).</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-year">2023</div>
+              <div class="timeline-content">
+                <h5>Multiples singles & Mixtape Nofuru</h5>
+                <p>Année productive avec les singles <strong>Jeysi</strong> et <strong>Barajagal</strong>, et sortie du Mixtape <strong>Nofuru</strong> (10 titres, 30 déc. 2023).</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-content">
+                <h5>Clip Bañowo & Préparation Album</h5>
+                <p>Sortie du clip <strong>Bañowo</strong> (juin 2024) et préparation intensive du premier album studio.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-year">2025</div>
+              <div class="timeline-content">
+                <h5>Album Tinndi Tiiɗɗi - Consécration</h5>
+                <p>Sortie du premier album studio <strong>Tinndi Tiiɗɗi</strong> (21 titres, 15 août 2025) avec les collaborations notables et la tournée associée.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Galerie Photos -->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <h2 class="text-center mb-5">Galerie Photos</h2>
+          <p class="text-center mb-4" style="color: #666;">Découvrez BB MC en images : concerts, studio, coulisses</p>
+          
+          <div class="gallery-container">
+            <div class="gallery-main">
+              <img id="mainImage" src="images_BBMC/photo galérie bb mc/DSC_2580.jpg" alt="BB MC" class="main-image gallery-item" data-index="0">
+              <div class="gallery-controls">
+                <button id="prevBtn" class="gallery-btn prev-btn">‹</button>
+                <button id="nextBtn" class="gallery-btn next-btn">›</button>
+              </div>
+            </div>
+            
+            <div class="gallery-thumbnails">
+              <div class="thumbnail active gallery-item" data-src="images_BBMC/photo galérie bb mc/DSC_2580.jpg" data-index="0">
+                <img src="images_BBMC/photo galérie bb mc/DSC_2580.jpg" alt="Photo 1">
+              </div>
+              <div class="thumbnail gallery-item" data-src="images_BBMC/photo galérie bb mc/DSC_2581.jpg" data-index="1">
+                <img src="images_BBMC/photo galérie bb mc/DSC_2581.jpg" alt="Photo 2">
+              </div>
+              <div class="thumbnail gallery-item" data-src="images_BBMC/photo galérie bb mc/DSC_2547.jpg" data-index="2">
+                <img src="images_BBMC/photo galérie bb mc/DSC_2547.jpg" alt="Photo 3">
+              </div>
+              <div class="thumbnail gallery-item" data-src="images_BBMC/photo galérie bb mc/DSC_2531.jpg" data-index="3">
+                <img src="images_BBMC/photo galérie bb mc/DSC_2531.jpg" alt="Photo 4">
+              </div>
+              <div class="thumbnail gallery-item" data-src="images_BBMC/photo galérie bb mc/ibrahim.jpg" data-index="4">
+                <img src="images_BBMC/photo galérie bb mc/ibrahim.jpg" alt="Photo 5">
+              </div>
+              <div class="thumbnail gallery-item" data-src="images_BBMC/photo galérie bb mc/10.jpg" data-index="5">
+                <img src="images_BBMC/photo galérie bb mc/10.jpg" alt="Photo 6">
+              </div>
+              <div class="thumbnail gallery-item" data-src="images_BBMC/photo galérie bb mc/11.jpg" data-index="6">
+                <img src="images_BBMC/photo galérie bb mc/11.jpg" alt="Photo 7">
+              </div>
+              <div class="thumbnail gallery-item" data-src="images_BBMC/photo galérie bb mc/9.jpg" data-index="7">
+                <img src="images_BBMC/photo galérie bb mc/9.jpg" alt="Photo 8">
+              </div>
+              <div class="thumbnail gallery-item" data-src="images_BBMC/photo galérie bb mc/5.jpg" data-index="8">
+                <img src="images_BBMC/photo galérie bb mc/5.jpg" alt="Photo 9">
+              </div>
+              <div class="thumbnail gallery-item" data-src="images_BBMC/photo galérie bb mc/Galery.JPG" data-index="9">
+                <img src="images_BBMC/photo galérie bb mc/Galery.JPG" alt="Photo 10">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox -->
+      <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+          <img id="lightboxImage" class="lightbox-image" src="" alt="Photo en taille réelle">
+          <button id="lightboxClose" class="lightbox-close">×</button>
+          <button id="lightboxPrev" class="lightbox-nav lightbox-prev">‹</button>
+          <button id="lightboxNext" class="lightbox-nav lightbox-next">›</button>
+          <div id="lightboxCounter" class="lightbox-counter">1 / 10</div>
+        </div>
+      </div>
+
+      <!-- Thématiques & Style -->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <h2 class="text-center mb-5">Thématiques & Style</h2>
+          <div class="row row-50">
+            
+            <div class="col-lg-3 col-md-6">
+              <div class="theme-card">
+                <div class="theme-icon">🎤</div>
+                <h4>Vie sociale & engagement</h4>
+                <p>Titres comme <strong>Tinndi Tiiɗɗi</strong>, <strong>Fuuta</strong>, et <strong>Politique</strong> reflètent son engagement social et sa vision de la société.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="theme-card">
+                <div class="theme-icon">❤️</div>
+                <h4>Amour & relations</h4>
+                <p>Exploration des relations humaines dans <strong>So Hodirama</strong>, <strong>Yeewende</strong>, et <strong>Debbo Lamdo</strong>.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="theme-card">
+                <div class="theme-icon">🔥</div>
+                <h4>Ego & Clash</h4>
+                <p>Affirmation de son talent et de sa place dans le rap avec <strong>Concept</strong>, <strong>Talent</strong>, et <strong>Commandants</strong>.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="theme-card">
+                <div class="theme-icon">🌍</div>
+                <h4>Identité culturelle</h4>
+                <p>Valorisation de la langue et la culture peule, modernisation de la tradition orale du conte peul à travers le rap.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Équipe & Production -->
+      <section class="section section-lg bg-gray-1">
+        <div class="container">
+          <h2 class="text-center mb-5">Équipe & Contacts</h2>
+          <div class="row row-50">
+            
+            <div class="col-lg-6">
+              <div class="team-card">
+                <h4>🎬 Maison de Production</h4>
+                <h3>D.F.PROD</h3>
+                <div class="team-member">
+                  <strong>Directeur de Production :</strong> SALLBY (Djiby Oumar SALL)
+                </div>
+                <div class="team-member">
+                  <strong>Assistant de production & Manager général :</strong> KTN (Ibrahima Niang)
+                </div>
+                <div class="team-member">
+                  <strong>Managers de Production :</strong> Kaw Thiernal & DD Galsen
+                </div>
+                <div class="team-member">
+                  <strong>Consultant Artiste :</strong> Saïd
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="team-card">
+                <h4>📊 Statistiques & Audience</h4>
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <h5>4 825 120</h5>
+                    <p>Vues YouTube (global)</p>
+                  </div>
+                  <div class="stat-item">
+                    <h5>1 280 704</h5>
+                    <p>Vues Album Tinndi Tiiɗɗi</p>
+                  </div>
+                  <div class="stat-item">
+                    <h5>37 032</h5>
+                    <p>Streams Spotify</p>
+                  </div>
+                  <div class="stat-item">
+                    <h5>115</h5>
+                    <p>Concerts (2021-2025)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Presse & Médias -->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <h2 class="text-center mb-5">Presse & Médias</h2>
+          <div class="row row-30">
+            
+            <div class="col-lg-4">
+              <div class="media-card">
+                <h5>📰 Analyse critique</h5>
+                <p>Analyse critique de <strong>Tinndi Tiiɗɗi</strong> par Baya Seck & Farba Even's, reconnaissance de la qualité artistique de l'album.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="media-card">
+                <h5>📻 Passages radio</h5>
+                <p>Présence régulière dans les émissions <strong>Thialli hip-hop</strong> et <strong>Rap fouta connexion</strong>, débats et interviews.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="media-card">
+                <h5>🎯 Rap game</h5>
+                <p>Présence active dans le rap game sénégalo-mauritanien avec polémiques artistiques et collaborations stratégiques.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="section footer-classic bg-default">
+        <div class="container">
+          <div class="row row-15">
+            <div class="col-sm-6">
+              <p class="rights"><span>BB MC</span><span>&nbsp;</span><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>|&nbsp;</span>Tous droits réservés
+                | Production <a href="#">D.F.PROD</a>
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <div class="footer-contact"><a href="contacts.html">
+                  <div class="icon novi-icon mdi mdi-email-outline"></div>Nous contacter</a></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    <!-- Galerie JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const mainImage = document.getElementById('mainImage');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        // Lightbox elements
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        
+        let currentIndex = 0;
+        const images = Array.from(thumbnails).map(thumb => thumb.dataset.src);
+        
+        // Fonction pour changer l'image
+        function changeImage(index) {
+          if (index < 0) index = images.length - 1;
+          if (index >= images.length) index = 0;
+          
+          currentIndex = index;
+          
+          // Effet de transition
+          mainImage.style.opacity = '0.5';
+          
+          setTimeout(() => {
+            mainImage.src = images[currentIndex];
+            mainImage.style.opacity = '1';
+          }, 200);
+          
+          // Mettre à jour les thumbnails
+          thumbnails.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentIndex);
+          });
+        }
+        
+        // Fonction pour ouvrir la lightbox
+        function openLightbox(index) {
+          currentIndex = index;
+          lightboxImage.src = images[currentIndex];
+          lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+        
+        // Fonction pour fermer la lightbox
+        function closeLightbox() {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+        
+        // Fonction pour naviguer dans la lightbox
+        function navigateLightbox(direction) {
+          if (direction === 'next') {
+            currentIndex = currentIndex >= images.length - 1 ? 0 : currentIndex + 1;
+          } else {
+            currentIndex = currentIndex <= 0 ? images.length - 1 : currentIndex - 1;
+          }
+          lightboxImage.src = images[currentIndex];
+          lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+        }
+        
+        // Clic sur l'image principale pour ouvrir la lightbox
+        mainImage.addEventListener('click', () => {
+          openLightbox(currentIndex);
+        });
+        
+        // Clic sur les thumbnails
+        thumbnails.forEach((thumbnail, index) => {
+          thumbnail.addEventListener('click', () => {
+            changeImage(index);
+          });
+          
+          // Double-clic pour ouvrir la lightbox
+          thumbnail.addEventListener('dblclick', () => {
+            openLightbox(index);
+          });
+        });
+        
+        // Clic sur tous les éléments gallery-item pour ouvrir la lightbox
+        document.querySelectorAll('.gallery-item').forEach((item) => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const index = parseInt(item.dataset.index) || 0;
+            openLightbox(index);
+          });
+        });
+        
+        // Boutons précédent/suivant de la galerie
+        prevBtn.addEventListener('click', () => {
+          changeImage(currentIndex - 1);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+          changeImage(currentIndex + 1);
+        });
+        
+        // Lightbox controls
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', () => navigateLightbox('prev'));
+        lightboxNext.addEventListener('click', () => navigateLightbox('next'));
+        
+        // Fermer lightbox en cliquant sur le fond
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            closeLightbox();
+          }
+        });
+        
+        // Navigation au clavier
+        document.addEventListener('keydown', (e) => {
+          if (lightbox.classList.contains('active')) {
+            // Navigation dans la lightbox
+            if (e.key === 'ArrowLeft') {
+              navigateLightbox('prev');
+            } else if (e.key === 'ArrowRight') {
+              navigateLightbox('next');
+            } else if (e.key === 'Escape') {
+              closeLightbox();
+            }
+          } else {
+            // Navigation dans la galerie normale
+            if (e.key === 'ArrowLeft') {
+              changeImage(currentIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+              changeImage(currentIndex + 1);
+            }
+          }
+        });
+        
+        // Auto-play (optionnel)
+        let autoPlay = setInterval(() => {
+          if (!lightbox.classList.contains('active')) {
+            changeImage(currentIndex + 1);
+          }
+        }, 5000);
+        
+        // Pause auto-play au hover
+        const galleryContainer = document.querySelector('.gallery-container');
+        galleryContainer.addEventListener('mouseenter', () => {
+          clearInterval(autoPlay);
+        });
+        
+        galleryContainer.addEventListener('mouseleave', () => {
+          autoPlay = setInterval(() => {
+            if (!lightbox.classList.contains('active')) {
+              changeImage(currentIndex + 1);
+            }
+          }, 5000);
+        });
+      });
+      
+      // Correction navbar mobile - fermer au chargement
+      const navbarToggle = document.querySelector('.rd-navbar-toggle');
+      const navbarNavWrap = document.querySelector('.rd-navbar-nav-wrap');
+      
+      // S'assurer que la navbar est fermée au chargement
+      if (navbarNavWrap) {
+        navbarNavWrap.classList.remove('active');
+      }
+      
+      // Fermer la navbar quand on clique sur un lien
+      const navLinks = document.querySelectorAll('.rd-nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (navbarNavWrap) {
+            navbarNavWrap.classList.remove('active');
+          }
+        });
+      });
+    </script>
+    <!-- Small interactive enhancements -->
+    <script>
+      (function(){
+        // Navbar shrink on scroll
+        const navbar = document.querySelector('.rd-navbar');
+        const logo = document.querySelector('.logo-improved');
+        function onScroll() {
+          const scrollY = window.scrollY || window.pageYOffset;
+          if (!navbar) return;
+          if (scrollY > 60) {
+            navbar.classList.add('rd-navbar--scrolled');
+            if (logo) logo.classList.add('logo-improved--small');
+          } else {
+            navbar.classList.remove('rd-navbar--scrolled');
+            if (logo) logo.classList.remove('logo-improved--small');
+          }
+          // back to top button
+          const back = document.getElementById('backToTop');
+          if (back) {
+            if (scrollY > 300) back.classList.add('show'); else back.classList.remove('show');
+          }
+        }
+
+        // Smooth scroll for internal links
+        function smoothScrollInit() {
+          document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e){
+              const targetId = this.getAttribute('href').slice(1);
+              const target = document.getElementById(targetId);
+              if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            });
+          });
+        }
+
+        // Reveal-on-scroll
+        function revealInit(){
+          const elems = document.querySelectorAll('.animate-on-scroll');
+          const obs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) entry.target.classList.add('in-view');
+            });
+          }, { threshold: 0.15 });
+          elems.forEach(el => obs.observe(el));
+        }
+
+        // Active link highlight based on scroll
+        function activeLinkOnScroll(){
+          const sections = Array.from(document.querySelectorAll('section[id]'));
+          const navLinks = Array.from(document.querySelectorAll('.rd-navbar-nav a'));
+          function refresh() {
+            const sc = window.scrollY + 120;
+            let current = null;
+            sections.forEach(s => { if (s.offsetTop <= sc) current = s.id; });
+            navLinks.forEach(a => {
+              const href = a.getAttribute('href').replace('./','').replace(window.location.origin,'');
+              const target = href.split('#')[1] || href.split('/').pop().split('.')[0];
+              a.parentElement.classList.toggle('active', current && href.includes('#'+current));
+            });
+          }
+          window.addEventListener('scroll', refresh);
+          refresh();
+        }
+
+        // Back to top
+        function backToTopInit(){
+          const btn = document.createElement('button');
+          btn.id = 'backToTop';
+          btn.title = 'Retour en haut';
+          btn.innerHTML = '↑';
+          document.body.appendChild(btn);
+          btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
+
+        // Init all
+        document.addEventListener('DOMContentLoaded', () => {
+          smoothScrollInit();
+          revealInit();
+          backToTopInit();
+          activeLinkOnScroll();
+          onScroll();
+          window.addEventListener('scroll', onScroll, { passive: true });
+        });
+      })();
+    </script>
+    
+    <style>
+      .timeline {
+        position: relative;
+        padding: 20px 0;
+      }
+      
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #007bff;
+        transform: translateX(-50%);
+      }
+      
+      .timeline-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        position: relative;
+      }
+      
+      .timeline-item:nth-child(odd) {
+        flex-direction: row;
+      }
+      
+      .timeline-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      
+      .timeline-year {
+        background: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 18px;
+        min-width: 100px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .timeline-content {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin: 0 30px;
+        flex: 1;
+        max-width: 400px;
+      }
+      
+      .timeline-content h5 {
+        color: #007bff;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+      
+      .timeline-content p {
+        margin: 0;
+        line-height: 1.6;
+        color: #666;
+      }
+      
+      .theme-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        text-align: center;
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+      
+      .theme-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .theme-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+        display: block;
+      }
+      
+      .theme-card h4 {
+        color: #007bff;
+        margin-bottom: 15px;
+      }
+      
+      .theme-card p {
+        color: #666;
+        line-height: 1.6;
+      }
+      
+      .team-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        height: 100%;
+      }
+      
+      .team-card h4 {
+        color: #007bff;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+      
+      .team-card h3 {
+        color: #333;
+        margin-bottom: 25px;
+        font-size: 24px;
+      }
+      
+      .team-member {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .team-member:last-child {
+        border-bottom: none;
+      }
+      
+      .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      
+      .stat-item {
+        text-align: center;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 10px;
+      }
+      
+      .stat-item h5 {
+        color: #007bff;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      .stat-item p {
+        color: #666;
+        font-size: 12px;
+        margin: 0;
+      }
+      
+      .media-card {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+      
+      .media-card:hover {
+        transform: translateY(-3px);
+      }
+      
+      .media-card h5 {
+        color: #007bff;
+        margin-bottom: 15px;
+      }
+      
+      .media-card p {
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+      }
+      
+      .artist-info {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border-left: 4px solid #007bff;
+      }
+      
+      .artist-info h5 {
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+      
+      .artist-info p {
+        margin: 0;
+        font-weight: bold;
+      }
+      
+      @media (max-width: 768px) {
+        .timeline::before {
+          left: 30px;
+        }
+        
+        .timeline-item {
+          flex-direction: row !important;
+          padding-left: 60px;
+        }
+        
+        .timeline-year {
+          position: absolute;
+          left: 0;
+          min-width: 80px;
+          font-size: 14px;
+          padding: 8px 12px;
+        }
+        
+        .timeline-content {
+          margin: 0;
+          max-width: none;
+        }
+        
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </body>
+</html>

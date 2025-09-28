@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+  <head>
+    <title>Concerts - BB MC | 115 Concerts 2021-2025</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bbmc-custom.css">
+    <style>
+      /* Logo amélioré */
+      .logo-improved {
+        max-height: 40px !important;
+        width: 40px !important;
+        border-radius: 50%;
+        padding: 5px;
+        background: transparent;
+        transition: all 0.3s ease;
+        object-fit: contain;
+      }
+      
+      .logo-improved:hover {
+        transform: scale(1.1);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      }
+      
+      /* Page Header */
+      .page-header {
+        position: relative;
+        z-index: 10;
+        background: transparent !important;
+      }
+      
+      .page-header::before {
+        display: none !important;
+      }
+      
+      /* Suppression complète de la barre bleue navbar */
+      .rd-navbar-wrap {
+        background: transparent !important;
+      }
+      
+      .rd-navbar {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .rd-navbar::before,
+      .rd-navbar::after {
+        display: none !important;
+      }
+      
+      .rd-navbar-main-outer {
+        background: transparent !important;
+      }
+      
+      .rd-navbar-main {
+        background: transparent !important;
+      }
+      
+      .rd-navbar--is-stuck {
+        background: rgba(26, 26, 46, 0.9) !important;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+      
+      /* Amélioration lisibilité texte */
+      .section {
+        background: rgba(255, 255, 255, 0.95) !important;
+      }
+      
+      .bg-image {
+        position: relative;
+      }
+      
+      .bg-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+      }
+      
+      .bg-image .container {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .context-dark {
+        color: white !important;
+      }
+      
+      .context-dark h1,
+      .context-dark h2,
+      .context-dark h3,
+      .context-dark h4,
+      .context-dark h5,
+      .context-dark h6 {
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      }
+      
+      .context-dark p {
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      }
+      
+      .bg-default {
+        background: rgba(248, 249, 250, 0.98) !important;
+      }
+      
+      .bg-default h1,
+      .bg-default h2,
+      .bg-default h3,
+      .bg-default h4,
+      .bg-default h5,
+      .bg-default h6 {
+        color: #333 !important;
+      }
+      
+      .bg-default p {
+        color: #555 !important;
+      }
+      
+      .concert-card {
+        background: rgba(255, 255, 255, 0.95) !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .concert-card h3,
+      .concert-card h4,
+      .concert-card h5 {
+        color: #333 !important;
+      }
+      
+      .concert-card p {
+        color: #555 !important;
+      }
+    </style>
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section page-header">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap" style="position: absolute">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!--RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!--RD Navbar Toggle-->
+                  <button type="button" class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" title="Menu de navigation"><span></span></button>
+                  <!--RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand--><a class="brand" href="index.html"><img src="logo d.f.prod.jpg" alt="BB MC - D.F.PROD" class="logo-improved"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Accueil</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Biographie</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="discographie.html">Discographie</a>
+                      </li>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="concerts.html">Concerts</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="rd-navbar-collapse">
+                  <ul class="socialite-list">
+                    <li><a class="icon novi-icon socialite fa-youtube" href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-instagram" href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-spotify" href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" target="_blank" rel="noopener"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="parallax-container section-lg text-center" data-parallax-img="images_BBMC/photo galérie bb mc/DSC_2580.jpg">
+        <div class="parallax-content">
+          <div class="container">
+            <h1 style="color: #fff; font-size: 48px; margin-bottom: 20px;">Concerts BB MC</h1>
+            <h6 class="text-gray-300" style="font-size: 24px;">115 concerts réalisés entre 2021 et 2025</h6>
+            <p style="color: #fff; font-size: 18px; margin-top: 20px;">Des tournées marquantes à travers le Sénégal et la Mauritanie</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistiques Section -->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">115</span>
+                </div>
+                <h5 class="counter-classic-title">Total Concerts</h5>
+                <p class="counter-classic-text">2021 - 2025</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">65</span>
+                </div>
+                <h5 class="counter-classic-title">Concerts 2022</h5>
+                <p class="counter-classic-text">Année la plus active</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">3</span>
+                </div>
+                <h5 class="counter-classic-title">Grandes Tournées</h5>
+                <p class="counter-classic-text">Naayi Laddé, NOFURU, Tinndi Tiiɗɗi</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">21</span>
+                </div>
+                <h5 class="counter-classic-title">Concerts 2025</h5>
+                <p class="counter-classic-text">Tournée Tinndi Tiiɗɗi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concerts par Année -->
+      <section class="section section-xl bg-gray-1">
+        <div class="container">
+          <h2 class="text-center">Concerts par Année</h2>
+          <div class="row row-50">
+            
+            <!-- 2025 - Tournée Tinndi Tiiɗɗi -->
+            <div class="col-lg-6">
+              <div class="card-custom">
+                <h3>2025 - Tournée Tinndi Tiiɗɗi (21 concerts)</h3>
+                <div class="event-list">
+                  <div class="event-item">
+                    <span class="event-date">18-19 Jan</span>
+                    <span class="event-location">Soringho</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">10 Juin</span>
+                    <span class="event-location">Pété</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">13 Juil</span>
+                    <span class="event-location">Sinthian</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">2 Sept</span>
+                    <span class="event-location">Koundel</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">10 Sept</span>
+                    <span class="event-location">Thiemping</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">12 Sept</span>
+                    <span class="event-location">Ndendory</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">15-16 Sept</span>
+                    <span class="event-location">Patouki, Orkadiere</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">17 Sept</span>
+                    <span class="event-location">Padalal</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">20 Sept</span>
+                    <span class="event-location">Thialy</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">23 Sept</span>
+                    <span class="event-location">Wendou Bosseabe</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">25-28 Sept</span>
+                    <span class="event-location">Danthiady, Sangue Lobaly, Seno Palel, Dialloube</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">1-2 Oct</span>
+                    <span class="event-location">Bokissaboudou, Horlonde</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">11 Oct</span>
+                    <span class="event-location">Woudourou</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">18 Oct</span>
+                    <span class="event-location">Sinthiou Bamambe</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2024 - Tournée NOFURU -->
+            <div class="col-lg-6">
+              <div class="card-custom">
+                <h3>2024 - Tournée NOFURU (16 concerts)</h3>
+                <div class="event-list">
+                  <div class="event-item">
+                    <span class="event-date">12-14 Jan</span>
+                    <span class="event-location">Banipelly, GoureL Baidy, Arihara</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">20 Jan</span>
+                    <span class="event-location">Bow</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">27 Jan</span>
+                    <span class="event-location">Ourossogui</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">Tabaski</span>
+                    <span class="event-location">Agnam Yeroyabe, Ndiayel Pendao, Thiagaye, Hawre</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">27-30 Juin</span>
+                    <span class="event-location">Sinthiane Sinthiou Garba, Somana, Wodobere</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">1 Juil</span>
+                    <span class="event-location">Korkadie</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">12 Sept</span>
+                    <span class="event-location">Matam</span>
+                  </div>
+                  <div class="event-item">
+                    <span class="event-date">19-20 Sept</span>
+                    <span class="event-location">Thiawle, Jamaica</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2022 - Tournée Naayi Laddé -->
+            <div class="col-lg-12">
+              <div class="card-custom">
+                <h3>2022 - Tournée Naayi Laddé (65 concerts)</h3>
+                <p><strong>La tournée la plus intensive de BB MC</strong> - Plus de 40 villages traversés entre mai et décembre 2022</p>
+                <div class="row">
+                  <div class="col-md-4">
+                    <h5>Mai - Juin 2022</h5>
+                    <div class="event-list">
+                      <div class="event-item">
+                        <span class="event-date">30-31 Mai</span>
+                        <span class="event-location">Koundel Rewo</span>
+                      </div>
+                      <div class="event-item">
+                        <span class="event-date">2-3 Juin</span>
+                        <span class="event-location">Tabaski Ourossogui, Nabadji</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <h5>Juillet 2022</h5>
+                    <div class="event-list">
+                      <div class="event-item">
+                        <span class="event-date">6-7 Juil</span>
+                        <span class="event-location">Maghama</span>
+                      </div>
+                      <div class="event-item">
+                        <span class="event-date">12-13 Juil</span>
+                        <span class="event-location">Wendou Bossiabe</span>
+                      </div>
+                      <div class="event-item">
+                        <span class="event-date">14-15 Juil</span>
+                        <span class="event-location">Sinthiou Bamambe, Sinthiane Padalal</span>
+                      </div>
+                      <div class="event-item">
+                        <span class="event-date">17-18 Juil</span>
+                        <span class="event-location">Kobilo</span>
+                      </div>
+                      <div class="event-item">
+                        <span class="event-date">19-20 Juil</span>
+                        <span class="event-location">Hounare</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <h5>Août - Décembre 2022</h5>
+                    <div class="event-list">
+                      <div class="event-item">
+                        <span class="event-date">Août</span>
+                        <span class="event-location">CAS-CAS, Tohomadji, Arigabo, Agnam Lidoubé</span>
+                      </div>
+                      <div class="event-item">
+                        <span class="event-date">Sept</span>
+                        <span class="event-location">Kaédi, Kanel, Babougnol, Lobali</span>
+                      </div>
+                      <div class="event-item">
+                        <span class="event-date">Oct</span>
+                        <span class="event-location">Madina Diathbe, Trimf, Diamouguel</span>
+                      </div>
+                      <div class="event-item">
+                        <span class="event-date">31 Déc</span>
+                        <span class="event-location">Sylla Diongto</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <footer class="section footer-classic bg-default">
+        <div class="container">
+          <div class="row row-15">
+            <div class="col-sm-6">
+              <p class="rights"><span>BB MC</span><span>&nbsp;</span><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>|&nbsp;</span>Tous droits réservés
+                | Production <a href="#">D.F.PROD</a>
+              </p>
+            </div>
+            <div class="col-sm-6">
+              <div class="footer-contact"><a href="contacts.html">
+                  <div class="icon novi-icon mdi mdi-email-outline"></div>Nous contacter</a></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    <style>
+      .card-custom {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+      }
+      
+      .event-list {
+        margin-top: 20px;
+      }
+      
+      .event-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .event-item:last-child {
+        border-bottom: none;
+      }
+      
+      .event-date {
+        font-weight: bold;
+        color: #007bff;
+        min-width: 100px;
+      }
+      
+      .event-location {
+        color: #666;
+        text-align: right;
+      }
+      
+      .counter-classic {
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .counter-classic-number {
+        font-size: 48px;
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+      
+      .counter-classic-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      .counter-classic-text {
+        color: #666;
+        font-size: 14px;
+      }
+      
+      /* Styles pour la galerie d'affiches */
+      .poster-gallery {
+        padding: 60px 0;
+      }
+      
+      .poster-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+      
+      .poster-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+      }
+      
+      .poster-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+      
+      .poster-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      
+      .poster-card:hover .poster-image {
+        transform: scale(1.05);
+      }
+      
+      .poster-info {
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .poster-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 8px;
+      }
+      
+      .poster-year {
+        color: #ff6b35;
+        font-weight: 600;
+        font-size: 0.9em;
+      }
+      
+      /* Lightbox pour affichage en grand */
+      .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .lightbox.active {
+        display: flex;
+      }
+      
+      .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+      }
+      
+      .lightbox-image {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+      
+      .lightbox-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        background: #ff6b35;
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 107, 53, 0.8);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease;
+      }
+      
+      .lightbox-nav:hover {
+        background: rgba(255, 107, 53, 1);
+      }
+      
+      .lightbox-prev {
+        left: -70px;
+      }
+      
+      .lightbox-next {
+        right: -70px;
+      }
+      
+      @media (max-width: 768px) {
+        .poster-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        
+        .poster-image {
+          height: 300px;
+        }
+        
+        .lightbox-nav {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section page-header">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap" style="position: absolute">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!--RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!--RD Navbar Toggle-->
+                  <button type="button" class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" title="Menu de navigation"><span></span></button>
+                  <!--RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand--><a class="brand" href="index.html"><img src="logo d.f.prod.jpg" alt="BB MC - D.F.PROD" class="logo-improved"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Accueil</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Biographie</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="discographie.html">Discographie</a>
+                      </li>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="concerts.html">Concerts</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="rd-navbar-collapse">
+                  <ul class="socialite-list">
+                    <li><a class="icon novi-icon socialite fa-youtube" href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-instagram" href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener"></a></li>
+                    <li><a class="icon novi-icon socialite fa-spotify" href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" target="_blank" rel="noopener"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="parallax-container section-lg text-center" data-parallax-img="images_BBMC/photo galérie bb mc/DSC_2580.jpg">
+        <div class="parallax-content">
+          <div class="container">
+            <h1 style="color: #fff; font-size: 48px; margin-bottom: 20px;">Concerts BB MC</h1>
+            <h6 class="text-gray-300" style="font-size: 24px;">115 concerts réalisés entre 2021 et 2025</h6>
+            <p style="color: #fff; font-size: 18px; margin-top: 20px;">Des tournées marquantes à travers le Sénégal et la Mauritanie</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistiques Section -->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">115</span>
+                </div>
+                <h5 class="counter-classic-title">Total Concerts</h5>
+                <p class="counter-classic-text">2021 - 2025</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">65</span>
+                </div>
+                <h5 class="counter-classic-title">Concerts 2022</h5>
+                <p class="counter-classic-text">Année la plus active</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">3</span>
+                </div>
+                <h5 class="counter-classic-title">Grandes Tournées</h5>
+                <p class="counter-classic-text">Naayi Laddé, NOFURU, Tinndi Tiiɗɗi</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="counter-classic">
+                <div class="counter-classic-number">
+                  <span class="counter">21</span>
+                </div>
+                <h5 class="counter-classic-title">Concerts 2025</h5>
+                <p class="counter-classic-text">Tournée Tinndi Tiiɗɗi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Affiches de Concerts -->
+      <section class="poster-gallery bg-gray-1">
+        <div class="container">
+          <h2 class="text-center mb-5">Affiches de Concerts & Tournées</h2>
+          <p class="text-center mb-4">Cliquez sur une affiche pour l'agrandir</p>
+          
+          <div class="poster-grid">
+            <div class="poster-card" data-image="images_BBMC/Affiche concerts/BB MC Album Tinndi Tiiddi Tour 2025.jpeg">
+              <img src="images_BBMC/Affiche concerts/BB MC Album Tinndi Tiiddi Tour 2025.jpeg" alt="Tournée Album Tinndi Tiiɗɗi 2025" class="poster-image">
+              <div class="poster-info">
+                <div class="poster-title">Tournée Album Tinndi Tiiɗɗi</div>
+                <div class="poster-year">2025</div>
+              </div>
+            </div>
+            
+            <div class="poster-card" data-image="images_BBMC/Affiche concerts/BB MC Tour Album Tinndi Tiiddi.jpeg">
+              <img src="images_BBMC/Affiche concerts/BB MC Tour Album Tinndi Tiiddi.jpeg" alt="Tour Album Tinndi Tiiɗɗi" class="poster-image">
+              <div class="poster-info">
+                <div class="poster-title">Tour Album Tinndi Tiiɗɗi</div>
+                <div class="poster-year">2025</div>
+              </div>
+            </div>
+            
+            <div class="poster-card" data-image="images_BBMC/Affiche concerts/BB MC Tour Vacance 2024.jpeg">
+              <img src="images_BBMC/Affiche concerts/BB MC Tour Vacance 2024.jpeg" alt="Tour Vacances 2024" class="poster-image">
+              <div class="poster-info">
+                <div class="poster-title">Tour Vacances</div>
+                <div class="poster-year">2024</div>
+              </div>
+            </div>
+            
+            <div class="poster-card" data-image="images_BBMC/Affiche concerts/BB MC Tour Janvier 2024.jpeg">
+              <img src="images_BBMC/Affiche concerts/BB MC Tour Janvier 2024.jpeg" alt="Tour Janvier 2024" class="poster-image">
+              <div class="poster-info">
+                <div class="poster-title">Tour Janvier</div>
+                <div class="poster-year">2024</div>
+              </div>
+            </div>
+            
+            <div class="poster-card" data-image="images_BBMC/Affiche concerts/BB MC Tour Vacance 2023.jpeg">
+              <img src="images_BBMC/Affiche concerts/BB MC Tour Vacance 2023.jpeg" alt="Tour Vacances 2023" class="poster-image">
+              <div class="poster-info">
+                <div class="poster-title">Tour Vacances</div>
+                <div class="poster-year">2023</div>
+              </div>
+            </div>
+            
+            <div class="poster-card" data-image="images_BBMC/Affiche concerts/BB MC Tour mixtape Nayiladdé.jpeg">
+              <img src="images_BBMC/Affiche concerts/BB MC Tour mixtape Nayiladdé.jpeg" alt="Tour Mixtape Naayi Laddé" class="poster-image">
+              <div class="poster-info">
+                <div class="poster-title">Tour Mixtape Naayi Laddé</div>
+                <div class="poster-year">2022</div>
+              </div>
+            </div>
+            
+            <div class="poster-card" data-image="images_BBMC/Affiche concerts/BB MC Tour 2022 Sénégal Mouritanie.jpeg">
+              <img src="images_BBMC/Affiche concerts/BB MC Tour 2022 Sénégal Mouritanie.jpeg" alt="Tour 2022 Sénégal Mauritanie" class="poster-image">
+              <div class="poster-info">
+                <div class="poster-title">Tour Sénégal Mauritanie</div>
+                <div class="poster-year">2022</div>
+              </div>
+            </div>
+            
+            <div class="poster-card" data-image="images_BBMC/Affiche concerts/BB MC Tour Vacance scolaire 2022.jpeg">
+              <img src="images_BBMC/Affiche concerts/BB MC Tour Vacance scolaire 2022.jpeg" alt="Tour Vacances Scolaires 2022" class="poster-image">
+              <div class="poster-info">
+                <div class="poster-title">Tour Vacances Scolaires</div>
+                <div class="poster-year">2022</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="posterLightbox">
+        <div class="lightbox-content">
+          <button type="button" class="lightbox-close" id="closeLightbox" title="Fermer">&times;</button>
+          <button type="button" class="lightbox-nav lightbox-prev" id="prevPoster" title="Affiche précédente">&#8249;</button>
+          <img class="lightbox-image" id="lightboxImage" src="" alt="">
+          <button type="button" class="lightbox-nav lightbox-next" id="nextPoster" title="Affiche suivante">&#8250;</button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="section footer-classic context-dark bg-image" style="background-image: url(images_BBMC/photo\ galérie\ bb\ mc/DSC_2547.jpg);">
+        <div class="container">
+          <div class="row row-30">
+            <div class="col-md-4 col-xl-5">
+              <div class="pr-xl-4">
+                <a class="brand" href="index.html"><img class="brand-logo-light" src="logo d.f.prod.jpg" alt="BB MC" width="140" height="37" srcset="logo d.f.prod.jpg 2x"></a>
+                <p>BB MC - Ambassadeur du Rap Peul. Artiste sénégalais originaire de Thiemping, région de Matam.</p>
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year">2025</span><span>&nbsp;</span><span>BB MC</span><span>.&nbsp;</span><span>Tous droits réservés.</span></p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>Contacts</h5>
+              <dl class="contact-list">
+                <dt>Email:</dt>
+                <dd><a href="mailto:bb.mc.officiel@gmail.com">bb.mc.officiel@gmail.com</a></dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>Téléphone:</dt>
+                <dd><a href="tel:+221123456789">+221 12 345 67 89</a></dd>
+              </dl>
+            </div>
+            <div class="col-md-4 col-xl-3">
+              <h5>Liens</h5>
+              <ul class="nav-list">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">Biographie</a></li>
+                <li><a href="discographie.html">Discographie</a></li>
+                <li><a href="concerts.html">Concerts</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row no-gutters social-container">
+          <div class="col">
+            <div class="social-inner">
+              <div class="social-dummy"></div>
+              <div class="social-wrap">
+                <a class="social-link" href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener" title="Facebook BB MC"><span class="icon fa fa-facebook"></span></a>
+                <a class="social-link" href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener" title="Instagram BB MC"><span class="icon fa fa-instagram"></span></a>
+                <a class="social-link" href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener" title="YouTube BB MC"><span class="icon fa fa-youtube"></span></a>
+                <a class="social-link" href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" target="_blank" rel="noopener" title="Spotify BB MC"><span class="icon fa fa-spotify"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    <!-- JavaScript pour la galerie d'affiches -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const posterCards = document.querySelectorAll('.poster-card');
+        const lightbox = document.getElementById('posterLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const prevPoster = document.getElementById('prevPoster');
+        const nextPoster = document.getElementById('nextPoster');
+        
+        let currentIndex = 0;
+        let posterImages = [];
+        
+        // Collecter toutes les images
+        posterCards.forEach((card, index) => {
+          const imageSrc = card.dataset.image;
+          const imageAlt = card.querySelector('img').alt;
+          posterImages.push({ src: imageSrc, alt: imageAlt });
+          
+          // Ajouter l'événement de clic
+          card.addEventListener('click', () => {
+            currentIndex = index;
+            openLightbox();
+          });
+        });
+        
+        function openLightbox() {
+          lightboxImage.src = posterImages[currentIndex].src;
+          lightboxImage.alt = posterImages[currentIndex].alt;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightboxFunc() {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+        
+        function showPrevPoster() {
+          currentIndex = (currentIndex - 1 + posterImages.length) % posterImages.length;
+          lightboxImage.src = posterImages[currentIndex].src;
+          lightboxImage.alt = posterImages[currentIndex].alt;
+        }
+        
+        function showNextPoster() {
+          currentIndex = (currentIndex + 1) % posterImages.length;
+          lightboxImage.src = posterImages[currentIndex].src;
+          lightboxImage.alt = posterImages[currentIndex].alt;
+        }
+        
+        // Événements
+        closeLightbox.addEventListener('click', closeLightboxFunc);
+        prevPoster.addEventListener('click', showPrevPoster);
+        nextPoster.addEventListener('click', showNextPoster);
+        
+        // Fermer en cliquant à l'extérieur
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            closeLightboxFunc();
+          }
+        });
+        
+        // Navigation au clavier
+        document.addEventListener('keydown', (e) => {
+          if (lightbox.classList.contains('active')) {
+            switch(e.key) {
+              case 'Escape':
+                closeLightboxFunc();
+                break;
+              case 'ArrowLeft':
+                showPrevPoster();
+                break;
+              case 'ArrowRight':
+                showNextPoster();
+                break;
+            }
+          }
+        });
+        
+        // Animation des cartes au scroll
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, observerOptions);
+        
+        // Observer toutes les cartes
+        posterCards.forEach(card => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(30px)';
+          card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          observer.observe(card);
+        });
+      });
+    </script>
+  </body>
+</html>
