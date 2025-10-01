@@ -1,0 +1,709 @@
+/**
+ * BB MC - Sections Superposées & Effets de Profondeur
+ * Styles pour créer des sections qui se chevauchent avec effets 3D
+ */
+
+/* ============================================
+   SECTIONS SUPERPOSÉES - CONFIGURATION
+   ============================================ */
+.page {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Navbar - Toujours au-dessus */
+.page-header,
+.rd-navbar-wrap,
+.rd-navbar {
+  z-index: 1000 !important;
+}
+
+.rd-navbar--is-stuck,
+.rd-navbar--scrolled {
+  z-index: 1000 !important;
+}
+
+/* Réduire la hauteur du navbar */
+.rd-navbar-panel {
+  padding: 3px 0 !important;
+  max-height: 55px !important;
+}
+
+.rd-navbar-main {
+  min-height: 55px !important;
+  max-height: 55px !important;
+}
+
+.rd-navbar-brand {
+  padding: 5px 0 !important;
+}
+
+.rd-navbar-brand img {
+  max-height: 45px !important;
+  height: 45px !important;
+}
+
+.rd-navbar-nav > li > a {
+  padding: 8px 15px !important;
+  font-size: 0.95rem !important;
+  line-height: 1.2 !important;
+}
+
+.rd-navbar-static .rd-navbar-inner {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+
+.rd-navbar-static {
+  height: 55px !important;
+}
+
+.rd-navbar-nav {
+  margin: 0 !important;
+}
+
+/* Hero Section avec effet de profondeur */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible !important;
+  z-index: 10;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  padding-bottom: 100px;
+  padding-top: 100px;
+  transition: transform 0.1s ease-out;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('images_BBMC/photo_galerie/12.jpg') center/cover;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(180deg, transparent, rgba(102, 126, 234, 0.1));
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Album Showcase - Superposé sur Hero */
+.album-showcase {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 150px 0 100px;
+  margin-top: -80px;
+  z-index: 15;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.album-showcase.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.album-showcase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 107, 53, 0.2), transparent 60%);
+  pointer-events: none;
+}
+
+/* Videos Section - Superposée */
+.videos-section {
+  position: relative;
+  background: #f8f9fa;
+  padding: 150px 0 100px;
+  margin-top: -80px;
+  z-index: 20;
+  clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.videos-section.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.videos-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(180deg, rgba(118, 75, 162, 0.1), transparent);
+  pointer-events: none;
+}
+
+/* Music Section - Superposée */
+.music-section {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  padding: 150px 0 100px;
+  margin-top: -80px;
+  z-index: 25;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+}
+
+.music-section.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.music-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(255, 215, 0, 0.1), transparent 60%);
+  pointer-events: none;
+}
+
+/* Social Section - Superposée */
+.social-section {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 120px 0 100px;
+  margin-top: -80px;
+  z-index: 30;
+  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+}
+
+.social-section.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+.footer-custom {
+  position: relative;
+  z-index: 35;
+  margin-top: -1px;
+}
+
+/* ============================================
+   EFFETS DE PROFONDEUR 3D
+   ============================================ */
+
+/* Cartes avec effet 3D */
+.album-card,
+.video-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.album-card:hover {
+  transform: translateY(-20px) rotateX(5deg) rotateY(-5deg) scale(1.05);
+}
+
+.video-card:hover {
+  transform: translateY(-15px) rotateX(3deg) scale(1.03);
+}
+
+/* Album Cover avec effet de profondeur */
+.album-cover {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.album-cover::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  background: inherit;
+  filter: blur(20px);
+  opacity: 0;
+  transform: translateZ(-50px);
+  transition: opacity 0.6s ease;
+  z-index: -1;
+}
+
+.album-card:hover .album-cover::after {
+  opacity: 0.6;
+}
+
+/* ============================================
+   PARALLAX AVANCÉ
+   ============================================ */
+
+.parallax-layer {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateZ(-100px) scale(1.5);
+  z-index: -1;
+}
+
+/* ============================================
+   ÉLÉMENTS FLOTTANTS
+   ============================================ */
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px);
+  }
+}
+
+.floating-element:nth-child(2) {
+  animation-delay: 1s;
+  animation-duration: 7s;
+}
+
+.floating-element:nth-child(3) {
+  animation-delay: 2s;
+  animation-duration: 8s;
+}
+
+/* ============================================
+   EFFETS DE VAGUES
+   ============================================ */
+
+.wave-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 5;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.wave-divider .shape-fill {
+  fill: #f8f9fa;
+}
+
+/* ============================================
+   GLASSMORPHISM EFFECTS
+   ============================================ */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+}
+
+/* ============================================
+   SECTION TITLES AVEC EFFETS
+   ============================================ */
+
+.section-title {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  border-radius: 2px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  border-radius: 2px;
+}
+
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(10px);
+  opacity: 0.5;
+}
+
+/* ============================================
+   AUDIO PLAYER AVEC EFFET DE PROFONDEUR
+   ============================================ */
+
+.audiomack-player {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.audiomack-player:hover {
+  transform: translateZ(20px);
+}
+
+.audiomack-player::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  background: inherit;
+  filter: blur(30px);
+  opacity: 0;
+  transform: translate(-50%, -50%) translateZ(-30px);
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.audiomack-player:hover::before {
+  opacity: 0.6;
+}
+
+/* ============================================
+   STATS AVEC EFFET 3D
+   ============================================ */
+
+.hero-stats {
+  perspective: 1000px;
+}
+
+.stat-item {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.stat-item:hover {
+  transform: translateZ(30px) rotateX(10deg);
+}
+
+.stat-number {
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+
+.stat-number::after {
+  content: attr(data-count);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: -1;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(8px);
+  opacity: 0.5;
+}
+
+/* ============================================
+   BOUTONS AVEC EFFET 3D
+   ============================================ */
+
+.btn-custom,
+.button {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-custom::after,
+.button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(15px);
+  opacity: 0;
+  transform: translateZ(-10px);
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.btn-custom:hover::after,
+.button:hover::after {
+  opacity: 0.8;
+}
+
+.btn-custom:hover,
+.button:hover {
+  transform: translateY(-5px) translateZ(10px);
+}
+
+.btn-custom:active,
+.button:active {
+  transform: translateY(-2px) translateZ(5px);
+}
+
+/* ============================================
+   SOCIAL LINKS AVEC PROFONDEUR
+   ============================================ */
+
+.social-link {
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.social-link:hover {
+  transform: translateY(-10px) translateZ(20px) rotateZ(5deg);
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 20px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.3), transparent);
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.social-link:hover::after {
+  opacity: 1;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .hero-section,
+  .album-showcase,
+  .videos-section,
+  .music-section,
+  .social-section {
+    clip-path: none;
+    margin-top: 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  
+  .album-card:hover,
+  .video-card:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+  
+  .stat-item:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* ============================================
+   ANIMATIONS AVANCÉES
+   ============================================ */
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%) rotateY(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%) rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleInRotate {
+  from {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.scale-rotate {
+  animation: scaleInRotate 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* ============================================
+   EFFET DE LUMIÈRE DYNAMIQUE
+   ============================================ */
+
+.dynamic-light {
+  position: relative;
+  overflow: hidden;
+}
+
+.dynamic-light::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+  animation: rotateLightEffect 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateLightEffect {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   EFFET DE PARTICULES AMÉLIORÉ
+   ============================================ */
+
+.particles-enhanced {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle-enhanced {
+  position: absolute;
+  background: radial-gradient(circle, var(--accent-color), transparent);
+  border-radius: 50%;
+  animation: floatParticle 15s infinite ease-in-out;
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(var(--tx), var(--ty)) scale(1.5);
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 1;
+  }
+}
