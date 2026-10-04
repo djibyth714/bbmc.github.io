@@ -1,576 +1,149 @@
-<!DOCTYPE html>
-<html class="wide wow-animation" lang="fr">
-  <head>
-    <title>Concerts - BB MC | 115 Concerts 2021-2025</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bbmc-custom.css">
-    <link rel="stylesheet" href="css/bbmc-enhanced.css">
-    <link rel="stylesheet" href="css/bbmc-overlapping.css">
-    <link rel="stylesheet" href="css/bbmc-concerts-enhanced.css">
-    <style>
-      /* Logo amélioré */
-      .logo-improved {
-        max-height: 40px !important;
-        width: 40px !important;
-        border-radius: 50%;
-        padding: 5px;
-        background: transparent;
-        transition: all 0.3s ease;
-        object-fit: contain;
-      }
-      
-      .logo-improved:hover {
-        transform: scale(1.1);
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-      }
-      
-      /* Page Header */
-      .page-header {
-        position: relative;
-        z-index: 10;
-        background: transparent !important;
-      }
-      
-      .page-header::before {
-        display: none !important;
-      }
-      
-      /* Suppression complète de la barre bleue navbar */
-      .rd-navbar-wrap {
-        background: transparent !important;
-      }
-      
-      .rd-navbar {
-        background: transparent !important;
-        box-shadow: none !important;
-      }
-      
-      .rd-navbar::before,
-      .rd-navbar::after {
-        display: none !important;
-      }
-      
-      .rd-navbar-main-outer {
-        background: transparent !important;
-      }
-      
-      .rd-navbar-main {
-        background: transparent !important;
-      }
-      
-      .rd-navbar--is-stuck {
-        background: rgba(26, 26, 46, 0.9) !important;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-      }
-      
-      /* Amélioration lisibilité texte */
-      .section {
-        background: rgba(255, 255, 255, 0.95) !important;
-      }
-      
-      .bg-image {
-        position: relative;
-      }
-      
-      .bg-image::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1;
-      }
-      
-      .bg-image .container {
-        position: relative;
-        z-index: 2;
-      }
-      
-      .context-dark {
-        color: white !important;
-      }
-      
-      .context-dark h1,
-      .context-dark h2,
-      .context-dark h3,
-      .context-dark h4,
-      .context-dark h5,
-      .context-dark h6 {
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-      }
-      
-      .context-dark p {
-        color: rgba(255, 255, 255, 0.9) !important;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-      }
-      
-      .bg-default {
-        background: rgba(248, 249, 250, 0.98) !important;
-      }
-      
-      .bg-default h1,
-      .bg-default h2,
-      .bg-default h3,
-      .bg-default h4,
-      .bg-default h5,
-      .bg-default h6 {
-        color: #333 !important;
-      }
-      
-      .bg-default p {
-        color: #555 !important;
-      }
-      
-      .concert-card {
-        background: rgba(255, 255, 255, 0.95) !important;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-      
-      .concert-card h3,
-      .concert-card h4,
-      .concert-card h5 {
-        color: #333 !important;
-      }
-      
-      .concert-card p {
-        color: #555 !important;
-      }
-    </style>
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
-  </head>
-  <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <div class="preloader">
-      <div class="preloader-body">
-        <div class="cssload-container">
-          <div class="cssload-speeding-wheel"></div>
-        </div>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concerts — BB MC · 135 concerts, tournée 2026</title>
+<meta name="description" content="Concerts de BB MC : 135 dates au Sénégal et en Mauritanie, le live band à Douta Seck (18 avril 2026), la tournée Tabaski 2026 et toutes les tournées depuis 2021.">
+<meta name="theme-color" content="#0E0C0A">
+<link rel="canonical" href="https://bbmc.dsall.fr/concerts.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BB MC — Site officiel">
+<meta property="og:title" content="Concerts — BB MC · 135 concerts, tournée 2026">
+<meta property="og:description" content="Concerts de BB MC : 135 dates au Sénégal et en Mauritanie, le live band à Douta Seck (18 avril 2026), la tournée Tabaski 2026 et toutes les tournées depuis 2021.">
+<meta property="og:url" content="https://bbmc.dsall.fr/concerts.html">
+<meta property="og:image" content="https://bbmc.dsall.fr/images_BBMC/web/og-cover.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images_BBMC/web/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/2026/1Ptgg87LROyAm0K0.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/site-2026.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="sr" href="#main">Aller au contenu</a>
+<header class="hdr always">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="BB MC — accueil">BB <span>MC</span></a>
+    <nav class="nav" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="about.html">Biographie</a><a href="discographie.html">Musique</a><a href="concerts.html" aria-current="page">Concerts</a><a href="contacts.html">Contact</a><a class="btn btn-gold" href="contacts.html#booking">Booking</a></nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-bars"/></svg></button>
+  </div>
+</header>
+<main id="main">
+<section class="phero">
+  <div class="bg"><img src="images_BBMC/web/con15.jpg" alt="" style="object-position:50% 40%"></div>
+  <div class="wrap">
+    <span class="kicker">Tournées & concerts</span>
+    <h1 class="display">135 concerts<br><span class="it c-gold">et la route continue</span></h1>
+    <p class="lead">Des villages du fleuve aux scènes de la capitale : toutes les dates de BB MC depuis 2021.</p>
+    <p class="crumbs"><a href="index.html">Accueil</a> / Concerts</p>
+  </div>
+  <div class="band"></div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="stats rv">
+      <div><strong>135</strong><span>Concerts depuis 2021</span></div>
+      <div><strong>2</strong><span>Pays · Sénégal & Mauritanie</span></div>
+      <div><strong>65</strong><span>Dates · Naayi Laddé Tour</span></div>
+      <div><strong>13</strong><span>Concerts en 2026</span></div>
+    </div>
+    <div class="grid2 mt-l" style="align-items:end">
+      <div class="rv"><span class="kicker">Concerts par année</span><h2 class="h2">Une scène<br><span class="it c-clay">qui grandit</span></h2>
+        <p class="body mt-m">L'année 2022 reste le record avec la tournée Naayi Laddé (65 dates). En 2026, BB MC franchit un cap artistique avec son premier concert en live band.</p></div>
+      <div><div class="ychart"><div class=""><b>2</b><i style="--h:3%"></i></div><div class=""><b>65</b><i style="--h:86%"></i></div><div class=""><b>11</b><i style="--h:15%"></i></div><div class=""><b>16</b><i style="--h:21%"></i></div><div class=""><b>28</b><i style="--h:37%"></i></div><div class="now"><b>13</b><i style="--h:17%"></i></div></div><div class="ylabels"><div class="">2021</div><div class="">2022</div><div class="">2023</div><div class="">2024</div><div class="">2025</div><div class="now">2026</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="wrap grid2" style="align-items:start">
+    <div class="rv"><span class="kicker">Saison 2026</span><h2 class="h2">Dates <span class="it c-gold">2026</span></h2>
+      <p class="body mt-m">Matam, Dakar, la tournée Tabaski et la tournée d'été : 13 concerts depuis mars.</p>
+      <a class="btn btn-gold mt-m" href="contacts.html#booking"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-calendar"/></svg> Programmer BB MC</a>
+      <a href="images_BBMC/web/aff02.jpg" data-lb="tour26" style="display:block;max-width:360px" class="mt-l"><img src="images_BBMC/web/aff02.jpg" alt="Affiche de la tournée Tabaski 2026" loading="lazy" decoding="async"></a></div>
+    <ul class="dates rv"><li class=""><span class="d">21 mars</span><span class="p">Matam</span><span class="r"></span></li><li class=""><span class="d">22 mars</span><span class="p">Nguenar</span><span class="r"></span></li><li class=""><span class="d">04 avr.</span><span class="p">Marsa</span><span class="r"></span></li><li class=""><span class="d">05 avr.</span><span class="p">Gouniang</span><span class="r"></span></li><li class="hl"><span class="d">18 avr.</span><span class="p">Dakar · Douta Seck</span><span class="r">Live band</span></li><li class=""><span class="d">29 mai</span><span class="p">Agnam Toulel Thialé</span><span class="r">Tournée Tabaski</span></li><li class=""><span class="d">30 mai</span><span class="p">Ngourdian</span><span class="r">Tournée Tabaski</span></li><li class=""><span class="d">31 mai</span><span class="p">Teteguel</span><span class="r">Tournée Tabaski</span></li><li class=""><span class="d">02 juin</span><span class="p">Sabar</span><span class="r">Tournée Tabaski</span></li><li class=""><span class="d">12 août</span><span class="p">Wouro Mi</span><span class="r"></span></li><li class=""><span class="d">14 août</span><span class="p">Diamouguel</span><span class="r"></span></li><li class=""><span class="d">10 sept.</span><span class="p">Garly</span><span class="r"></span></li><li class=""><span class="d">03 oct.</span><span class="p">Gourel Famoly</span><span class="r"></span></li></ul>
+  </div>
+</section>
+
+<section class="event" id="douta-seck">
+  <div class="bg"><img src="images_BBMC/web/con19.jpg" alt="BB MC à Douta Seck" style="object-position:50% 30%" loading="lazy" decoding="async"></div>
+  <div class="wrap">
+    <span class="badge"><i></i>18 avril 2026</span>
+    <h2 class="display mt-m">Live à<br><span class="c-gold">Douta Seck</span></h2>
+    <p class="where">Show 4 Dakar · Maison de la Culture Douta Seck · 20h</p>
+    <p class="body">Pour la première fois de sa carrière, BB MC est accompagné d'un orchestre de musiciens en live : guitares, batterie, claviers, choriste et DJ. Trois répétitions, une scénographie aux couleurs du Fouta, des artistes invités et un public conquis, lampes de téléphones levées.</p>
+    <div class="facts"><div><strong>615</strong>Billets vendus</div><div><strong>1<sup style="font-size:.45em">er</sup></strong>Concert avec orchestre</div><div><strong>Live</strong>Musiciens & choriste</div><div><strong>Feat.</strong>Artistes invités</div></div>
+  </div>
+</section>
+
+<section class="sec dark" style="background:var(--ink2)">
+  <div class="wrap">
+    <div class="vgrid two" style="align-items:center">
+      <article class="vcard big rv">
+  <div class="yt" data-id="uMawW__GJ7c" role="button" tabindex="0" aria-label="Lire la vidéo Live à Douta Seck">
+    <img src="https://i.ytimg.com/vi/uMawW__GJ7c/hqdefault.jpg" alt="Live à Douta Seck — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Live à Douta Seck<small>Captation · 18 avril 2026</small></h3><span class="views">45 K vues</span></div>
+</article>
+      <div class="rv"><span class="kicker">La captation</span><h2 class="h2">Revivez<br><span class="it c-gold">le concert</span></h2><p class="body mt-m">Les moments forts du 18 avril 2026, filmés à la Maison de la Culture Douta Seck.</p></div>
+    </div>
+    <div class="gal mt-l"><a href="images_BBMC/web/con19.jpg" data-lb="douta" class="w2 h2r"><img src="images_BBMC/web/con19.jpg" alt="Douta Seck · 18.04.2026" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con08.jpg" data-lb="douta" class="w2"><img src="images_BBMC/web/con08.jpg" alt="Le public" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con03.jpg" data-lb="douta" class=""><img src="images_BBMC/web/con03.jpg" alt="L'orchestre" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con12.jpg" data-lb="douta" class=""><img src="images_BBMC/web/con12.jpg" alt="BB MC" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con23.jpg" data-lb="douta" class="w2"><img src="images_BBMC/web/con23.jpg" alt="Avec les choristes" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con15.jpg" data-lb="douta" class=""><img src="images_BBMC/web/con15.jpg" alt="Le public" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con13.jpg" data-lb="douta" class=""><img src="images_BBMC/web/con13.jpg" alt="Scénographie" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con02.jpg" data-lb="douta" class="w2"><img src="images_BBMC/web/con02.jpg" alt="Sur scène" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con09.jpg" data-lb="douta" class=""><img src="images_BBMC/web/con09.jpg" alt="Sur scène" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con17.jpg" data-lb="douta" class=""><img src="images_BBMC/web/con17.jpg" alt="Sur scène" loading="lazy" decoding="async"></a><a href="images_BBMC/web/gst00.jpg" data-lb="douta" class=""><img src="images_BBMC/web/gst00.jpg" alt="Artiste invité" loading="lazy" decoding="async"></a><a href="images_BBMC/web/gst07.jpg" data-lb="douta" class=""><img src="images_BBMC/web/gst07.jpg" alt="Artiste invité" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con21.jpg" data-lb="douta" class="w2"><img src="images_BBMC/web/con21.jpg" alt="La scène" loading="lazy" decoding="async"></a><a href="images_BBMC/web/con04.jpg" data-lb="douta" class=""><img src="images_BBMC/web/con04.jpg" alt="Le public" loading="lazy" decoding="async"></a><a href="images_BBMC/web/gst04.jpg" data-lb="douta" class=""><img src="images_BBMC/web/gst04.jpg" alt="Artiste invité" loading="lazy" decoding="async"></a></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="kicker">Historique</span><h2 class="h2">Toutes les <span class="it c-clay">tournées</span></h2></div><p class="body">Cliquez sur une année pour afficher les dates.</p></div>
+    <div class="tour"><details open><summary><span class="y">2026</span><span class="n">Saison 2026<small>Live band à Douta Seck, tournée Tabaski et tournée d'été</small></span><span class="c">13 concerts</span><span class="pm" aria-hidden="true"></span></summary>
+<div class="content"><div class="chips"><span><b>21 mars</b>Matam</span><span><b>22 mars</b>Nguenar</span><span><b>04 avr.</b>Marsa</span><span><b>05 avr.</b>Gouniang</span><span><b>18 avr.</b>Dakar · Douta Seck</span><span><b>29 mai</b>Agnam Toulel Thialé</span><span><b>30 mai</b>Ngourdian</span><span><b>31 mai</b>Teteguel</span><span><b>02 juin</b>Sabar</span><span><b>12 août</b>Wouro Mi</span><span><b>14 août</b>Diamouguel</span><span><b>10 sept.</b>Garly</span><span><b>03 oct.</b>Gourel Famoly</span></div><a href="images_BBMC/web/aff02.jpg" data-lb="tour"><img src="images_BBMC/web/aff02.jpg" alt="Affiche Saison 2026 2026" loading="lazy" decoding="async"></a></div></details><details><summary><span class="y">2025</span><span class="n nc">Tinndi Tiiɗɗi Tour<small>La tournée du premier album</small></span><span class="c">28 concerts</span><span class="pm" aria-hidden="true"></span></summary>
+<div class="content"><div class="chips"><span><b>18–19 janv.</b>Soringho</span><span><b>10 juin</b>Pété</span><span><b>Tabaski</b>Thiemping</span><span><b>13 juil.</b>Sinthian</span><span><b>02 sept.</b>Koundel</span><span><b>10 sept.</b>Thiemping</span><span><b>12 sept.</b>Ndendory</span><span><b>15 sept.</b>Patouki</span><span><b>16 sept.</b>Orkadiere</span><span><b>17 sept.</b>Padalal</span><span><b>20 sept.</b>Thialy</span><span><b>23 sept.</b>Wendou Bosseabe</span><span><b>25 sept.</b>Danthiady</span><span><b>26 sept.</b>Sangue Lobaly</span><span><b>27 sept.</b>Seno Palel</span><span><b>28 sept.</b>Dialloube</span><span><b>01 oct.</b>Boki Saboudé</span><span><b>02 oct.</b>Horlonde</span><span><b>11 oct.</b>Woudourou</span><span><b>18 oct.</b>Sinthiou Bamambe</span><span><b>01 nov.</b>Polel</span></div><a href="images_BBMC/web/aff04.jpg" data-lb="tour"><img src="images_BBMC/web/aff04.jpg" alt="Affiche Tinndi Tiiɗɗi Tour 2025" loading="lazy" decoding="async"></a></div></details><details><summary><span class="y">2024</span><span class="n">Nofuru Tour<small>Janvier, Tabaski et tournée des vacances</small></span><span class="c">16 concerts</span><span class="pm" aria-hidden="true"></span></summary>
+<div class="content"><div class="chips"><span><b>12 janv.</b>Banipelly</span><span><b>13 janv.</b>Gourel Baidy</span><span><b>14 janv.</b>Arihara</span><span><b>20 janv.</b>Bow</span><span><b>27 janv.</b>Ourossogui</span><span><b>Tabaski</b>Agnam Yeroyabe</span><span><b>Tabaski</b>Ndiayel Pendao</span><span><b>Tabaski</b>Thiagaye</span><span><b>Tabaski</b>Hawre</span><span><b>27 juin</b>Sinthiane Sinthiou Garba</span><span><b>28 juin</b>Somana</span><span><b>30 juin</b>Wodobere</span><span><b>01 juil.</b>Korkadie</span><span><b>12 sept.</b>Matam</span><span><b>19 sept.</b>Thiawle</span><span><b>20 sept.</b>Jamaica</span></div><a href="images_BBMC/web/aff05.jpg" data-lb="tour"><img src="images_BBMC/web/aff05.jpg" alt="Affiche Nofuru Tour 2024" loading="lazy" decoding="async"></a></div></details><details><summary><span class="y">2023</span><span class="n">Tournée des vacances<small>Mai, septembre et fin d'année</small></span><span class="c">11 concerts</span><span class="pm" aria-hidden="true"></span></summary>
+<div class="content"><div class="chips"><span><b>20 mai</b>Nabadji</span><span><b>27 mai</b>Thil Boubacar</span><span><b>Tabaski</b>Ndiaffane</span><span><b>02 sept.</b>Sinthiou Bamambe</span><span><b>03 sept.</b>Madina Ndiathbé</span><span><b>06 sept.</b>Yacine Lacke</span><span><b>10 sept.</b>Diella</span><span><b>12 sept.</b>Matam</span><span><b>01 oct.</b>Donaye Taredji</span><span><b>29 déc.</b>Thiemping</span></div><a href="images_BBMC/web/aff06.jpg" data-lb="tour"><img src="images_BBMC/web/aff06.jpg" alt="Affiche Tournée des vacances 2023" loading="lazy" decoding="async"></a></div></details><details><summary><span class="y">2022</span><span class="n">Naayi Laddé Tour<small>La tournée record : Sénégal & Mauritanie</small></span><span class="c">65 concerts</span><span class="pm" aria-hidden="true"></span></summary>
+<div class="content"><div class="chips"><span><b>Korité</b>Thiemping</span><span><b>30–31 mai</b>Koundel Rewo 🇲🇷</span><span><b>02 juin</b>Ourossogui</span><span><b>03 juin</b>Nabadji</span><span><b>06–07 juil.</b>Maghama 🇲🇷</span><span><b>12–13 juil.</b>Wendou Bossiabe</span><span><b>14 juil.</b>Sinthiou Bamambe</span><span><b>15–16 juil.</b>Sinthiane Padalal 🇲🇷</span><span><b>17–18 juil.</b>Kobilo</span><span><b>19–20 juil.</b>Hounare</span><span><b>21–22 juil.</b>Sinthiou Dioyé</span><span><b>23–24 juil.</b>Ndendory</span><span><b>25–26 juil.</b>Mbakhna Less 🇲🇷</span><span><b>27–28 juil.</b>Belithioye</span><span><b>01–02 août</b>Cas-Cas</span><span><b>03–04 août</b>Tohomadji 🇲🇷</span><span><b>05–06 août</b>Arigabo</span><span><b>07 août</b>Agnam Lidoubé</span><span><b>09–10 août</b>Nguidjilone</span><span><b>11–12 août</b>Sinthiou Mbal</span><span><b>13–14 août</b>Orkadiere</span><span><b>17 août</b>Séno Palel</span><span><b>18–19 août</b>Padalal</span><span><b>20–21 août</b>Asnde Balla</span><span><b>22–23 août</b>Béli Neydé</span><span><b>24 août</b>Ogo</span><span><b>25–26 août</b>Diaba Lidoubé</span><span><b>10 sept.</b>Kaédi 🇲🇷</span><span><b>20 sept.</b>Kanel</span><span><b>24 sept.</b>Babougnol</span><span><b>25 sept.</b>Lobali</span><span><b>26 sept.</b>Barkéwi</span><span><b>28 sept.</b>Ourossogui</span><span><b>01 oct.</b>Madina Diathbe</span><span><b>04 oct.</b>Trimf</span><span><b>06 oct.</b>Diamouguel</span><span><b>31 déc.</b>Sylla Diongto</span></div><a href="images_BBMC/web/aff09.jpg" data-lb="tour"><img src="images_BBMC/web/aff09.jpg" alt="Affiche Naayi Laddé Tour 2022" loading="lazy" decoding="async"></a></div></details><details><summary><span class="y">2021</span><span class="n">Premières scènes<small>Le début de l'aventure live</small></span><span class="c">2 concerts</span><span class="pm" aria-hidden="true"></span></summary>
+<div class="content"><div class="chips"><span><b>06 mars</b>Ganna Balal</span><span><b>07 mars</b>Ganna Balal</span></div></div></details></div>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="kicker">Sur la route</span><h2 class="h2">Affiches de <span class="it c-gold">tournée</span></h2></div></div>
+    <div class="gal posters"><a style="aspect-ratio:1" href="images_BBMC/web/aff02.jpg" data-lb="posters" class="rv"><img src="images_BBMC/web/aff02.jpg" alt="Tournée Tabaski 2026" loading="lazy" decoding="async"><figcaption>Tournée Tabaski 2026</figcaption></a><a style="aspect-ratio:1" href="images_BBMC/web/aff00.jpg" data-lb="posters" class="rv"><img src="images_BBMC/web/aff00.jpg" alt="Show 4 Dakar 2026" loading="lazy" decoding="async"><figcaption>Show 4 Dakar 2026</figcaption></a><a style="aspect-ratio:1" href="images_BBMC/web/aff04.jpg" data-lb="posters" class="rv"><img src="images_BBMC/web/aff04.jpg" alt="Tinndi Tiiɗɗi Tour 2025" loading="lazy" decoding="async"><figcaption>Tinndi Tiiɗɗi Tour 2025</figcaption></a><a style="aspect-ratio:1" href="images_BBMC/web/aff01.jpg" data-lb="posters" class="rv"><img src="images_BBMC/web/aff01.jpg" alt="Tinndi Tiiɗɗi Tour 2025" loading="lazy" decoding="async"><figcaption>Tinndi Tiiɗɗi Tour 2025</figcaption></a><a style="aspect-ratio:1" href="images_BBMC/web/aff05.jpg" data-lb="posters" class="rv"><img src="images_BBMC/web/aff05.jpg" alt="Nofuru Tour 2024" loading="lazy" decoding="async"><figcaption>Nofuru Tour 2024</figcaption></a><a style="aspect-ratio:1" href="images_BBMC/web/aff07.jpg" data-lb="posters" class="rv"><img src="images_BBMC/web/aff07.jpg" alt="Tournée 2024" loading="lazy" decoding="async"><figcaption>Tournée 2024</figcaption></a><a style="aspect-ratio:1" href="images_BBMC/web/aff06.jpg" data-lb="posters" class="rv"><img src="images_BBMC/web/aff06.jpg" alt="Tournée vacances 2023" loading="lazy" decoding="async"><figcaption>Tournée vacances 2023</figcaption></a><a style="aspect-ratio:1" href="images_BBMC/web/aff09.jpg" data-lb="posters" class="rv"><img src="images_BBMC/web/aff09.jpg" alt="Naayi Laddé Tour 2022" loading="lazy" decoding="async"><figcaption>Naayi Laddé Tour 2022</figcaption></a><a style="aspect-ratio:1" href="images_BBMC/web/aff03.jpg" data-lb="posters" class="rv"><img src="images_BBMC/web/aff03.jpg" alt="Tour Sénégal–Mauritanie 2022" loading="lazy" decoding="async"><figcaption>Tour Sénégal–Mauritanie 2022</figcaption></a><a style="aspect-ratio:1" href="images_BBMC/web/aff08.jpg" data-lb="posters" class="rv"><img src="images_BBMC/web/aff08.jpg" alt="Tournée vacances 2022" loading="lazy" decoding="async"><figcaption>Tournée vacances 2022</figcaption></a></div>
+  </div>
+</section>
+<section class="cta">
+  <div class="wm" aria-hidden="true">BOOKING</div>
+  <div class="wrap">
+    <div><span class="kicker">Concerts · Festivals · Événements</span><h2 class="h2">Faites venir<br>BB MC sur scène</h2></div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a class="btn btn-ink" href="contacts.html#booking"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-microphone-lines"/></svg> Réserver</a>
+      <a class="btn btn-ghost" href="tel:+221782884765"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-phone"/></svg> +221 78 288 47 65</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="logo" href="index.html">BB <span>MC</span></a>
+        <p>Ibrahima Sy, alias BB MC — rappeur, conteur et ambassadeur du rap peul. De Thiemping (Matam) aux scènes du Sénégal et de la Mauritanie.</p>
+        <div class="soc"><a href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-youtube"/></svg></a><a href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-instagram"/></svg></a><a href="https://www.tiktok.com/@bbmc_poulosy" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-tiktok"/></svg></a><a href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-facebook-f"/></svg></a><a href="https://open.spotify.com/artist/29MqBciLksFnFCcSYz8YT8" target="_blank" rel="noopener" aria-label="Spotify"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-spotify"/></svg></a></div>
       </div>
+      <div><h4>Explorer</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">Biographie</a></li><li><a href="discographie.html">Musique</a></li><li><a href="concerts.html">Concerts</a></li><li><a href="contacts.html">Contact</a></li></ul></div>
+      <div><h4>Booking</h4><ul>
+        <li><a href="tel:+221782884765">+221 78 288 47 65</a></li>
+        <li><a href="tel:+221770950193">+221 77 095 01 93</a></li>
+        <li><a href="mailto:bebemc.th@gmail.com">bebemc.th@gmail.com</a></li>
+        <li><a href="mailto:bb.mc.officiel@gmail.com">bb.mc.officiel@gmail.com</a></li>
+      </ul></div>
+      <div><h4>Écouter</h4><ul><li><a href="https://open.spotify.com/artist/29MqBciLksFnFCcSYz8YT8" target="_blank" rel="noopener">Spotify</a></li><li><a href="https://music.apple.com/fr/artist/bb-mc/1540760816" target="_blank" rel="noopener">Apple Music</a></li><li><a href="https://www.deezer.com/fr/artist/113787442" target="_blank" rel="noopener">Deezer</a></li><li><a href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://audiomack.com/bb-mc" target="_blank" rel="noopener">Audiomack</a></li></ul></div>
     </div>
-    <div class="page">
-      <header class="section page-header">
-        <!--RD Navbar-->
-        <div class="rd-navbar-wrap" style="position: absolute">
-          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-            <div class="rd-navbar-main-outer">
-              <div class="rd-navbar-main">
-                <!--RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!--RD Navbar Toggle-->
-                  <button type="button" class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" title="Menu de navigation"><span></span></button>
-                  <!--RD Navbar Brand-->
-                  <div class="rd-navbar-brand">
-                    <!--Brand--><a class="brand" href="index.html"><img src="logo d.f.prod.jpg" alt="BB MC - D.F.PROD" class="logo-improved"/></a>
-                  </div>
-                </div>
-                <div class="rd-navbar-main-element">
-                  <div class="rd-navbar-nav-wrap">
-                    <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Accueil</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Biographie</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="discographie.html">Discographie</a>
-                      </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="concerts.html">Concerts</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contact</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="rd-navbar-collapse">
-                  <ul class="socialite-list">
-                    <li><a class="icon novi-icon socialite fa-youtube" href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener"></a></li>
-                    <li><a class="icon novi-icon socialite fa-instagram" href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener"></a></li>
-                    <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener"></a></li>
-                    <li><a class="icon novi-icon socialite fa-spotify" href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" target="_blank" rel="noopener"></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
-
-      <!-- Hero Section -->
-      <section class="parallax-container section-lg text-center" data-parallax-img="images_BBMC/photo_galerie/DSC_2580.jpg">
-        <div class="parallax-content">
-          <div class="container">
-            <h1 style="color: #fff; font-size: 48px; margin-bottom: 20px;">Concerts BB MC</h1>
-            <h6 class="text-gray-300" style="font-size: 24px;">115 concerts réalisés entre 2021 et 2025</h6>
-            <p style="color: #fff; font-size: 18px; margin-top: 20px;">Des tournées marquantes à travers le Sénégal et la Mauritanie</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Statistiques Section -->
-      <section class="section section-lg bg-default">
-        <div class="container">
-          <div class="row row-50">
-            <div class="col-lg-3 col-md-6">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter" data-count="115">115</span>
-                </div>
-                <h5 class="counter-classic-title">Total Concerts</h5>
-                <p class="counter-classic-text">2021 - 2025</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter" data-count="65">65</span>
-                </div>
-                <h5 class="counter-classic-title">Concerts 2022</h5>
-                <p class="counter-classic-text">Année la plus active</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter" data-count="3">3</span>
-                </div>
-                <h5 class="counter-classic-title">Grandes Tournées</h5>
-                <p class="counter-classic-text">Naayi Laddé, NOFURU, Tinndi Tiiɗɗi</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter" data-count="21">21</span>
-                </div>
-                <h5 class="counter-classic-title">Concerts 2025</h5>
-                <p class="counter-classic-text">Tournée Tinndi Tiiɗɗi</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Mixtapes & Album Section -->
-      <section class="section section-lg mixtapes-section">
-        <div class="container">
-          <h2 class="text-center mb-5">Mixtapes & Album Studio</h2>
-          <p class="text-center mb-5">Un parcours musical authentique à travers 3 projets majeurs</p>
-          
-          <div class="row row-50">
-            <!-- Mixtape Naayi Laddé -->
-            <div class="col-lg-4">
-              <div class="release-card">
-                <div class="release-badge">2021</div>
-                <h3>Mixtape Naayi Laddé</h3>
-                <div class="release-info">
-                  <span class="release-date">📅 7 mai 2021</span>
-                  <span class="release-tracks">🎵 18 titres</span>
-                </div>
-                <p><strong>Naayi Laddé Tour 2022</strong> : La tournée la plus intensive avec plus de <strong>40 dates</strong> entre mai et décembre 2022 à travers les villages du Fouta et de Mauritanie.</p>
-                <p class="release-highlight" style="color: #000000 !important; font-weight: 900 !important; font-size: 1.4rem !important;">✨ Authenticité, énergie, et connexion profonde avec le public</p>
-                <div class="release-locations">
-                  <strong>Villages phares :</strong> Koundel Rewo, Ourossogui, Nabadji, Maghama, Wendou Bossiabe, Sinthiou Bamambe, Kobilo, Hounare, Kaédi, Kanel, et plus...
-                </div>
-              </div>
-            </div>
-
-            <!-- Mixtape Nofuru -->
-            <div class="col-lg-4">
-              <div class="release-card">
-                <div class="release-badge">2023</div>
-                <h3>Mixtape Nofuru</h3>
-                <div class="release-info">
-                  <span class="release-date">📅 30 déc. 2023</span>
-                  <span class="release-tracks">🎵 10 titres</span>
-                </div>
-                <p><strong>NOFURU Tour 2024</strong> : <strong>16 concerts</strong> marquants avec des dates en janvier, Tabaski, juin-juillet, et septembre.</p>
-                <p class="release-highlight" style="color: #000000 !important; font-weight: 900 !important; font-size: 1.4rem !important;">🔥 Énergie renouvelée et public fidèle</p>
-                <div class="release-locations">
-                  <strong>Concerts clés :</strong> Banipelly, GoureL Baidy, Arihara, Bow, Ourossogui, Agnam Yeroyabe, Matam, Jamaica...
-                </div>
-              </div>
-            </div>
-
-            <!-- Album Tinndi Tiiɗɗi -->
-            <div class="col-lg-4">
-              <div class="release-card release-card-featured">
-                <div class="release-badge">2025</div>
-                <h3>Album Tinndi Tiiɗɗi</h3>
-                <div class="release-info">
-                  <span class="release-date">📅 15 août 2025</span>
-                  <span class="release-tracks">🎵 21 titres</span>
-                </div>
-                <p><strong>Tinndi Tiiɗɗi Tour 2025</strong> : Premier album studio avec <strong>21 concerts</strong> qui marquent l'histoire du rap local.</p>
-                <p class="release-highlight" style="color: #000000 !important; font-weight: 900 !important; font-size: 1.4rem !important;">🌟 Consécration et moments inoubliables</p>
-                <div class="release-locations">
-                  <strong>Tournée complète :</strong> Soringho, Pété, Sinthian, Koundel, Thiemping, Ndendory, Wendou Bosseabe, et 14 autres villes...
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Concerts par Année -->
-      <section class="section section-xl bg-gray-1">
-        <div class="container">
-          <h2 class="text-center">Concerts par Année</h2>
-          <div class="row row-50">
-            
-            <!-- 2025 - Tournée Tinndi Tiiɗɗi -->
-            <div class="col-lg-12">
-              <div class="card-custom">
-                <h3>2025 - Tournée Tinndi Tiiɗɗi (21 concerts)</h3>
-                <p class="mb-4"><strong>Premier album studio</strong> - Une tournée historique marquant le parcours de BB MC</p>
-                
-                <div class="row mb-4">
-                  <div class="col-md-6">
-                    <img src="images_BBMC/Affiche%20concerts/BB%20MC%20Album%20Tinndi%20Tiiddi%20Tour%202025.jpeg" alt="Tournée Tinndi Tiiɗɗi 2025" class="tour-poster">
-                  </div>
-                  <div class="col-md-6">
-                    <img src="images_BBMC/Affiche%20concerts/BB%20MC%20Tour%20Album%20Tinndi%20Tiiddi.jpeg" alt="Tour Album Tinndi Tiiɗɗi" class="tour-poster">
-                  </div>
-                </div>
-                
-                <h4>Liste des concerts</h4>
-                <div class="event-list">
-                  <div class="event-item">
-                    <span class="event-date">18-19 Jan</span>
-                    <span class="event-location">Soringho</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">10 Juin</span>
-                    <span class="event-location">Pété</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">13 Juil</span>
-                    <span class="event-location">Sinthian</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">2 Sept</span>
-                    <span class="event-location">Koundel</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">10 Sept</span>
-                    <span class="event-location">Thiemping</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">12 Sept</span>
-                    <span class="event-location">Ndendory</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">15-16 Sept</span>
-                    <span class="event-location">Patouki, Orkadiere</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">17 Sept</span>
-                    <span class="event-location">Padalal</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">20 Sept</span>
-                    <span class="event-location">Thialy</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">23 Sept</span>
-                    <span class="event-location">Wendou Bosseabe</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">25-28 Sept</span>
-                    <span class="event-location">Danthiady, Sangue Lobaly, Seno Palel, Dialloube</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">1-2 Oct</span>
-                    <span class="event-location">Bokissaboudou, Horlonde</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">11 Oct</span>
-                    <span class="event-location">Woudourou</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">18 Oct</span>
-                    <span class="event-location">Sinthiou Bamambe</span>
-                  </div>
-                </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 2024 - Tournée NOFURU -->
-            <div class="col-lg-12">
-              <div class="card-custom">
-                <h3>2024 - Tournée NOFURU (16 concerts)</h3>
-                <p class="mb-4"><strong>Deuxième mixtape</strong> - Énergie renouvelée et public fidèle</p>
-                
-                <div class="row mb-4">
-                  <div class="col-md-4">
-                    <img src="images_BBMC/Affiche%20concerts/BB%20MC%20Tour%20Janvier%202024.jpeg" alt="Tour Janvier 2024" class="tour-poster">
-                  </div>
-                  <div class="col-md-4">
-                    <img src="images_BBMC/Affiche%20concerts/BB%20MC%20Tour%20Vacance%202024.jpeg" alt="Tour Vacances 2024" class="tour-poster">
-                  </div>
-                  <div class="col-md-4">
-                    <img src="images_BBMC/Affiche%20concerts/BB%20MC%20Tour%20Vacance%202023.jpeg" alt="Tour Vacances 2023" class="tour-poster">
-                  </div>
-                </div>
-                
-                <h4>Liste des concerts</h4>
-                <div class="event-list">
-                  <div class="event-item">
-                    <span class="event-date">12-14 Jan</span>
-                    <span class="event-location">Banipelly, GoureL Baidy, Arihara</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">20 Jan</span>
-                    <span class="event-location">Bow</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">27 Jan</span>
-                    <span class="event-location">Ourossogui</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">Tabaski</span>
-                    <span class="event-location">Agnam Yeroyabe, Ndiayel Pendao, Thiagaye, Hawre</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">27-30 Juin</span>
-                    <span class="event-location">Sinthiane Sinthiou Garba, Somana, Wodobere</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">1 Juil</span>
-                    <span class="event-location">Korkadie</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">12 Sept</span>
-                    <span class="event-location">Matam</span>
-                  </div>
-                  <div class="event-item">
-                    <span class="event-date">19-20 Sept</span>
-                    <span class="event-location">Thiawle, Jamaica</span>
-                  </div>
-                </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 2022 - Tournée Naayi Laddé -->
-            <div class="col-lg-12">
-              <div class="card-custom">
-                <h3>2022 - Tournée Naayi Laddé (65 concerts)</h3>
-                <p class="mb-4"><strong>La tournée la plus intensive de BB MC</strong> - Plus de 40 villages traversés entre mai et décembre 2022</p>
-                
-                <div class="row mb-4">
-                  <div class="col-md-4">
-                    <img src="images_BBMC/Affiche%20concerts/BB%20MC%20Tour%20mixtape%20Nayiladdé.jpeg" alt="Tour Mixtape Naayi Laddé" class="tour-poster">
-                  </div>
-                  <div class="col-md-4">
-                    <img src="images_BBMC/Affiche%20concerts/BB%20MC%20Tour%202022%20Sénégal%20Mouritanie.jpeg" alt="Tour 2022 Sénégal Mauritanie" class="tour-poster">
-                  </div>
-                  <div class="col-md-4">
-                    <img src="images_BBMC/Affiche%20concerts/BB%20MC%20Tour%20Vacance%20scolaire%202022.jpeg" alt="Tour Vacances Scolaires 2022" class="tour-poster">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <h5>Mai - Juin 2022</h5>
-                    <div class="event-list">
-                      <div class="event-item">
-                        <span class="event-date">30-31 Mai</span>
-                        <span class="event-location">Koundel Rewo</span>
-                      </div>
-                      <div class="event-item">
-                        <span class="event-date">2-3 Juin</span>
-                        <span class="event-location">Tabaski Ourossogui, Nabadji</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <h5>Juillet 2022</h5>
-                    <div class="event-list">
-                      <div class="event-item">
-                        <span class="event-date">6-7 Juil</span>
-                        <span class="event-location">Maghama</span>
-                      </div>
-                      <div class="event-item">
-                        <span class="event-date">12-13 Juil</span>
-                        <span class="event-location">Wendou Bossiabe</span>
-                      </div>
-                      <div class="event-item">
-                        <span class="event-date">14-15 Juil</span>
-                        <span class="event-location">Sinthiou Bamambe, Sinthiane Padalal</span>
-                      </div>
-                      <div class="event-item">
-                        <span class="event-date">17-18 Juil</span>
-                        <span class="event-location">Kobilo</span>
-                      </div>
-                      <div class="event-item">
-                        <span class="event-date">19-20 Juil</span>
-                        <span class="event-location">Hounare</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <h5>Août - Décembre 2022</h5>
-                    <div class="event-list">
-                      <div class="event-item">
-                        <span class="event-date">Août</span>
-                        <span class="event-location">CAS-CAS, Tohomadji, Arigabo, Agnam Lidoubé</span>
-                      </div>
-                      <div class="event-item">
-                        <span class="event-date">Sept</span>
-                        <span class="event-location">Kaédi, Kanel, Babougnol, Lobali</span>
-                      </div>
-                      <div class="event-item">
-                        <span class="event-date">Oct</span>
-                        <span class="event-location">Madina Diathbe, Trimf, Diamouguel</span>
-                      </div>
-                      <div class="event-item">
-                        <span class="event-date">31 Déc</span>
-                        <span class="event-location">Sylla Diongto</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-      <footer class="section footer-classic bg-default">
-        <div class="container">
-          <div class="row row-15">
-            <div class="col-sm-6">
-              <p class="rights"><span>BB MC</span><span>&nbsp;</span><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>|&nbsp;</span>Tous droits réservés
-                | Production <a href="#">D.F.PROD</a>
-              </p>
-            </div>
-            <div class="col-sm-6">
-              <div class="footer-contact"><a href="contacts.html">
-                  <div class="icon novi-icon mdi mdi-email-outline"></div>Nous contacter</a></div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <div class="snackbars" id="form-output-global"></div>
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/bbmc-animations.js"></script>
-  </body>
+    <div class="bot"><span>© <span data-year>2026</span> BB MC — Tous droits réservés · Production D.F.PROD</span><span>bbmc.dsall.fr</span></div>
+  </div>
+</footer>
+<script src="js/site-2026.js" defer></script>
+</body>
 </html>

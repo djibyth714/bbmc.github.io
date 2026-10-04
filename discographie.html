@@ -1,1147 +1,251 @@
-<!DOCTYPE html>
-<html class="wide wow-animation" lang="fr">
-  <head>
-    <title>Discographie - BB MC | Albums, Mixtapes & Singles</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bbmc-custom.css">
-    <style>
-      /* Logo amélioré */
-      .logo-improved {
-        max-height: 40px !important;
-        width: 40px !important;
-        border-radius: 50%;
-        padding: 5px;
-        background: transparent;
-        transition: all 0.3s ease;
-        object-fit: contain;
-      }
-      
-      .logo-improved:hover {
-        transform: scale(1.1);
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-      }
-      
-      /* Page Header */
-      .page-header {
-        position: relative;
-        z-index: 10;
-        background: transparent !important;
-      }
-      
-      .page-header::before {
-        display: none !important;
-      }
-      
-      /* Suppression complète de la barre bleue navbar */
-      .rd-navbar-wrap {
-        background: transparent !important;
-      }
-      
-      .rd-navbar {
-        background: transparent !important;
-        box-shadow: none !important;
-      }
-      
-      .rd-navbar::before,
-      .rd-navbar::after {
-        display: none !important;
-      }
-      
-      .rd-navbar-main-outer {
-        background: transparent !important;
-      }
-      
-      .rd-navbar-main {
-        background: transparent !important;
-      }
-      
-      .rd-navbar--is-stuck {
-        background: rgba(26, 26, 46, 0.9) !important;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-      }
-      
-      /* Amélioration lisibilité texte */
-      .section {
-        background: rgba(255, 255, 255, 0.95) !important;
-      }
-      
-      .bg-image {
-        position: relative;
-      }
-      
-      .bg-image::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1;
-      }
-      
-      .bg-image .container {
-        position: relative;
-        z-index: 2;
-      }
-      
-      .context-dark {
-        color: white !important;
-      }
-      
-      .context-dark h1,
-      .context-dark h2,
-      .context-dark h3,
-      .context-dark h4,
-      .context-dark h5,
-      .context-dark h6 {
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-      }
-      
-      .context-dark p {
-        color: rgba(255, 255, 255, 0.9) !important;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-      }
-      
-      .bg-default {
-        background: rgba(248, 249, 250, 0.98) !important;
-      }
-      
-      .bg-default h1,
-      .bg-default h2,
-      .bg-default h3,
-      .bg-default h4,
-      .bg-default h5,
-      .bg-default h6 {
-        color: #333 !important;
-      }
-      
-      .bg-default p {
-        color: #555 !important;
-      }
-      /* Lightbox améliorée (galerie) */
-      .lb-overlay { position: fixed; inset:0; background: rgba(0,0,0,0.85); display:none; align-items:center; justify-content:center; z-index:9999; }
-      .lb-overlay.show { display:flex; }
-      .lb-inner { position:relative; max-width:90%; max-height:90%; }
-      .lb-inner img { max-width:100%; max-height:100%; display:block; border-radius:8px; }
-      .lb-close, .lb-prev, .lb-next { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.06); border:none; color:#fff; width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; }
-      .lb-close { top:12px; right:12px; transform:none; }
-      .lb-prev { left:-64px; }
-      .lb-next { right:-64px; }
-      .lb-caption { margin-top:8px; text-align:center; color:#fff; font-size:16px; }
-      
-      /* Images uniformes pour Singles & Clips */
-      .single-card img {
-        height: 250px !important;
-        width: 100% !important;
-        object-fit: cover !important;
-        object-position: center !important;
-      }
-      
-      /* Correction visibilité section Statistiques */
-      .bg-gray-1 h2,
-      .bg-gray-1 h3,
-      .bg-gray-1 h4,
-      .bg-gray-1 h5,
-      .bg-gray-1 h6 {
-        color: #333 !important;
-      }
-      
-      /* Styles pour la section Émissions Radio & TV */
-      .emission-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        margin-bottom: 30px;
-      }
-      
-      .emission-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-      }
-      
-      .emission-thumb {
-        display: block;
-        position: relative;
-        text-decoration: none;
-        overflow: hidden;
-      }
-      
-      .emission-thumb img {
-        width: 100%;
-        height: 280px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-      
-      .emission-card:hover .emission-thumb img {
-        transform: scale(1.05);
-      }
-      
-      .emission-info {
-        padding: 20px;
-        text-align: center;
-      }
-      
-      .emission-info .type-badge {
-        display: inline-block;
-        background: #ff6b35;
-        color: white;
-        padding: 4px 12px;
-        border-radius: 15px;
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-bottom: 12px;
-        letter-spacing: 0.5px;
-      }
-      
-      .emission-info .chaine {
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 6px;
-        color: #333;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      
-      .emission-info .emission-name {
-        font-size: 14px;
-        margin: 0;
-        color: #666;
-        font-weight: 500;
-        line-height: 1.4;
-      }
-      
-      .bg-gray-100 {
-        background-color: #f8f9fa !important;
-      }
-      
-      .bg-gray-1 p,
-      .bg-gray-1 .counter-classic-text {
-        color: #666 !important;
-      }
-      
-      .bg-gray-1 .counter,
-      .bg-gray-1 .counter-classic-number {
-        color: #ff6b35 !important;
-        font-weight: bold !important;
-      }
-      
-    </style>
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
-  </head>
-  <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <div class="preloader">
-      <div class="preloader-body">
-        <div class="cssload-container">
-          <div class="cssload-speeding-wheel"></div>
-        </div>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Musique — BB MC · Album Tinndi Tiiɗɗi, mixtapes & clips</title>
+<meta name="description" content="Discographie de BB MC : album Tinndi Tiiɗɗi (21 titres), mixtapes Nofuru et Naayi Laddé, EP Mine Ndiédjitani, clips officiels et chiffres d'audience.">
+<meta name="theme-color" content="#0E0C0A">
+<link rel="canonical" href="https://bbmc.dsall.fr/discographie.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BB MC — Site officiel">
+<meta property="og:title" content="Musique — BB MC · Album Tinndi Tiiɗɗi, mixtapes & clips">
+<meta property="og:description" content="Discographie de BB MC : album Tinndi Tiiɗɗi (21 titres), mixtapes Nofuru et Naayi Laddé, EP Mine Ndiédjitani, clips officiels et chiffres d'audience.">
+<meta property="og:url" content="https://bbmc.dsall.fr/discographie.html">
+<meta property="og:image" content="https://bbmc.dsall.fr/images_BBMC/web/og-cover.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images_BBMC/web/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/2026/1Ptgg87LROyAm0K0.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/site-2026.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="sr" href="#main">Aller au contenu</a>
+<header class="hdr always">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="BB MC — accueil">BB <span>MC</span></a>
+    <nav class="nav" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="about.html">Biographie</a><a href="discographie.html" aria-current="page">Musique</a><a href="concerts.html">Concerts</a><a href="contacts.html">Contact</a><a class="btn btn-gold" href="contacts.html#booking">Booking</a></nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-bars"/></svg></button>
+  </div>
+</header>
+<main id="main">
+<section class="phero">
+  <div class="bg"><img src="images_BBMC/web/new03.jpg" alt="" style="object-position:50% 35%"></div>
+  <div class="wrap">
+    <span class="kicker">Discographie</span>
+    <h1 class="display">Albums, mixtapes<br>& <span class="it c-gold">clips</span></h1>
+    <p class="lead">De l'EP avec D.G Team à l'album Tinndi Tiiɗɗi : écoutez, regardez, partagez.</p>
+    <p class="crumbs"><a href="index.html">Accueil</a> / Musique</p>
+  </div>
+  <div class="band"></div>
+</section>
+
+<section class="sec dark" id="album" style="background:var(--ink2)">
+  <div class="wrap album">
+    <div class="cover rv"><img src="images_BBMC/web/rel00.jpg" alt="Pochette de l'album Tinndi Tiiɗɗi">
+      <ul class="feats" style="margin-top:56px">
+        <li>Debbo Lamdo <span>feat. Mussu</span></li><li>Fuuta <span>feat. Gawlo Africa</span></li>
+        <li>Anndu Hoorema <span>feat. Agnès Dji</span></li><li>Commandants <span>feat. Safaray & Wizaby</span></li>
+        <li>Jombajo <span>feat. Salif Tassor</span></li></ul></div>
+    <div class="rv">
+      <span class="kicker">Album studio · 15 août 2025</span>
+      <h2 class="h2 nc">Tinndi <span class="c-gold">Tiiɗɗi</span></h2>
+      <p class="body mt-s">Premier album studio de BB MC : 21 titres entre tradition peule et modernité hip-hop. Le projet a propulsé ses clips au-delà du million de vues.</p>
+      <div class="player">
+  <div class="now">
+    <button class="sbtn" data-prev aria-label="Titre précédent"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-backward-step"/></svg></button>
+    <button class="pbtn" aria-label="Lecture"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></button>
+    <button class="sbtn" data-next aria-label="Titre suivant"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-forward-step"/></svg></button>
+    <div class="info"><div class="t">—</div><div class="a">BB MC · Tinndi Tiiɗɗi</div><div class="bar"><i></i></div></div>
+    <span class="time">0:00 / 0:00</span>
+  </div>
+  <ol class="tracks"><li data-src="music/TINNDI_TIIDDI/01%20Tinndi%20Tii%C9%97%C9%97i.mp3" data-title="Tinndi Tiiɗɗi" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">01</span><span class="nm">Tinndi Tiiɗɗi</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/02%20Gilli%20Cukalel.mp3" data-title="Gilli Cukalel" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">02</span><span class="nm">Gilli Cukalel</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/03%20Concept.mp3" data-title="Concept" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">03</span><span class="nm">Concept</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/04%20Fuuta%20%28feat.%20Gawlo%20Africa%29.mp3" data-title="Fuuta" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">04</span><span class="nm">Fuuta <small>feat. Gawlo Africa</small></span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/05%20Talent.mp3" data-title="Talent" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">05</span><span class="nm">Talent</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/06%20Debbo%20Laam%C9%97o%20%28feat.%20Mussu%29.mp3" data-title="Debbo Laamɗo" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">06</span><span class="nm">Debbo Laamɗo <small>feat. Mussu</small></span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/07%20Yah%20Wi%C9%93%C9%93e.mp3" data-title="Yah Wiɓɓe" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">07</span><span class="nm">Yah Wiɓɓe</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/08%20Ya%C9%93%C9%93u%20%C9%97oo.mp3" data-title="Yaɓɓu ɗoo" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">08</span><span class="nm">Yaɓɓu ɗoo</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/09%20Miin%20Waawi.mp3" data-title="Miin Waawi" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">09</span><span class="nm">Miin Waawi</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/10%20Anndu%20Hooremaa%20%28feat.%20Agn%C3%A9s%20Dji%29.mp3" data-title="Anndu Hooremaa" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">10</span><span class="nm">Anndu Hooremaa <small>feat. Agnés Dji</small></span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/11%20So%20Hoddiraama.mp3" data-title="So Hoddiraama" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">11</span><span class="nm">So Hoddiraama</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/12%20Parani.mp3" data-title="Parani" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">12</span><span class="nm">Parani</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/13%20Wow-Wow.mp3" data-title="Wow-Wow" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">13</span><span class="nm">Wow-Wow</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/14%20Jombaajo%20%28feat.%20Salif%20Tassor%29.mp3" data-title="Jombaajo" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">14</span><span class="nm">Jombaajo <small>feat. Salif Tassor</small></span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/15%20Jarabi.mp3" data-title="Jarabi" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">15</span><span class="nm">Jarabi</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/16%20O%20Yi%C9%97aama.mp3" data-title="O Yiɗaama" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">16</span><span class="nm">O Yiɗaama</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/17%20F%C3%AAte%20Ta%20Vie.mp3" data-title="Fête Ta Vie" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">17</span><span class="nm">Fête Ta Vie</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/18%20Commandants%20%28feat.%20Safaray%20%26%20Wizaby%29.mp3" data-title="Commandants" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">18</span><span class="nm">Commandants <small>feat. Safaray & Wizaby</small></span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/19%20Yeeweende.mp3" data-title="Yeeweende" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">19</span><span class="nm">Yeeweende</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/20%20Politique.mp3" data-title="Politique" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">20</span><span class="nm">Politique</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/TINNDI_TIIDDI/21%20Neene%20%28Bonus%29.mp3" data-title="Neene (Bonus)" data-artist="BB MC · Tinndi Tiiɗɗi"><span class="n">21</span><span class="nm">Neene (Bonus)</span><span class="eq"><b></b><b></b><b></b></span></li></ol>
+</div>
+      <div class="plat"><a href="https://open.spotify.com/artist/29MqBciLksFnFCcSYz8YT8" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-spotify"/></svg>Spotify</a><a href="https://music.apple.com/fr/artist/bb-mc/1540760816" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-apple"/></svg>Apple Music</a><a href="https://www.deezer.com/fr/artist/113787442" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-deezer"/></svg>Deezer</a><a href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-youtube"/></svg>YouTube</a><a href="https://audiomack.com/bb-mc" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-headphones"/></svg>Audiomack</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="kicker">Discographie</span><h2 class="h2">Mixtapes & projets</h2></div>
+      <p class="body">Quatre projets majeurs qui retracent l'évolution d'un style : du collectif D.G Team à l'album solo.</p></div>
+    <div class="projects">
+      <div class="proj rv"><img src="images_BBMC/web/rel00.jpg" alt="Album Tinndi Tiiɗɗi" loading="lazy" decoding="async"><div class="yr">2025 · Album</div><h3 class="nc">Tinndi Tiiɗɗi</h3><p>21 titres. L'œuvre de la maturité, portée par Debbo Lamdo et Fuuta.</p></div>
+      <div class="proj rv"><img src="images_BBMC/web/rel04.jpg" alt="Mixtape Nofuru" loading="lazy" decoding="async"><div class="yr">2023 · Mixtape</div><h3>Nofuru</h3><p>10 titres, sortie le 30 décembre 2023. Productions modernes (Nda Nda, Gilli Beldi).</p></div>
+      <div class="proj rv"><img src="images_BBMC/web/rel02.jpg" alt="Mixtape Naayi Laddé" loading="lazy" decoding="async"><div class="yr">2022 · Mixtape</div><h3>Naayi Laddé</h3><p>18 titres, sortie le 7 mai 2022. Le projet qui établit sa réputation, suivi d'une tournée de 65 dates.</p></div>
+      <div class="proj rv"><img src="images_BBMC/web/rel_mine.jpg" alt="EP Mine Ndiédjitani" loading="lazy" style="object-fit:contain;background:#070914"><div class="yr">2018 · EP</div><h3>Mine Ndiédjitani</h3><p>Sorti le 31 mars 2018 avec le groupe Daranibé Goonga : la base de son identité musicale.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="wrap grid2">
+    <div class="rv"><span class="kicker">Mixtape · 2023</span><h2 class="h2">Nofuru</h2><p class="body mt-s">Extraits disponibles à l'écoute.</p><div class="player">
+  <div class="now">
+    <button class="sbtn" data-prev aria-label="Titre précédent"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-backward-step"/></svg></button>
+    <button class="pbtn" aria-label="Lecture"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></button>
+    <button class="sbtn" data-next aria-label="Titre suivant"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-forward-step"/></svg></button>
+    <div class="info"><div class="t">—</div><div class="a">BB MC · Nofuru</div><div class="bar"><i></i></div></div>
+    <span class="time">0:00 / 0:00</span>
+  </div>
+  <ol class="tracks"><li data-src="music/NOFURU/02%20%7C%20BB%20MC%20%7C%20GILLI%20BELDI%20%28Audio%29.mp3" data-title="Gilli Beldi" data-artist="BB MC · Nofuru"><span class="n">02</span><span class="nm">Gilli Beldi</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NOFURU/08%20%7C%20BB%20MC%20%7C%20MIJOJI%20%28Audio%29.mp3" data-title="Mijoji" data-artist="BB MC · Nofuru"><span class="n">08</span><span class="nm">Mijoji</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NOFURU/10%20%7C%20BB%20MC%20%7C%20ITANAM%20KO%20WONE%20BERDAM%20KO%20%28Audio%29.mp3" data-title="Itanam Ko Wone Berdam Ko" data-artist="BB MC · Nofuru"><span class="n">10</span><span class="nm">Itanam Ko Wone Berdam Ko</span><span class="eq"><b></b><b></b><b></b></span></li></ol>
+</div></div>
+    <div class="rv"><span class="kicker">Mixtape · 2022</span><h2 class="h2">Naayi Laddé</h2><p class="body mt-s">La mixtape intégrale, 18 titres.</p><div class="player">
+  <div class="now">
+    <button class="sbtn" data-prev aria-label="Titre précédent"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-backward-step"/></svg></button>
+    <button class="pbtn" aria-label="Lecture"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></button>
+    <button class="sbtn" data-next aria-label="Titre suivant"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-forward-step"/></svg></button>
+    <div class="info"><div class="t">—</div><div class="a">BB MC · Naayi Laddé</div><div class="bar"><i></i></div></div>
+    <span class="time">0:00 / 0:00</span>
+  </div>
+  <ol class="tracks"><li data-src="music/NAAYI%20LADDE/01-BB%20Mc%20Poulo%20Sy%20-%20Guiddo.mp3" data-title="Guiddo" data-artist="BB MC · Naayi Laddé"><span class="n">01</span><span class="nm">Guiddo</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/02-BB%20Mc%20Poulo%20Sy%20-%20Kiraam.mp3" data-title="Kiraam" data-artist="BB MC · Naayi Laddé"><span class="n">02</span><span class="nm">Kiraam</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/03-BB%20Mc%20Poulo%20Sy%20-%20love.mp3" data-title="Love" data-artist="BB MC · Naayi Laddé"><span class="n">03</span><span class="nm">Love</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/04-BB%20Mc%20Poulo%20Sy%20-%20Boudel%20Ilo.mp3" data-title="Boudel Ilo" data-artist="BB MC · Naayi Laddé"><span class="n">04</span><span class="nm">Boudel Ilo</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/05-BB%20Mc%20Poulo%20Sy%20-%20Avertisment.mp3" data-title="Avertisment" data-artist="BB MC · Naayi Laddé"><span class="n">05</span><span class="nm">Avertisment</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/06-BB%20Mc%20Poulo%20Sy%20-%20Allah%20Wadi%20Jimo.mp3" data-title="Allah Wadi Jimo" data-artist="BB MC · Naayi Laddé"><span class="n">06</span><span class="nm">Allah Wadi Jimo</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/07-BB%20Mc%20Poulo%20Sy%20-%20Diamfo.mp3" data-title="Diamfo" data-artist="BB MC · Naayi Laddé"><span class="n">07</span><span class="nm">Diamfo</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/08-BB%20Mc%20Poulo%20Sy%20-%20Guilli.mp3" data-title="Guilli" data-artist="BB MC · Naayi Laddé"><span class="n">08</span><span class="nm">Guilli</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/09-BB%20Mc%20Poulo%20Sy%20-%20Policer.mp3" data-title="Policer" data-artist="BB MC · Naayi Laddé"><span class="n">09</span><span class="nm">Policer</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/10-BB%20Mc%20Poulo%20Sy%20-%20Wallo%20Fendo.mp3" data-title="Wallo Fendo" data-artist="BB MC · Naayi Laddé"><span class="n">10</span><span class="nm">Wallo Fendo</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/11-BB%20Mc%20Poulo%20Sy%20-%20Ye%CC%81wama%20BB.mp3" data-title="Yéwama BB" data-artist="BB MC · Naayi Laddé"><span class="n">11</span><span class="nm">Yéwama BB</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/12-BB%20Mc%20Poulo%20Sy%20Poulagou.mp3" data-title="Poulagou" data-artist="BB MC · Naayi Laddé"><span class="n">12</span><span class="nm">Poulagou</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/13-BB%20Mc%20Poulo%20Sy%20-%20Bejida%20Yidde%20Diahowo.mp3" data-title="Bejida Yidde Diahowo" data-artist="BB MC · Naayi Laddé"><span class="n">13</span><span class="nm">Bejida Yidde Diahowo</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/14-BB%20Mc%20Poulo%20Sy%20-%20Adouna.mp3" data-title="Adouna" data-artist="BB MC · Naayi Laddé"><span class="n">14</span><span class="nm">Adouna</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/15-BB%20Mc%20Poulo%20Sy%20-%20TIKE%CC%81RE%CC%81%20MA.mp3" data-title="TikéRé Ma" data-artist="BB MC · Naayi Laddé"><span class="n">15</span><span class="nm">TikéRé Ma</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/16-BB%20Mc%20Poulo%20Sy%20-%20Kongui%20Kawnidi.mp3" data-title="Kongui Kawnidi" data-artist="BB MC · Naayi Laddé"><span class="n">16</span><span class="nm">Kongui Kawnidi</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/17-BB%20Mc%20Poulo%20Sy%20Feat%20Ambayla%20.%20Meyzi%20Bro%20.%20Presi%20Thug%20.%20%20Diallo%20Bi%20.%20Maxim%20-%20Cool%20Bila%20Cool.mp3" data-title="Cool Bila Cool" data-artist="BB MC · Naayi Laddé"><span class="n">17</span><span class="nm">Cool Bila Cool</span><span class="eq"><b></b><b></b><b></b></span></li><li data-src="music/NAAYI%20LADDE/18-BB%20Mc%20Poulo%20Sy%20ft%20Heftine%20-Ko%20Mi%20Kirow.mp3" data-title="Ko Mi Kirow" data-artist="BB MC · Naayi Laddé"><span class="n">18</span><span class="nm">Ko Mi Kirow</span><span class="eq"><b></b><b></b><b></b></span></li></ol>
+</div></div>
+  </div>
+</section>
+
+<section class="sec" id="clips">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="kicker">Vidéos officielles</span><h2 class="h2">Tous les <span class="it c-clay">clips</span></h2></div>
+      <a class="link" href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener">Chaîne YouTube <svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-arrow-right"/></svg></a></div>
+    <div class="vgrid"><article class="vcard rv">
+  <div class="yt" data-id="ihf_qx8Wu8I" role="button" tabindex="0" aria-label="Lire la vidéo Ben Laden">
+    <img src="https://i.ytimg.com/vi/ihf_qx8Wu8I/hqdefault.jpg" alt="Ben Laden — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Ben Laden<small>Single · septembre 2026</small></h3><span class="views">120 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="mNW4KphipUA" role="button" tabindex="0" aria-label="Lire la vidéo Amadou Koufa">
+    <img src="https://i.ytimg.com/vi/mNW4KphipUA/hqdefault.jpg" alt="Amadou Koufa — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Amadou Koufa<small>Single · août 2026</small></h3><span class="views">113 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="uMawW__GJ7c" role="button" tabindex="0" aria-label="Lire la vidéo Live à Douta Seck">
+    <img src="https://i.ytimg.com/vi/uMawW__GJ7c/hqdefault.jpg" alt="Live à Douta Seck — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Live à Douta Seck<small>Captation · 18 avril 2026</small></h3><span class="views">45 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="_w6HXmev8j8" role="button" tabindex="0" aria-label="Lire la vidéo Fuuta">
+    <img src="https://i.ytimg.com/vi/_w6HXmev8j8/hqdefault.jpg" alt="Fuuta — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Fuuta<small>feat. Gawlo Africa · janvier 2026</small></h3><span class="views">555 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="E9LYaRtkX0w" role="button" tabindex="0" aria-label="Lire la vidéo Tinndi Tiiɗɗi">
+    <img src="https://i.ytimg.com/vi/E9LYaRtkX0w/hqdefault.jpg" alt="Tinndi Tiiɗɗi — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Tinndi Tiiɗɗi<small>Clip officiel · décembre 2025</small></h3><span class="views">128 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="WJF_bPy6tM0" role="button" tabindex="0" aria-label="Lire la vidéo Fête Ta Vie">
+    <img src="https://i.ytimg.com/vi/WJF_bPy6tM0/hqdefault.jpg" alt="Fête Ta Vie — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Fête Ta Vie<small>Clip officiel · septembre 2025</small></h3><span class="views">252 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="XyliL7392I0" role="button" tabindex="0" aria-label="Lire la vidéo Debbo Lamdo">
+    <img src="https://i.ytimg.com/vi/XyliL7392I0/hqdefault.jpg" alt="Debbo Lamdo — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Debbo Lamdo<small>feat. Mussu · août 2025</small></h3><span class="views">1 M vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="TmOU7pJxHlE" role="button" tabindex="0" aria-label="Lire la vidéo Nda Nda">
+    <img src="https://i.ytimg.com/vi/TmOU7pJxHlE/hqdefault.jpg" alt="Nda Nda — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Nda Nda<small>Mixtape Nofuru · 2023</small></h3><span class="views">478 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="1jq2gBs0jjg" role="button" tabindex="0" aria-label="Lire la vidéo Ko Min Fulbe">
+    <img src="https://i.ytimg.com/vi/1jq2gBs0jjg/hqdefault.jpg" alt="Ko Min Fulbe — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Ko Min Fulbe<small>Clip officiel · 2023</small></h3><span class="views">247 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="o_sqvpCxRxg" role="button" tabindex="0" aria-label="Lire la vidéo Konu">
+    <img src="https://i.ytimg.com/vi/o_sqvpCxRxg/hqdefault.jpg" alt="Konu — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Konu<small>Clip officiel · 2023</small></h3><span class="views">233 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="ZkK439j6Vr0" role="button" tabindex="0" aria-label="Lire la vidéo Jeysi">
+    <img src="https://i.ytimg.com/vi/ZkK439j6Vr0/hqdefault.jpg" alt="Jeysi — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Jeysi<small>Clip officiel · 2023</small></h3><span class="views">152 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="2ns3aLLsF2o" role="button" tabindex="0" aria-label="Lire la vidéo Barajagal">
+    <img src="https://i.ytimg.com/vi/2ns3aLLsF2o/hqdefault.jpg" alt="Barajagal — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Barajagal<small>Clip officiel · 2023</small></h3><span class="views">151 K vues</span></div>
+</article><article class="vcard rv">
+  <div class="yt" data-id="t4QQBnmTPG0" role="button" tabindex="0" aria-label="Lire la vidéo Yingee Jineeji">
+    <img src="https://i.ytimg.com/vi/t4QQBnmTPG0/hqdefault.jpg" alt="Yingee Jineeji — BB MC" loading="lazy" decoding="async">
+    <span class="play"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-play"/></svg></span>
+  </div>
+  <div class="meta"><h3>Yingee Jineeji<small>Clip officiel · 2023</small></h3><span class="views">114 K vues</span></div>
+</article></div>
+  </div>
+</section>
+
+<section class="sec paper">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="kicker">Singles</span><h2 class="h2">Pochettes</h2></div></div>
+    <div class="covers"><figure class="rv"><img src="images_BBMC/web/rel11.jpg" alt="Nda Nda" loading="lazy" decoding="async"><figcaption>Nda Nda<span>478 K</span></figcaption></figure><figure class="rv"><img src="images_BBMC/web/rel09.jpg" alt="Ko Min Fulbe" loading="lazy" decoding="async"><figcaption>Ko Min Fulbe<span>247 K</span></figcaption></figure><figure class="rv"><img src="images_BBMC/web/rel10.jpg" alt="Konu" loading="lazy" decoding="async"><figcaption>Konu<span>233 K</span></figcaption></figure><figure class="rv"><img src="images_BBMC/web/rel07.jpg" alt="Bañowo" loading="lazy" decoding="async"><figcaption>Bañowo<span>165 K</span></figcaption></figure><figure class="rv"><img src="images_BBMC/web/rel08.jpg" alt="Jeysi" loading="lazy" decoding="async"><figcaption>Jeysi<span>152 K</span></figcaption></figure><figure class="rv"><img src="images_BBMC/web/rel06.jpg" alt="Barajagal" loading="lazy" decoding="async"><figcaption>Barajagal<span>151 K</span></figcaption></figure></div>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="wrap grid2" style="align-items:start">
+    <div class="rv">
+      <span class="kicker">Statistiques & audience</span>
+      <div style="font:400 clamp(110px,15vw,220px)/.85 var(--display);color:var(--gold);margin-top:26px">10,6<span style="font-size:.5em"> M</span></div>
+      <p class="lead mt-s"><span class="c-gold" style="font-style:normal;font-family:var(--display)">10 625 792</span> vues cumulées sur la chaîne YouTube officielle.</p>
+      <div class="stats sm mt-l" style="grid-template-columns:1fr 1fr">
+        <div><strong>57 948</strong><span>Streams Spotify</span></div>
+        <div><strong>47 763</strong><span>Streams Apple Music</span></div>
+        <div><strong>1 763</strong><span>Streams Deezer</span></div>
+        <div><strong>507</strong><span>Amazon Music</span></div>
       </div>
+      <p class="body mt-s" style="font-size:13px">Streaming : album Tinndi Tiiɗɗi. Données octobre 2026.</p>
     </div>
-    <div class="page">
-      <header class="section page-header">
-        <!--RD Navbar-->
-        <div class="rd-navbar-wrap" style="position: absolute">
-          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-            <div class="rd-navbar-main-outer">
-              <div class="rd-navbar-main">
-                <!--RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!--RD Navbar Toggle-->
-                  <button type="button" class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" title="Menu de navigation"><span></span></button>
-                  <!--RD Navbar Brand-->
-                  <div class="rd-navbar-brand">
-                    <!--Brand--><a class="brand" href="index.html"><img src="logo d.f.prod.jpg" alt="BB MC - D.F.PROD" class="logo-improved"/></a>
-                  </div>
-                </div>
-                <div class="rd-navbar-main-element">
-                  <div class="rd-navbar-nav-wrap">
-                    <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Accueil</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Biographie</a>
-                      </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="discographie.html">Discographie</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="concerts.html">Concerts</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contact</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="rd-navbar-collapse">
-                  <ul class="socialite-list">
-                    <li><a class="icon novi-icon socialite fa-youtube" href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener"></a></li>
-                    <li><a class="icon novi-icon socialite fa-instagram" href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener"></a></li>
-                    <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener"></a></li>
-                    <li><a class="icon novi-icon socialite fa-spotify" href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" target="_blank" rel="noopener"></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
-
-      <!-- Hero Section -->
-      <section class="parallax-container section-lg text-center" data-parallax-img="images_BBMC/photo_galerie/DSC_2547.jpg">
-        <div class="parallax-content">
-          <div class="container">
-            <h1 style="color: #fff; font-size: 48px; margin-bottom: 20px;">Discographie</h1>
-            <h6 class="text-gray-300" style="font-size: 24px;">Albums, Mixtapes & Singles de BB MC</h6>
-            <p style="color: #fff; font-size: 18px; margin-top: 20px;">Une évolution artistique de 2010 à 2025</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Album Principal - Tinndi Tiiɗɗi -->
-      <section class="section section-xl bg-default">
-        <div class="container">
-          <div class="row row-50 align-items-center">
-            <div class="col-lg-6">
-              <img src="images_BBMC/Photo des projets sortie/Album Tinndi Tiiɗɗi Tracklist.png" alt="Tinndi Tiiɗɗi - Tracklist" class="img-fluid rounded shadow-lg">
-            </div>
-            <div class="col-lg-6">
-              <h2>Tinndi Tiiɗɗi <span class="badge badge-primary">2025</span></h2>
-              <h4>Premier Album Studio</h4>
-              <p class="lead">21 titres qui marquent l'aboutissement artistique de BB MC, alliant tradition peule et modernité hip-hop dans une œuvre magistrale.</p>
-              
-              <div class="stats-row mb-4">
-                <div class="stat-item">
-                  <h5>1 280 704</h5>
-                  <p>Vues YouTube</p>
-                </div>
-                <div class="stat-item">
-                  <h5>37 032</h5>
-                  <p>Streams Spotify</p>
-                </div>
-                <div class="stat-item">
-                  <h5>21 147</h5>
-                  <p>Streams Apple Music</p>
-                </div>
-              </div>
-
-              <h5>Collaborations Notables :</h5>
-              <ul class="list-custom mb-4">
-                <li><strong>Fuuta</strong> feat. Gawlo Africa</li>
-                <li><strong>Debbo Lamdo</strong> feat. Mussu</li>
-                <li><strong>Anndu Hoorema</strong> feat. Agnés Dji</li>
-                <li><strong>Commandants</strong> feat. Safaray & Wizaby</li>
-              </ul>
-
-              <div class="streaming-links">
-                <a href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" class="btn btn-spotify" target="_blank" rel="noopener">
-                  <i class="fa fa-spotify"></i> Spotify
-                </a>
-                <a href="https://music.apple.com/fr/artist/bb-mc/1540760816" class="btn btn-apple" target="_blank" rel="noopener">
-                  <i class="fa fa-apple"></i> Apple Music
-                </a>
-                <a href="https://www.youtube.com/@bb_mc_officiel" class="btn btn-youtube" target="_blank" rel="noopener">
-                  <i class="fa fa-youtube"></i> YouTube
-                </a>
-                <a href="https://www.deezer.com/fr/artist/113787442" class="btn btn-deezer" target="_blank" rel="noopener">
-                  <i class="fa fa-music"></i> Deezer
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Mixtapes -->
-      <section class="section section-lg bg-gray-1">
-        <div class="container">
-          <h2 class="text-center mb-5">Mixtapes</h2>
-          <div class="row row-50">
-            
-            <!-- Nofuru 2023 -->
-            <div class="col-lg-6">
-              <div class="row align-items-center">
-                <div class="col-md-5">
-                  <img src="images_BBMC/Photo des projets sortie/Mixtatpe NOFURU - Cover Officiel.jpg" alt="NOFURU Cover" class="img-fluid rounded shadow-sm mb-3">
-                </div>
-                <div class="col-md-7">
-                  <div class="album-card">
-                    <div class="album-header">
-                      <h3>Nofuru</h3>
-                      <span class="album-year">2023</span>
-                    </div>
-                    <div class="album-info">
-                      <p><strong>Date de sortie :</strong> 30 décembre 2023</p>
-                      <p><strong>Nombre de titres :</strong> 10</p>
-                      <p><strong>Type :</strong> Mixtape</p>
-                    </div>
-                    <p class="album-description">
-                      Mixtape de fin d'année qui consolide le style unique de BB MC, avec des productions modernes et des textes toujours ancrés dans la culture peule.
-                    </p>
-                    <div class="album-highlights">
-                      <h5>Tournée associée :</h5>
-                      <p>NOFURU Tour 2024 - 16 concerts à travers le Sénégal et la Mauritanie</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Naayi Laddé 2022 -->
-            <div class="col-lg-6">
-              <div class="row align-items-center">
-                <div class="col-md-5">
-                  <img src="images_BBMC/Photo des projets sortie/Mixtape Naayi Laddé - Cover.jpg" alt="Naayi Laddé Cover" class="img-fluid rounded shadow-sm mb-3">
-                </div>
-                <div class="col-md-7">
-                  <div class="album-card">
-                    <div class="album-header">
-                      <h3>Naayi Laddé</h3>
-                      <span class="album-year">2022</span>
-                    </div>
-                    <div class="album-info">
-                      <p><strong>Date de sortie :</strong> 7 mai 2022</p>
-                      <p><strong>Nombre de titres :</strong> 18</p>
-                      <p><strong>Type :</strong> Mixtape</p>
-                    </div>
-                    <p class="album-description">
-                      Première grande œuvre de BB MC qui établit sa réputation. Ce projet marque un tournant dans sa carrière avec une tournée exceptionnelle de 65 concerts.
-                    </p>
-                    <div class="album-highlights">
-                      <h5>Tournée associée :</h5>
-                      <p>Naayi Laddé Tour 2022 - 65 concerts, la tournée la plus intensive de l'artiste</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Mine Ndiédjitani 2017 -->
-            <div class="col-lg-12">
-              <div class="album-card">
-                <div class="album-header">
-                  <h3>Mine Ndiédjitani</h3>
-                  <span class="album-year">2017-2018</span>
-                </div>
-                <div class="album-info">
-                  <p><strong>Groupe :</strong> D.G Team (Daranibé Goonga)</p>
-                  <p><strong>Type :</strong> Premier EP</p>
-                </div>
-                <p class="album-description">
-                  Premier projet officiel de BB MC avec le groupe Daranibé Goonga. Cet EP marque les débuts professionnels de l'artiste et pose les bases de son identité musicale.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Singles & Clips -->
-      <section class="section section-lg bg-default">
-        <div class="container">
-          <h2 class="text-center mb-5">Singles & Clips Phares</h2>
-          <div class="row row-30">
-            
-            <div class="col-lg-4 col-md-6">
-              <div class="single-card">
-                <img src="images_BBMC/Photo des projets sortie/Sortie Single NDA NDA.jpg" alt="NDA NDA" class="img-fluid rounded mb-3">
-                <h4>NDA NDA</h4>
-                <p class="single-type">Single</p>
-                <a href="https://www.youtube.com/watch?v=TmOU7pJxHlE" class="btn btn-youtube" target="_blank" rel="noopener">
-                  <i class="fa fa-youtube"></i> Regarder sur YouTube
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="single-card">
-                <img src="images_BBMC/Photo des projets sortie/Sortie Single KO MIN FULBE.jpg" alt="KO MIN FULBE" class="img-fluid rounded mb-3">
-                <h4>KO MIN FULBE</h4>
-                <p class="single-type">Single</p>
-                <a href="https://www.youtube.com/watch?v=1jq2gBs0jjg" class="btn btn-youtube" target="_blank" rel="noopener">
-                  <i class="fa fa-youtube"></i> Regarder sur YouTube
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="single-card">
-                <img src="images_BBMC/Photo des projets sortie/Sortie Single KONU.jpg" alt="KONU" class="img-fluid rounded mb-3">
-                <h4>KONU</h4>
-                <p class="single-type">Single</p>
-                <a href="https://www.youtube.com/watch?v=o_sqvpCxRxg" class="btn btn-youtube" target="_blank" rel="noopener">
-                  <i class="fa fa-youtube"></i> Regarder sur YouTube
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="single-card">
-                <img src="images_BBMC/Photo des projets sortie/Sortie Single BARAJAGAL.jpg" alt="BARAJAGAL" class="img-fluid rounded mb-3">
-                <h4>BARAJAGAL</h4>
-                <p class="single-type">Single</p>
-                <a href="https://www.youtube.com/watch?v=2ns3aLLsF2o" class="btn btn-youtube" target="_blank" rel="noopener">
-                  <i class="fa fa-youtube"></i> Regarder sur YouTube
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="single-card">
-                <img src="images_BBMC/Photo des projets sortie/Sortie Single Jeysi.jpg" alt="Jeysi" class="img-fluid rounded mb-3">
-                <h4>Jeysi</h4>
-                <p class="single-type">Single</p>
-                <a href="https://www.youtube.com/watch?v=ZkK439j6Vr0" class="btn btn-youtube" target="_blank" rel="noopener">
-                  <i class="fa fa-youtube"></i> Regarder sur YouTube
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="single-card">
-                <img src="images_BBMC/Photo des projets sortie/Sortie Single YINGEE JINEEJI.jpg" alt="YINGEE JINEEJI" class="img-fluid rounded mb-3">
-                <h4>YINGEE JINEEJI</h4>
-                <p class="single-type">Single</p>
-                <a href="https://www.youtube.com/watch?v=t4QQBnmTPG0" class="btn btn-youtube" target="_blank" rel="noopener">
-                  <i class="fa fa-youtube"></i> Regarder sur YouTube
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Statistiques Globales -->
-      <section class="section section-lg bg-gray-1">
-        <div class="container">
-          <h2 class="text-center mb-5">Statistiques & Audience</h2>
-          
-          <!-- YouTube Stats -->
-          <div class="row row-30 mb-5">
-            <div class="col-lg-6 col-md-6">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter">4878371</span>
-                </div>
-                <h5 class="counter-classic-title">Vues YouTube</h5>
-                <p class="counter-classic-text">Total global</p>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter">1326318</span>
-                </div>
-                <h5 class="counter-classic-title">Album Tinndi Tiiɗɗi</h5>
-                <p class="counter-classic-text">Vues YouTube</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Streaming Platforms Stats -->
-          <h3 class="text-center mb-4">Streaming - Album Tinndi Tiiɗɗi</h3>
-          <div class="row row-30">
-            <div class="col-lg-3 col-md-6">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter">38032</span>
-                </div>
-                <h5 class="counter-classic-title">Spotify</h5>
-                <p class="counter-classic-text">Streams</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter">22147</span>
-                </div>
-                <h5 class="counter-classic-title">Apple Music</h5>
-                <p class="counter-classic-text">Streams</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter">1492</span>
-                </div>
-                <h5 class="counter-classic-title">Deezer</h5>
-                <p class="counter-classic-text">Streams</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter">402</span>
-                </div>
-                <h5 class="counter-classic-title">Amazon Music</h5>
-                <p class="counter-classic-text">Streams</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Total Streaming -->
-          <div class="row row-30 mt-4">
-            <div class="col-lg-12 text-center">
-              <div class="counter-classic">
-                <div class="counter-classic-number">
-                  <span class="counter">62073</span>
-                </div>
-                <h5 class="counter-classic-title">Total Streams</h5>
-                <p class="counter-classic-text">Album Tinndi Tiiɗɗi - Toutes plateformes</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Émissions Radio & TV -->
-      <section class="section section-lg bg-gray-100">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h2>Émissions Radio & TV</h2>
-              <p class="lead">BB MC dans les médias : passages et interviews dans les principales émissions radio et télé</p>
-            </div>
-          </div>
-          
-          <div class="row row-30 justify-content-center">
-            <!-- 2sTV After Work -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="emission-card">
-                <a href="images_BBMC/Emission radio et TV/2sTV emission After Work.jpeg" class="emission-thumb disc-thumb" data-caption="2sTV - Émission After Work">
-                  <img src="images_BBMC/Emission radio et TV/2sTV emission After Work.jpeg" alt="2sTV Émission After Work" class="img-fluid">
-                </a>
-                <div class="emission-info">
-                  <div class="type-badge">TV</div>
-                  <div class="chaine">2sTV</div>
-                  <div class="emission-name">After Work</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- DStv NDENNDEN MIIJOOJI -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="emission-card">
-                <a href="images_BBMC/Emission radio et TV/DStv Emission NDENNDEN MIIJOOJI.jpeg" class="emission-thumb disc-thumb" data-caption="DStv - Émission NDENNDEN MIIJOOJI">
-                  <img src="images_BBMC/Emission radio et TV/DStv Emission NDENNDEN MIIJOOJI.jpeg" alt="DStv Émission NDENNDEN MIIJOOJI" class="img-fluid">
-                </a>
-                <div class="emission-info">
-                  <div class="type-badge">TV</div>
-                  <div class="chaine">DStv</div>
-                  <div class="emission-name">NDENNDEN MIIJOOJI</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- One Nation TV Rap Tiguirigui -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="emission-card">
-                <a href="images_BBMC/Emission radio et TV/One Nation TV emission Rap Tiguirigui.jpeg" class="emission-thumb disc-thumb" data-caption="One Nation TV - Rap Tiguirigui">
-                  <img src="images_BBMC/Emission radio et TV/One Nation TV emission Rap Tiguirigui.jpeg" alt="One Nation TV Rap Tiguirigui" class="img-fluid">
-                </a>
-                <div class="emission-info">
-                  <div class="type-badge">TV</div>
-                  <div class="chaine">One Nation TV</div>
-                  <div class="emission-name">Rap Tiguirigui</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- RFI -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="emission-card">
-                <a href="images_BBMC/Emission radio et TV/RFI.jpg" class="emission-thumb disc-thumb" data-caption="RFI - Radio France Internationale">
-                  <img src="images_BBMC/Emission radio et TV/RFI.jpg" alt="RFI Radio France Internationale" class="img-fluid">
-                </a>
-                <div class="emission-info">
-                  <div class="type-badge">Radio</div>
-                  <div class="chaine">RFI</div>
-                  <div class="emission-name">Radio France Internationale</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- RTF HIP HOP Vision -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="emission-card">
-                <a href="images_BBMC/Emission radio et TV/RTF (Radio Television Fulbé) Emission HIP HOP Vision.jpeg" class="emission-thumb disc-thumb" data-caption="RTF - Émission HIP HOP Vision">
-                  <img src="images_BBMC/Emission radio et TV/RTF (Radio Television Fulbé) Emission HIP HOP Vision.jpeg" alt="RTF Émission HIP HOP Vision" class="img-fluid">
-                </a>
-                <div class="emission-info">
-                  <div class="type-badge">TV</div>
-                  <div class="chaine">RTF</div>
-                  <div class="emission-name">HIP HOP Vision</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- RTF WOLDÉ -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="emission-card">
-                <a href="images_BBMC/Emission radio et TV/RTF (Radio Television Fulbé) Emission WOLDÉ.jpeg" class="emission-thumb disc-thumb" data-caption="RTF - Émission WOLDÉ">
-                  <img src="images_BBMC/Emission radio et TV/RTF (Radio Television Fulbé) Emission WOLDÉ.jpeg" alt="RTF Émission WOLDÉ" class="img-fluid">
-                </a>
-                <div class="emission-info">
-                  <div class="type-badge">TV</div>
-                  <div class="chaine">RTF</div>
-                  <div class="emission-name">WOLDÉ</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Senegal FM BETAAWE -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="emission-card">
-                <a href="images_BBMC/Emission radio et TV/Senegal FM emission BETAAWE.jpg" class="emission-thumb disc-thumb" data-caption="Senegal FM - Émission BETAAWE">
-                  <img src="images_BBMC/Emission radio et TV/Senegal FM emission BETAAWE.jpg" alt="Senegal FM Émission BETAAWE" class="img-fluid">
-                </a>
-                <div class="emission-info">
-                  <div class="type-badge">Radio</div>
-                  <div class="chaine">Senegal FM</div>
-                  <div class="emission-name">BETAAWE</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Vibe Radio TAL REK SHOW -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="emission-card">
-                <a href="images_BBMC/Emission radio et TV/vibe radio TAL REK SHOW.jpg" class="emission-thumb disc-thumb" data-caption="Vibe Radio - TAL REK SHOW">
-                  <img src="images_BBMC/Emission radio et TV/vibe radio TAL REK SHOW.jpg" alt="Vibe Radio TAL REK SHOW" class="img-fluid">
-                </a>
-                <div class="emission-info">
-                  <div class="type-badge">Radio</div>
-                  <div class="chaine">Vibe Radio</div>
-                  <div class="emission-name">TAL REK SHOW</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Plateformes de Streaming -->
-      <section class="section section-lg bg-default text-center">
-        <div class="container">
-          <h2>Écoutez BB MC sur toutes les plateformes</h2>
-          <p class="lead">Retrouvez toute la discographie de BB MC sur vos plateformes préférées</p>
-          
-          <div class="streaming-platforms">
-            <a href="https://artists.spotify.com/c/artist/29MqBciLksFnFCcSYz8YT8/" class="platform-link spotify" target="_blank" rel="noopener">
-              <i class="fa fa-spotify"></i>
-              <span>Spotify</span>
-            </a>
-            <a href="https://music.apple.com/fr/artist/bb-mc/1540760816" class="platform-link apple" target="_blank" rel="noopener">
-              <i class="fa fa-apple"></i>
-              <span>Apple Music</span>
-            </a>
-            <a href="https://www.youtube.com/@bb_mc_officiel" class="platform-link youtube" target="_blank" rel="noopener">
-              <i class="fa fa-youtube"></i>
-              <span>YouTube</span>
-            </a>
-            <a href="https://www.deezer.com/fr/artist/113787442" class="platform-link deezer" target="_blank" rel="noopener">
-              <i class="fa fa-music"></i>
-              <span>Deezer</span>
-            </a>
-            <a href="https://audiomack.com/bb-mc" class="platform-link audiomack" target="_blank" rel="noopener">
-              <i class="fa fa-headphones"></i>
-              <span>Audiomack</span>
-            </a>
-            <a href="https://www.tiktok.com/@bbmc_poulosy" class="platform-link tiktok" target="_blank" rel="noopener">
-              <i class="fa fa-music"></i>
-              <span>TikTok</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <footer class="section footer-classic bg-default">
-        <div class="container">
-          <div class="row row-15">
-            <div class="col-sm-6">
-              <p class="rights"><span>BB MC</span><span>&nbsp;</span><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>|&nbsp;</span>Tous droits réservés
-                | Production <a href="#">D.F.PROD</a>
-              </p>
-            </div>
-            <div class="col-sm-6">
-              <div class="footer-contact"><a href="contacts.html">
-                  <div class="icon novi-icon mdi mdi-email-outline"></div>Nous contacter</a></div>
-            </div>
-          </div>
-        </div>
-      </footer>
+    <div class="bars rv"><p class="kicker" style="margin-bottom:22px">Top clips YouTube</p><div class="row top"><div class="l">Debbo Lamdo<small>feat. Mussu · 2025</small></div><div class="t"><i style="--w:100%"></i></div><div class="v">1,00 M</div></div><div class="row"><div class="l">Fuuta<small>feat. Gawlo Africa · 2026</small></div><div class="t"><i style="--w:55.5%"></i></div><div class="v">555 K</div></div><div class="row"><div class="l">Nda Nda<small>Mixtape Nofuru · 2023</small></div><div class="t"><i style="--w:47.8%"></i></div><div class="v">478 K</div></div><div class="row"><div class="l">Dow Dieri<small>Single · 2020</small></div><div class="t"><i style="--w:36.7%"></i></div><div class="v">367 K</div></div><div class="row"><div class="l">Fuuta (audio)<small>Album · 2025</small></div><div class="t"><i style="--w:33.4%"></i></div><div class="v">334 K</div></div><div class="row"><div class="l">Wow-Wow (audio)<small>Album · 2025</small></div><div class="t"><i style="--w:29.8%"></i></div><div class="v">298 K</div></div><div class="row"><div class="l">Fête Ta Vie<small>Clip · 2025</small></div><div class="t"><i style="--w:25.2%"></i></div><div class="v">252 K</div></div><div class="row"><div class="l">Ko Min Fulbe<small>Clip · 2023</small></div><div class="t"><i style="--w:24.7%"></i></div><div class="v">247 K</div></div></div>
+  </div>
+</section>
+<section class="cta">
+  <div class="wm" aria-hidden="true">BOOKING</div>
+  <div class="wrap">
+    <div><span class="kicker">Concerts · Festivals · Événements</span><h2 class="h2">Faites venir<br>BB MC sur scène</h2></div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a class="btn btn-ink" href="contacts.html#booking"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-microphone-lines"/></svg> Réserver</a>
+      <a class="btn btn-ghost" href="tel:+221782884765"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-phone"/></svg> +221 78 288 47 65</a>
     </div>
-    <div class="snackbars" id="form-output-global"></div>
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-    <!-- Lightbox galerie améliorée -->
-    <div id="lbOverlay" class="lb-overlay" aria-hidden="true">
-      <div class="lb-inner">
-        <button type="button" class="lb-close" aria-label="Fermer" title="Fermer">×</button>
-        <button type="button" class="lb-prev" aria-label="Précédent" title="Image précédente">‹</button>
-        <img src="" alt="" id="lbImage">
-        <button type="button" class="lb-next" aria-label="Suivant" title="Image suivante">›</button>
-        <div class="lb-caption" id="lbCaption"></div>
+  </div>
+</section>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="logo" href="index.html">BB <span>MC</span></a>
+        <p>Ibrahima Sy, alias BB MC — rappeur, conteur et ambassadeur du rap peul. De Thiemping (Matam) aux scènes du Sénégal et de la Mauritanie.</p>
+        <div class="soc"><a href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-youtube"/></svg></a><a href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-instagram"/></svg></a><a href="https://www.tiktok.com/@bbmc_poulosy" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-tiktok"/></svg></a><a href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-facebook-f"/></svg></a><a href="https://open.spotify.com/artist/29MqBciLksFnFCcSYz8YT8" target="_blank" rel="noopener" aria-label="Spotify"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-spotify"/></svg></a></div>
       </div>
+      <div><h4>Explorer</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">Biographie</a></li><li><a href="discographie.html">Musique</a></li><li><a href="concerts.html">Concerts</a></li><li><a href="contacts.html">Contact</a></li></ul></div>
+      <div><h4>Booking</h4><ul>
+        <li><a href="tel:+221782884765">+221 78 288 47 65</a></li>
+        <li><a href="tel:+221770950193">+221 77 095 01 93</a></li>
+        <li><a href="mailto:bebemc.th@gmail.com">bebemc.th@gmail.com</a></li>
+        <li><a href="mailto:bb.mc.officiel@gmail.com">bb.mc.officiel@gmail.com</a></li>
+      </ul></div>
+      <div><h4>Écouter</h4><ul><li><a href="https://open.spotify.com/artist/29MqBciLksFnFCcSYz8YT8" target="_blank" rel="noopener">Spotify</a></li><li><a href="https://music.apple.com/fr/artist/bb-mc/1540760816" target="_blank" rel="noopener">Apple Music</a></li><li><a href="https://www.deezer.com/fr/artist/113787442" target="_blank" rel="noopener">Deezer</a></li><li><a href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://audiomack.com/bb-mc" target="_blank" rel="noopener">Audiomack</a></li></ul></div>
     </div>
-    <script>
-      (function(){
-        const overlay = document.getElementById('lbOverlay');
-        const lbImage = document.getElementById('lbImage');
-        const lbCaption = document.getElementById('lbCaption');
-        const btnClose = overlay && overlay.querySelector('.lb-close');
-        const btnPrev = overlay && overlay.querySelector('.lb-prev');
-        const btnNext = overlay && overlay.querySelector('.lb-next');
-
-        const thumbs = Array.from(document.querySelectorAll('a.disc-thumb'));
-        let index = 0;
-
-        function show(idx){
-          const a = thumbs[idx];
-          if (!a) return;
-          let src = a.getAttribute('href');
-          // Encoder correctement l'URL pour gérer les caractères spéciaux
-          src = encodeURI(src);
-          const caption = a.dataset.caption || a.querySelector('img').alt || '';
-          lbImage.src = src;
-          lbCaption.textContent = caption;
-          overlay.classList.add('show');
-          overlay.setAttribute('aria-hidden','false');
-          index = idx;
-          
-          // Ajouter un gestionnaire d'erreur pour l'image
-          lbImage.onerror = function() {
-            console.log('Erreur de chargement pour:', src);
-            // Essayer avec l'URL originale non encodée
-            lbImage.src = a.getAttribute('href');
-          };
-        }
-
-        function hide(){
-          overlay.classList.remove('show');
-          overlay.setAttribute('aria-hidden','true');
-        }
-
-        function prev(){ show((index - 1 + thumbs.length) % thumbs.length); }
-        function next(){ show((index + 1) % thumbs.length); }
-
-        thumbs.forEach((a,i)=>{
-          a.addEventListener('click', function(e){ 
-            e.preventDefault(); 
-            e.stopPropagation();
-            console.log('Clic sur émission:', a.getAttribute('href'));
-            show(i); 
-          });
-        });
-        
-        // Debug: afficher toutes les images trouvées
-        console.log('Images d\'émissions trouvées:', thumbs.length);
-        thumbs.forEach((thumb, i) => {
-          console.log(`${i}: ${thumb.getAttribute('href')}`);
-        });
-        if (btnClose) btnClose.addEventListener('click', hide);
-        if (btnPrev) btnPrev.addEventListener('click', prev);
-        if (btnNext) btnNext.addEventListener('click', next);
-        overlay && overlay.addEventListener('click', (e)=>{ if (e.target === overlay) hide(); });
-        document.addEventListener('keydown', (e)=>{
-          if (overlay.classList.contains('show')){
-            if (e.key === 'ArrowLeft') prev();
-            if (e.key === 'ArrowRight') next();
-            if (e.key === 'Escape') hide();
-          }
-        });
-      })();
-    </script>
-    
-    <style>
-      .album-card {
-        background: #fff;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        height: 100%;
-        transition: transform 0.3s ease;
-      }
-      
-      .album-card:hover {
-        transform: translateY(-5px);
-      }
-      
-      .album-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        border-bottom: 2px solid #007bff;
-        padding-bottom: 15px;
-      }
-      
-      .album-header h3 {
-        margin: 0;
-        color: #007bff;
-        font-size: 24px;
-      }
-      
-      .album-year {
-        background: #007bff;
-        color: white;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-weight: bold;
-      }
-      
-      .album-info {
-        background: #f8f9fa;
-        padding: 15px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-      }
-      
-      .album-info p {
-        margin: 5px 0;
-        font-size: 14px;
-      }
-      
-      .album-description {
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 20px;
-      }
-      
-      .album-highlights {
-        background: #e3f2fd;
-        padding: 15px;
-        border-radius: 10px;
-        border-left: 4px solid #007bff;
-      }
-      
-      .album-highlights h5 {
-        color: #007bff;
-        margin-bottom: 10px;
-      }
-      
-      .single-card {
-        background: #fff;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        margin-bottom: 20px;
-        transition: transform 0.3s ease;
-        height: 100%;
-      }
-      
-      .single-card:hover {
-        transform: translateY(-3px);
-      }
-      
-      .single-card h4 {
-        color: #007bff;
-        margin-bottom: 10px;
-      }
-      
-      .single-year {
-        color: #666;
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-      
-      .single-type {
-        background: #007bff;
-        color: white;
-        padding: 3px 10px;
-        border-radius: 15px;
-        font-size: 12px;
-        display: inline-block;
-        margin-bottom: 10px;
-      }
-      
-      .stats-row {
-        display: flex;
-        gap: 30px;
-        margin: 30px 0;
-      }
-      
-      .stat-item {
-        text-align: center;
-      }
-      
-      .stat-item h5 {
-        color: #007bff;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-      
-      .stat-item p {
-        color: #666;
-        font-size: 14px;
-        margin: 0;
-      }
-      
-      .list-custom {
-        list-style: none;
-        padding: 0;
-      }
-      
-      .list-custom li {
-        padding: 8px 0;
-        border-bottom: 1px solid #eee;
-      }
-      
-      .list-custom li:last-child {
-        border-bottom: none;
-      }
-      
-      .streaming-links {
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-        margin-top: 30px;
-      }
-      
-      .btn {
-        padding: 10px 20px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-      
-      .btn-spotify {
-        background: #1db954;
-        color: white;
-      }
-      
-      .btn-apple {
-        background: #000;
-        color: white;
-      }
-      
-      .btn-youtube {
-        background: #ff0000;
-        color: white;
-      }
-      
-      .btn-deezer {
-        background: #ff6600;
-        color: white;
-      }
-      
-      .streaming-platforms {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-        margin-top: 40px;
-      }
-      
-      .platform-link {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        padding: 20px;
-        border-radius: 15px;
-        transition: transform 0.3s ease;
-        min-width: 120px;
-      }
-      
-      .platform-link:hover {
-        transform: translateY(-5px);
-      }
-      
-      .platform-link i {
-        font-size: 40px;
-        margin-bottom: 10px;
-      }
-      
-      .platform-link.spotify {
-        background: #1db954;
-        color: white;
-      }
-      
-      .platform-link.apple {
-        background: #000;
-        color: white;
-      }
-      
-      .platform-link.youtube {
-        background: #ff0000;
-        color: white;
-      }
-      
-      .platform-link.deezer {
-        background: #ff6600;
-        color: white;
-      }
-      
-      .platform-link.audiomack {
-        background: #ff6600;
-        color: white;
-      }
-      
-      .platform-link.tiktok {
-        background: #000;
-        color: white;
-      }
-      
-      .counter-classic {
-        text-align: center;
-        padding: 20px;
-      }
-      
-      .counter-classic-number {
-        font-size: 36px;
-        font-weight: bold;
-        color: #007bff;
-        margin-bottom: 10px;
-      }
-      
-      .counter-classic-title {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-      
-      .counter-classic-text {
-        color: #666;
-        font-size: 14px;
-      }
-      
-      @media (max-width: 768px) {
-        .stats-row {
-          flex-direction: column;
-          gap: 15px;
-        }
-        
-        .streaming-links {
-          justify-content: center;
-        }
-        
-        .streaming-platforms {
-          gap: 15px;
-        }
-        
-        .platform-link {
-          min-width: 100px;
-          padding: 15px;
-        }
-      }
-    </style>
-  </body>
+    <div class="bot"><span>© <span data-year>2026</span> BB MC — Tous droits réservés · Production D.F.PROD</span><span>bbmc.dsall.fr</span></div>
+  </div>
+</footer>
+<script src="js/site-2026.js" defer></script>
+</body>
 </html>

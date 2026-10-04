@@ -1,307 +1,116 @@
-<!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
-  <head>
-    <title>Contacts</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bbmc-custom.css">
-    <link rel="stylesheet" href="css/bbmc-enhanced.css">
-    <style>
-      /* Logo amélioré */
-      .logo-improved {
-        max-height: 40px !important;
-        width: 40px !important;
-        border-radius: 50%;
-        padding: 5px;
-        background: transparent;
-        transition: all 0.3s ease;
-        object-fit: contain;
-      }
-      
-      .logo-improved:hover {
-        transform: scale(1.1);
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-      }
-      
-      /* Page Header */
-      .page-header {
-        position: relative;
-        z-index: 10;
-        background: transparent !important;
-      }
-      
-      .page-header::before {
-        display: none !important;
-      }
-      
-      /* Suppression complète de la barre bleue navbar */
-      .rd-navbar-wrap {
-        background: transparent !important;
-      }
-      
-      .rd-navbar {
-        background: transparent !important;
-        box-shadow: none !important;
-      }
-      
-      .rd-navbar::before,
-      .rd-navbar::after {
-        display: none !important;
-      }
-      
-      .rd-navbar-main-outer {
-        background: transparent !important;
-      }
-      
-      .rd-navbar-main {
-        background: transparent !important;
-      }
-      
-      .rd-navbar--is-stuck {
-        background: rgba(26, 26, 46, 0.9) !important;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-      }
-      
-      /* Amélioration lisibilité texte */
-      .section {
-        background: rgba(255, 255, 255, 0.95) !important;
-      }
-      
-      .bg-image {
-        position: relative;
-      }
-      
-      .bg-image::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1;
-      }
-      
-      .bg-image .container {
-        position: relative;
-        z-index: 2;
-      }
-      
-      .context-dark {
-        color: white !important;
-      }
-      
-      .context-dark h1,
-      .context-dark h2,
-      .context-dark h3,
-      .context-dark h4,
-      .context-dark h5,
-      .context-dark h6 {
-        color: white !important;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-      }
-      
-      .context-dark p {
-        color: rgba(255, 255, 255, 0.9) !important;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-      }
-      
-      .bg-default {
-        background: rgba(248, 249, 250, 0.98) !important;
-      }
-      
-      .bg-default h1,
-      .bg-default h2,
-      .bg-default h3,
-      .bg-default h4,
-      .bg-default h5,
-      .bg-default h6 {
-        color: #333 !important;
-      }
-      
-      .bg-default p {
-        color: #555 !important;
-      }
-      
-      .contact-info {
-        background: rgba(255, 255, 255, 0.95) !important;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        padding: 30px;
-        border-radius: 10px;
-      }
-      
-      .contact-info h3,
-      .contact-info h4,
-      .contact-info h5 {
-        color: #333 !important;
-      }
-      
-      .contact-info p {
-        color: #555 !important;
-      }
-    </style>
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
-  </head>
-  <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <div class="preloader">
-      <div class="preloader-body">
-        <div class="cssload-container">
-          <div class="cssload-speeding-wheel"></div>
-        </div>
-      </div>
-    </div>
-    <div class="page">
-      <header class="section page-header">
-        <!--RD Navbar-->
-        <div class="rd-navbar-wrap" style="position: absolute">
-          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-            <div class="rd-navbar-main-outer">
-              <div class="rd-navbar-main">
-                <!--RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!--RD Navbar Toggle-->
-                  <button type="button" class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" title="Menu de navigation"><span></span></button>
-                  <!--RD Navbar Brand-->
-                  <div class="rd-navbar-brand">
-                    <!--Brand--><a class="brand" href="index.html"><img src="logo d.f.prod.jpg" alt="BB MC - D.F.PROD" class="logo-improved"/></a>
-                  </div>
-                </div>
-                <div class="rd-navbar-main-element">
-                  <div class="rd-navbar-nav-wrap">
-                    <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Accueil</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Biographie</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="discographie.html">Discographie</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="concerts.html">Concerts</a>
-                      </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="contacts.html">Contact</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="rd-navbar-collapse">
-                  <ul class="socialite-list">
-                    <li><a class="icon novi-icon socialite fa-facebook" href="#"></a></li>
-                    <li><a class="icon novi-icon socialite fa-twitter" href="#"></a></li>
-                    <li><a class="icon novi-icon socialite fa-instagram" href="#"></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <!-- Breadcrumbs-->
-      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(images_BBMC/photo\ galérie\ bb\ mc/DSC_2580.jpg);">
-        <div class="container">
-          <h2 class="breadcrumbs-custom-title">Contact</h2>
-        </div>
-      </section>
-      <section class="section section-md bg-default">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-8 col-sm-10">
-              <h3>Informations de Contact</h3>
-              <p class="text-gray-600">Vous trouverez ici toutes les informations nécessaires pour me contacter pour des collaborations, réservations de concerts ou toute question.</p>
-            </div>
-          </div>
-          <div class="row row-50 justify-lg-content-center row-custom-border">
-            <div class="col-lg-4 col-md-6">
-              <div class="box-icon-classic">
-                <div class="icon novi-icon icon-primary icon-lg fl-bigmug-line-cellphone55"></div>
-                <h5 class="box-icon-classic-title">Téléphones</h5>
-                <ul class="box-icon-classic-list">
-                  <li><a href="tel:+221782884765">Principal : +221 78 288 47 65</a></li>
-                  <li><a href="tel:+221770950193">Secondaire : +221 77 095 01 93</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="box-icon-classic">
-                <div class="icon novi-icon icon-primary icon-lg fl-bigmug-line-big104"></div>
-                <h5 class="box-icon-classic-title">Adresse</h5>
-                <ul class="box-icon-classic-list">
-                  <li><a href="https://maps.app.goo.gl/CviqwKCGZoywtqge9" target="_blank" rel="noopener" title="Localiser Thiemping sur Google Maps">Thiemping, <br> Région de Matam, Sénégal</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="box-icon-classic">
-                <div class="icon novi-icon icon-primary icon-md fl-bigmug-line-email64"></div>
-                <h5 class="box-icon-classic-title">E-mails</h5>
-                <ul class="box-icon-classic-list">
-                  <li><a href="mailto:bebemc.th@gmail.com">bebemc.th@gmail.com</a></li>
-                  <li><a href="mailto:bb.mc.officiel@gmail.com">bb.mc.officiel@gmail.com</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact & booking — BB MC</title>
+<meta name="description" content="Contacter BB MC pour un concert, un festival, une interview ou un partenariat. Booking : +221 78 288 47 65 · bebemc.th@gmail.com.">
+<meta name="theme-color" content="#0E0C0A">
+<link rel="canonical" href="https://bbmc.dsall.fr/contacts.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BB MC — Site officiel">
+<meta property="og:title" content="Contact & booking — BB MC">
+<meta property="og:description" content="Contacter BB MC pour un concert, un festival, une interview ou un partenariat. Booking : +221 78 288 47 65 · bebemc.th@gmail.com.">
+<meta property="og:url" content="https://bbmc.dsall.fr/contacts.html">
+<meta property="og:image" content="https://bbmc.dsall.fr/images_BBMC/web/og-cover.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images_BBMC/web/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/2026/1Ptgg87LROyAm0K0.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/site-2026.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="sr" href="#main">Aller au contenu</a>
+<header class="hdr always">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="BB MC — accueil">BB <span>MC</span></a>
+    <nav class="nav" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="about.html">Biographie</a><a href="discographie.html">Musique</a><a href="concerts.html">Concerts</a><a href="contacts.html" aria-current="page">Contact</a><a class="btn btn-gold" href="contacts.html#booking">Booking</a></nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-bars"/></svg></button>
+  </div>
+</header>
+<main id="main">
+<section class="phero">
+  <div class="bg"><img src="images_BBMC/web/new07.jpg" alt="" style="object-position:50% 30%"></div>
+  <div class="wrap">
+    <span class="kicker">Booking · Presse · Partenariats</span>
+    <h1 class="display">Contact</h1>
+    <p class="lead">Concerts, festivals, interviews, partenariats : l'équipe D.F.PROD vous répond.</p>
+    <p class="crumbs"><a href="index.html">Accueil</a> / Contact</p>
+  </div>
+  <div class="band"></div>
+</section>
 
-      <!--Mailform-->
-      <section class="section section-lg bg-default">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-8 col-sm-10">
-              <h3>Contactez-moi</h3>
-              <p class="text-gray-600">N'hésitez pas à me laisser un message ou poser une question en utilisant le formulaire ci-dessous.</p>
-            </div>
-          </div>
-          <!--RD Mailform-->
-          <form class="rd-form rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-            <div class="row row-40">
-              <div class="col-lg-4">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-name">Nom</label>
-                  <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-phone">Téléphone</label>
-                  <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-email">E-Mail</label>
-                  <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-message">Message</label>
-                  <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-wrap">
-                  <button class="button button-primary" type="submit">Envoyer le message</button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
+<section class="sec" id="booking">
+  <div class="wrap">
+    <div class="cards">
+      <div class="card rv"><span class="kicker">Booking</span><div class="h3 mt-s">Téléphone</div>
+        <a class="big" href="tel:+221782884765">+221 78 288 47 65</a><a class="big" href="tel:+221770950193" style="margin-top:2px">+221 77 095 01 93</a>
+        <a class="link mt-m" href="https://wa.me/221782884765" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-whatsapp"/></svg> WhatsApp</a></div>
+      <div class="card rv"><span class="kicker">E-mail</span><div class="h3 mt-s">Écrire</div>
+        <a class="big" href="mailto:bebemc.th@gmail.com">bebemc.th@gmail.com</a><a class="big" href="mailto:bb.mc.officiel@gmail.com" style="margin-top:2px">bb.mc.officiel@gmail.com</a>
+        <p>Réponse sous 48 h pour les demandes de booking.</p></div>
+      <div class="card rv"><span class="kicker">Basé à</span><div class="h3 mt-s">Matam · Dakar</div>
+        <p><a href="https://maps.app.goo.gl/CviqwKCGZoywtqge9" target="_blank" rel="noopener">Thiemping, région de Matam, Sénégal</a></p>
+        <p>Disponible pour des dates au Sénégal, en Mauritanie et à l'international.</p></div>
     </div>
-    <div class="snackbars" id="form-output-global"></div>
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/bbmc-animations.js"></script>
-  </body>
+  </div>
+</section>
+
+<section class="sec paper">
+  <div class="wrap grid2" style="align-items:start">
+    <div class="rv">
+      <span class="kicker">Formulaire</span><h2 class="h2">Votre <span class="it c-clay">demande</span></h2>
+      <p class="body mt-m">Le formulaire ouvre votre messagerie avec un e-mail prérempli adressé à l'équipe.</p>
+      <form class="form mt-l" data-mailto="bebemc.th@gmail.com">
+        <div><label for="f-name">Nom</label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+        <div><label for="f-phone">Téléphone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="f-type">Objet</label><select id="f-type" name="type"><option>Booking concert</option><option>Festival</option><option>Presse / interview</option><option>Partenariat</option><option>Autre</option></select></div>
+        <div class="full"><label for="f-subject">Sujet</label><input id="f-subject" name="subject" placeholder="Ex. : concert le 12 décembre à Dakar"></div>
+        <div class="full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required placeholder="Date, lieu, type d'événement, capacité…"></textarea></div>
+        <div class="full"><button class="btn btn-ink" type="submit"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-envelope"/></svg> Envoyer la demande</button></div>
+      </form>
+    </div>
+    <div class="rv">
+      <div class="card" style="background:var(--ink);color:var(--cream);border-top-color:var(--gold)">
+        <span class="kicker" style="color:var(--gold)">Équipe D.F.PROD</span>
+        <ul class="team mt-s">
+          <li><b>SALLBY</b><span>Directeur de production<br>Djiby Oumar Sall</span></li>
+          <li><b>KTN</b><span>Manager général<br>Ibrahima Niang</span></li>
+          <li><b>Kaw Thiernal & DD Galsen</b><span>Managers de production</span></li>
+          <li><b>Saïd</b><span>Consultant artiste</span></li>
+        </ul>
+      </div>
+      <div class="card mt-m"><span class="kicker">Suivre BB MC</span>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="rnd" style="background:var(--ink)" href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-youtube"/></svg></a><a class="rnd" style="background:var(--ink)" href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-instagram"/></svg></a><a class="rnd" style="background:var(--ink)" href="https://www.tiktok.com/@bbmc_poulosy" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-tiktok"/></svg></a><a class="rnd" style="background:var(--ink)" href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-facebook-f"/></svg></a><a class="rnd" style="background:var(--ink)" href="https://open.spotify.com/artist/29MqBciLksFnFCcSYz8YT8" target="_blank" rel="noopener" aria-label="Spotify"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-spotify"/></svg></a></div>
+        <div style="display:flex;gap:20px;align-items:center;margin-top:26px"><img src="images_BBMC/web/qr.png" alt="QR code vers bbmc.dsall.fr" style="width:110px;height:110px"><p style="margin:0">Scannez pour partager le site officiel <b>bbmc.dsall.fr</b></p></div></div>
+      <div class="card mt-m"><span class="kicker">Presse</span><p>Téléchargez le press-kit 2026 (biographie, chiffres, photos).</p>
+        <a class="link mt-s" href="assets/Press-Book-BB-MC-2026.pdf" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-download"/></svg> Press-kit PDF</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="logo" href="index.html">BB <span>MC</span></a>
+        <p>Ibrahima Sy, alias BB MC — rappeur, conteur et ambassadeur du rap peul. De Thiemping (Matam) aux scènes du Sénégal et de la Mauritanie.</p>
+        <div class="soc"><a href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-youtube"/></svg></a><a href="https://www.instagram.com/bb_mc_officiel/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-instagram"/></svg></a><a href="https://www.tiktok.com/@bbmc_poulosy" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-tiktok"/></svg></a><a href="https://www.facebook.com/BB.MC.OFFICIELLE" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-facebook-f"/></svg></a><a href="https://open.spotify.com/artist/29MqBciLksFnFCcSYz8YT8" target="_blank" rel="noopener" aria-label="Spotify"><svg class="ic" aria-hidden="true"><use href="images_BBMC/web/icons.svg#i-spotify"/></svg></a></div>
+      </div>
+      <div><h4>Explorer</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="about.html">Biographie</a></li><li><a href="discographie.html">Musique</a></li><li><a href="concerts.html">Concerts</a></li><li><a href="contacts.html">Contact</a></li></ul></div>
+      <div><h4>Booking</h4><ul>
+        <li><a href="tel:+221782884765">+221 78 288 47 65</a></li>
+        <li><a href="tel:+221770950193">+221 77 095 01 93</a></li>
+        <li><a href="mailto:bebemc.th@gmail.com">bebemc.th@gmail.com</a></li>
+        <li><a href="mailto:bb.mc.officiel@gmail.com">bb.mc.officiel@gmail.com</a></li>
+      </ul></div>
+      <div><h4>Écouter</h4><ul><li><a href="https://open.spotify.com/artist/29MqBciLksFnFCcSYz8YT8" target="_blank" rel="noopener">Spotify</a></li><li><a href="https://music.apple.com/fr/artist/bb-mc/1540760816" target="_blank" rel="noopener">Apple Music</a></li><li><a href="https://www.deezer.com/fr/artist/113787442" target="_blank" rel="noopener">Deezer</a></li><li><a href="https://www.youtube.com/@bb_mc_officiel" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://audiomack.com/bb-mc" target="_blank" rel="noopener">Audiomack</a></li></ul></div>
+    </div>
+    <div class="bot"><span>© <span data-year>2026</span> BB MC — Tous droits réservés · Production D.F.PROD</span><span>bbmc.dsall.fr</span></div>
+  </div>
+</footer>
+<script src="js/site-2026.js" defer></script>
+</body>
 </html>

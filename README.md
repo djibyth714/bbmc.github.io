@@ -4,7 +4,20 @@ Site web officiel de BB MC, ambassadeur du rap peul sénégalais.
 
 ## 🎵 À propos
 
-BB MC est un artiste rap peul originaire de Thiemping, région de Matam au Sénégal. Avec plus de 115 concerts réalisés entre 2021 et 2025, il s'impose comme une figure majeure du rap peul contemporain.
+BB MC est un artiste rap peul originaire de Thiemping, région de Matam au Sénégal. Avec 135 concerts au Sénégal et en Mauritanie depuis 2021 et plus de 10,6 millions de vues YouTube, il s'impose comme une figure majeure du rap peul contemporain.
+
+## 🆕 Refonte 2026
+
+Le site a été entièrement redessiné en octobre 2026 avec l'identité visuelle du Press-Book 2026
+(noir, crème, or et terracotta · polices Anton, Manrope et Instrument Serif · frise à motifs peuls).
+
+- `css/site-2026.css` et `js/site-2026.js` : nouveau design, menu mobile, lecteur audio, vidéos YouTube chargées au clic, visionneuse photo
+- `images_BBMC/web/` : images optimisées pour le web (shooting 2026, concert Douta Seck, détourages, icônes)
+- `fonts/2026/` : polices auto-hébergées (avec prise en charge des lettres peules ɓ ɗ)
+- `assets/Press-Book-BB-MC-2026.pdf` : press-kit téléchargeable
+- Les pages HTML sont générées par `../build_site.py` (hors dépôt) : modifier les données dans ce script puis lancer `python3 build_site.py`
+
+Les anciennes feuilles de style du template (`style.css`, `bbmc-*.css`, `script.js`…) ne sont plus utilisées par les pages.
 
 ## 📁 Structure du projet
 
